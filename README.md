@@ -1,43 +1,37 @@
-# Hogar Claro
+# TopiApps
 
-Sitio estatico en HTML, CSS y JavaScript, preparado como base para publicacion y optimizacion orientada a Google AdSense.
+Sitio estatico en espanol enfocado en herramientas de inteligencia artificial, comparativas y prompts utiles.
 
-## Incluye
+## Enfoque editorial
 
-- Portada profesional
-- Paginas de articulos, nosotros, contacto, privacidad y terminos
-- Trece articulos originales en espanol sobre hogar practico, ahorro y compras inteligentes
-- `robots.txt`, `sitemap.xml` y `ads.txt`
-- Estructura responsive y lista para hosting estatico
+- Guias originales sobre apps de IA y productividad.
+- Comparativas tipo ChatGPT vs Claude.
+- Prompts para negocios, estudiantes y profesionales.
+- Paginas legales, contacto y sitemap listos para dominio propio.
+- Espacios comentados para insertar Google AdSense cuando la cuenta este aprobada.
 
-## Cambios obligatorios antes de publicar
+## Imagenes recomendadas
 
-1. Reemplaza `https://www.tudominio.com` por tu dominio real en todos los archivos HTML, `robots.txt` y `sitemap.xml`.
-2. Cambia `contacto@tudominio.com` y `editorial@tudominio.com` por correos reales.
-3. Sustituye el identificador de `ads.txt` por tu Publisher ID real de AdSense cuando lo tengas.
-4. Sube el sitio a un dominio propio y verifica que todas las paginas carguen correctamente.
-5. Publica mas contenido antes de pedir la revision para mejorar tus posibilidades.
+Para reducir riesgos de derechos de autor, usa URLs de bancos con licencia clara y evita copiar imagenes desde Google Imagenes o desde otros blogs.
 
-## Recomendaciones para AdSense
+Fuentes recomendadas:
 
-- Usa dominio propio, no subdominio temporal.
-- Manten navegacion clara y sin paginas vacias.
-- Evita contenido copiado o generado sin revisar.
-- Agrega un favicon y, si puedes, una imagen social para compartir.
-- Conecta Search Console y envia el sitemap.
-- Espera a que Google indexe varias paginas antes de solicitar revision.
+- Unsplash: https://unsplash.com/s/photos/artificial-intelligence
+- Pexels: https://www.pexels.com/search/artificial%20intelligence/
+- Pixabay: https://pixabay.com/images/search/artificial%20intelligence/
+- Wikimedia Commons: https://commons.wikimedia.org/wiki/Category:Artificial_intelligence
 
-## Comando para levantar el servidor
+Buenas practicas:
 
-```bash
-cd /Users/sebastian.carrillo/Documents/Personal/templateplantila
-python3 -m http.server 8000
-```
+- Revisa la licencia de cada imagen antes de usarla.
+- Guarda la URL de la fuente en tus notas editoriales.
+- Usa texto alternativo descriptivo en cada `<img>`.
+- Evita usar logos de herramientas como imagen principal salvo que sea necesario y con contexto informativo.
+- No uses imagenes de otros sitios sin permiso claro.
 
-## Donde poner AdSense
+## Pendientes antes de publicar
 
-- El script global va en el `<head>` de cada pagina, donde deje el comentario `Google AdSense: pega aqui el script global de AdSense`.
-- En la portada puedes poner un anuncio manual en [index.html](/Users/sebastian.carrillo/Documents/Personal/templateplantila/index.html), debajo del titulo `Articulos destacados`.
-- En la pagina de articulos puedes poner un anuncio manual en [pages/articles.html](/Users/sebastian.carrillo/Documents/Personal/templateplantila/pages/articles.html), encima del listado.
-- En los articulos puedes poner anuncios manuales dentro de `<article class="copy-block">`, donde deje el comentario correspondiente.
-- Si usas `Auto Ads`, normalmente basta con pegar el script global y Google decide las ubicaciones.
+1. Verifica que `topiapps.com` apunte al hosting correcto.
+2. Crea correos reales como `contacto@topiapps.com` y `editorial@topiapps.com`.
+3. Actualiza `ads.txt` con el publisher ID real de Google AdSense.
+4. Publica mas articulos originales antes de solicitar revision.
