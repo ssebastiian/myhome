@@ -1,0 +1,21 @@
+<svg width="512" height="512" viewBox="0 0 512 512" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title>TopiApps</title>
+  <rect width="512" height="512" rx="96" fill="#1a1a2e"/>
+  <circle cx="256" cy="256" r="74" fill="#6C63FF" opacity="0.15"/>
+  <circle cx="256" cy="256" r="50" fill="#6C63FF"/>
+  <rect x="233" y="229" width="46" height="8" rx="4" fill="#fff"/>
+  <rect x="252" y="237" width="8" height="43" rx="4" fill="#fff"/>
+  <circle cx="139" cy="169" r="19" fill="#00D4AA"/>
+  <circle cx="373" cy="169" r="19" fill="#00D4AA"/>
+  <circle cx="110" cy="324" r="19" fill="#FF6B6B"/>
+  <circle cx="402" cy="324" r="19" fill="#FF6B6B"/>
+  <circle cx="213" cy="411" r="19" fill="#FFD166"/>
+  <circle cx="299" cy="411" r="19" fill="#FFD166"/>
+  <line x1="205" y1="221" x2="157" y2="183" stroke="#00D4AA" stroke-width="5" stroke-linecap="round"/>
+  <line x1="307" y1="221" x2="355" y2="183" stroke="#00D4AA" stroke-width="5" stroke-linecap="round"/>
+  <line x1="205" y1="285" x2="129" y2="318" stroke="#FF6B6B" stroke-width="5" stroke-linecap="round"/>
+  <line x1="307" y1="285" x2="383" y2="318" stroke="#FF6B6B" stroke-width="5" stroke-linecap="round"/>
+  <line x1="232" y1="303" x2="219" y2="393" stroke="#FFD166" stroke-width="5" stroke-linecap="round"/>
+  <line x1="280" y1="303" x2="293" y2="393" stroke="#FFD166" stroke-width="5" stroke-linecap="round"/>
+  <path d="M80 256c38 0 37-46 59-46s21 46 43 46 21-46 43-46 21 46 43 46 21-46 43-46 21 46 43 46 21-46 59-46" fill="none" stroke="#6C63FF" stroke-width="7" stroke-linecap="round" opacity="0.45"/>
+</svg>
