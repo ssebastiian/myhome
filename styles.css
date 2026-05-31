@@ -429,6 +429,22 @@ h3 {
   margin-bottom: 0;
 }
 
+.editorial-note {
+  margin-top: 2rem;
+  padding: 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #f8fbfd;
+}
+
+.editorial-note h2 {
+  font-size: 1.25rem;
+}
+
+.editorial-note ul {
+  margin-top: 0.5rem;
+}
+
 .sidebar-stack {
   display: grid;
   gap: 1.2rem;
