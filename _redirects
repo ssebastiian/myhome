@@ -1,0 +1,8 @@
+/favicon.ico /assets/topiapps-icon.svg 200
+/favicon.svg /assets/topiapps-icon.svg 200
+/apple-touch-icon.png /assets/topiapps-icon.svg 200
+/apple-touch-icon-precomposed.png /assets/topiapps-icon.svg 200
+/wp-login.php /404.html 404
+/wp-admin/* /404.html 404
+/.env /404.html 404
+/.git/* /404.html 404
