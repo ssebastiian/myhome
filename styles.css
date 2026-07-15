@@ -33,6 +33,29 @@ a {
   text-decoration: none;
 }
 
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid rgba(15, 118, 110, 0.38);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 100;
+  padding: 0.7rem 1rem;
+  border-radius: var(--radius);
+  background: var(--text);
+  color: #fff;
+  transform: translateY(-160%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
 img {
   max-width: 100%;
 }
@@ -539,6 +562,106 @@ h3 {
   margin-top: 0.5rem;
 }
 
+.author-box,
+.source-box,
+.method-box,
+.key-takeaway {
+  margin-top: 2rem;
+  padding: 1.35rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.author-box {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  align-items: start;
+  background: var(--surface-strong);
+}
+
+.author-monogram {
+  display: grid;
+  width: 3.25rem;
+  height: 3.25rem;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 800;
+}
+
+.author-box h2,
+.source-box h2,
+.method-box h2,
+.key-takeaway h2 {
+  font-size: 1.35rem;
+}
+
+.source-box {
+  background: #fbfcfe;
+}
+
+.source-list {
+  display: grid;
+  gap: 0.8rem;
+  padding-left: 1.2rem;
+}
+
+.source-list a,
+.copy-block a,
+.contact-card a,
+.article-card a,
+.article-list-item a {
+  color: var(--accent-dark);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+.source-list small {
+  display: block;
+  color: var(--muted);
+}
+
+.method-box {
+  border-left: 5px solid var(--accent);
+  background: #f8fbfd;
+}
+
+.key-takeaway {
+  background: #fff8e7;
+  border-color: #ead9a7;
+}
+
+.score-card {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin: 1.2rem 0;
+}
+
+.score-card > div {
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #f8fbfd;
+}
+
+.score-card strong {
+  display: block;
+  color: var(--accent-dark);
+  font-size: 1.35rem;
+}
+
+.article-disclosure {
+  margin: 1rem 0 0;
+  padding-left: 1rem;
+  border-left: 3px solid var(--line);
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
 .sidebar-stack {
   display: grid;
   gap: 1.2rem;
@@ -631,6 +754,11 @@ h3 {
 
   .mini-meta span {
     width: 100%;
+  }
+
+  .author-box,
+  .score-card {
+    grid-template-columns: 1fr;
   }
 
   .hero-actions {

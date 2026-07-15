@@ -1,6 +1,8 @@
 # TopiApps
 
-Sitio estatico en espanol enfocado en herramientas de inteligencia artificial, comparativas y prompts utiles.
+Sitio estático en español enfocado en herramientas de inteligencia artificial, comparativas, métodos prácticos y prompts útiles.
+
+La biblioteca contiene 31 artículos. La auditoría y el checklist previo al próximo envío a AdSense están en [REVISION_ADSENSE_2026.md](REVISION_ADSENSE_2026.md).
 
 ## Enfoque editorial
 
@@ -29,9 +31,11 @@ Buenas practicas:
 - Evita usar logos de herramientas como imagen principal salvo que sea necesario y con contexto informativo.
 - No uses imagenes de otros sitios sin permiso claro.
 
-## Pendientes antes de publicar
+## Pendientes antes de solicitar otra revisión
 
-1. Verifica que `topiapps.com` apunte al hosting correcto.
-2. Crea correos reales como `contacto@topiapps.com` y `editorial@topiapps.com`.
-3. Actualiza `ads.txt` con el publisher ID real de Google AdSense.
-4. Publica mas articulos originales antes de solicitar revision.
+1. Despliega los cambios y verifica que `topiapps.com` sirva esta versión.
+2. Confirma que `contacto@topiapps.com` y `editorial@topiapps.com` reciben mensajes.
+3. Envía el sitemap actualizado en Google Search Console y solicita indexación de las páginas nuevas.
+4. Comprueba en AdSense que `ads.txt` aparece como autorizado.
+5. Configura una CMP certificada por Google si se sirve publicidad a usuarios del EEE, Reino Unido o Suiza.
+6. Solicita la revisión cuando Google ya haya rastreado e indexado los cambios importantes.
