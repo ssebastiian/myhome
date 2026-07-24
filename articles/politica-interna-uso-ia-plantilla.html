@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Política interna de uso de IA: plantilla práctica | TopiApps</title>
+    <meta name="description" content="Guía y plantilla descargable para definir usos permitidos, datos, revisión humana, proveedores e incidentes al usar IA en un equipo pequeño." />
+    <meta name="robots" content="index, follow" />
+    <meta name="google-adsense-account" content="ca-pub-9439862036060464" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9439862036060464" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/svg+xml" href="/assets/topiapps-icon.svg" />
+    <link rel="canonical" href="https://topiapps.com/articles/politica-interna-uso-ia-plantilla.html" />
+    <meta property="og:title" content="Política interna de uso de IA: plantilla práctica" />
+    <meta property="og:description" content="Una política breve para pasar de “usen IA con cuidado” a reglas que un equipo pueda aplicar." />
+    <meta property="og:type" content="article" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Política interna de uso de IA: plantilla práctica",
+        "description": "Guía y plantilla descargable para definir usos permitidos, datos, revisión humana, proveedores e incidentes al usar IA en un equipo pequeño.",
+        "inLanguage": "es",
+        "url": "https://topiapps.com/articles/politica-interna-uso-ia-plantilla.html",
+        "datePublished": "2026-07-24",
+        "dateModified": "2026-07-24",
+        "author": {"@type": "Person", "name": "Sebastián Carrillo", "url": "https://topiapps.com/pages/autor-sebastian-carrillo.html"},
+        "publisher": {"@type": "Organization", "name": "TopiApps", "url": "https://topiapps.com/"},
+        "mainEntityOfPage": "https://topiapps.com/articles/politica-interna-uso-ia-plantilla.html"
+      }
+    </script>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header class="site-header"><div class="container"><a class="brand" href="/">TopiApps</a><button class="nav-toggle" type="button" aria-expanded="false" aria-label="Abrir menú"><span></span><span></span></button><nav class="site-nav" aria-label="Principal"><a href="/">Inicio</a><a href="/pages/articles.html">Artículos</a><a href="/pages/resources.html">Recursos</a><a href="/pages/about.html">Nosotros</a><a href="/pages/contact.html">Contacto</a></nav></div></header>
+    <main id="contenido">
+      <section class="page-hero">
+        <div class="container">
+          <div class="breadcrumb"><a href="/">Inicio</a><span>/</span><a href="/pages/articles.html">Artículos</a><span>/</span><span>Gobernanza</span></div>
+          <p class="eyebrow">Uso responsable</p>
+          <h1>Política interna de uso de IA para equipos pequeños</h1>
+          <p class="page-intro">Una plantilla breve para decidir qué se puede hacer, qué información no debe cargarse, quién revisa las salidas y cómo actuar cuando algo falla.</p>
+          <p class="mini-meta"><span>Por <a href="/pages/autor-sebastian-carrillo.html">Sebastián Carrillo</a></span><span>15 min de lectura</span><span>Publicado: 24 de julio de 2026</span></p>
+          <p class="article-disclosure"><strong>Transparencia de producción:</strong> se utilizó IA como apoyo para organizar y revisar el borrador. La selección de fuentes, los límites y la publicación quedan bajo responsabilidad editorial de Sebastián Carrillo.</p>
+          <p class="article-disclosure">Contenido informativo y plantilla adaptable. No constituye asesoría jurídica, laboral, de ciberseguridad ni de protección de datos.</p>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container page-layout">
+          <article class="copy-block">
+            <div class="key-takeaway"><h2>Empieza por decisiones, no por definiciones</h2><p>Una política útil permite responder cuatro preguntas en menos de un minuto: ¿puedo usar esta herramienta?, ¿puedo cargar estos datos?, ¿quién debe revisar la salida? y ¿a quién aviso si ocurre un incidente?</p></div>
+
+            <p>En muchos equipos la regla completa es “no compartas información sensible”. El problema es que cada persona interpreta “sensible” de una forma distinta. Una considera que una lista de clientes está prohibida; otra copia un correo completo porque no incluye una contraseña. La ambigüedad aumenta cuando las herramientas pueden leer archivos, conectarse al correo o ejecutar acciones.</p>
+            <p>El objetivo de una política inicial no es cubrir todos los escenarios. Es establecer límites comprensibles, asignar responsables y crear un registro para aprender. La plantilla descargable de esta guía cabe en pocas páginas y debe adaptarse al país, contratos, sector y realidad técnica de cada organización.</p>
+
+            <p><a class="button secondary download-link" href="/downloads/plantilla-politica-uso-ia.md" download>Descargar plantilla en Markdown</a></p>
+
+            <nav class="method-box" aria-label="Contenido del artículo">
+              <h2>Las diez decisiones de la política</h2>
+              <ol class="content-index">
+                <li><a href="#objetivo">Objetivo, alcance y responsables</a></li>
+                <li><a href="#semaforo">Semáforo de información</a></li>
+                <li><a href="#usos">Usos permitidos y prohibidos</a></li>
+                <li><a href="#revision">Revisión humana según impacto</a></li>
+                <li><a href="#proveedores">Cuentas, proveedores y conectores</a></li>
+                <li><a href="#incidentes">Incidentes y registro mínimo</a></li>
+                <li><a href="#implantacion">Plan de implantación en siete días</a></li>
+              </ol>
+            </nav>
+
+            <h2 id="objetivo">1. Escribe un objetivo operativo</h2>
+            <p>Evita frases generales como “promover la innovación responsable”. Una versión accionable sería: “Esta política define qué usos de IA están permitidos, qué datos no pueden compartirse, qué revisión humana es obligatoria y cómo se reportan incidentes”. Después indica a quién aplica: empleados, contratistas, voluntarios, proveedores o un equipo concreto.</p>
+            <p>Nombra roles, no solo personas. Debe existir alguien que apruebe herramientas, alguien responsable del proceso que usa la salida y un canal para dudas e incidentes. En un negocio pequeño una misma persona puede cumplir varios roles, pero la responsabilidad debe quedar visible.</p>
+
+            <h2 id="semaforo">2. Clasifica la información con un semáforo</h2>
+            <div class="traffic-grid">
+              <div class="traffic-green"><strong>Verde</strong><p>Información pública, datos ficticios o material creado para practicar. Puede usarse en herramientas aprobadas.</p></div>
+              <div class="traffic-yellow"><strong>Amarillo</strong><p>Información interna no pública. Requiere autorización, cuenta adecuada y controles documentados.</p></div>
+              <div class="traffic-red"><strong>Rojo</strong><p>Datos personales, credenciales, secretos, información regulada o de clientes. No se carga en servicios externos salvo aprobación formal y garantías suficientes.</p></div>
+            </div>
+
+            <p>El color depende del contenido, no del formato. Una captura puede contener correos; un PDF público puede incluir instrucciones maliciosas; una hoja aparentemente anónima puede permitir identificar personas al combinar columnas. Añade ejemplos propios: contratos, tickets, historias clínicas, candidatos, código privado, listas de precios o estrategias.</p>
+            <p>Anonimizar no significa reemplazar un nombre y conservar todo lo demás. Fechas exactas, cargos, ubicaciones y eventos pueden volver identificable a una persona. Cuando el uso involucra datos personales, consulta a quien conozca las obligaciones aplicables.</p>
+
+            <h2 id="usos">3. Separa usos permitidos, condicionados y prohibidos</h2>
+            <p>Los usos permitidos deberían ser reversibles y fáciles de revisar: lluvia de ideas, borradores internos, explicación de conceptos, resumen de material público o creación de ejemplos ficticios. No digas solo “se permite redactar”; aclara que los hechos, tono y derechos de uso se revisan antes de publicar.</p>
+            <p>Los usos condicionados requieren una persona responsable o una herramienta aprobada. Por ejemplo: resumir documentos internos, generar código, clasificar solicitudes o preparar comunicaciones externas. Define la condición: anonimización, entorno de prueba, doble revisión, aprobación del área o prohibición de envío automático.</p>
+            <p>Entre los usos prohibidos conviene incluir:</p>
+            <ul>
+              <li>Introducir contraseñas, claves privadas, tokens, credenciales o secretos en instrucciones.</li>
+              <li>Cargar datos personales o confidenciales sin autorización y controles.</li>
+              <li>Tomar decisiones automáticas de alto impacto sobre empleo, crédito, salud, educación o derechos.</li>
+              <li>Publicar cifras, citas, referencias o hechos generados sin verificarlos.</li>
+              <li>Ejecutar código, transferencias, correos o cambios en producción sin confirmación humana.</li>
+              <li>Presentar como experiencia humana un caso que la IA inventó.</li>
+            </ul>
+
+            <h2 id="revision">4. Ajusta la revisión al daño posible</h2>
+            <p>No todas las salidas necesitan el mismo control. Un título interno puede revisarse por utilidad. Una respuesta a clientes debe comprobar condiciones, tono y datos. Una recomendación médica, fiscal o jurídica no debe delegarse a un asistente general como autoridad final.</p>
+            <table class="review-table">
+              <thead><tr><th>Nivel</th><th>Ejemplos</th><th>Control mínimo</th></tr></thead>
+              <tbody>
+                <tr><th>Bajo</th><td>Ideas, esquemas y material ficticio.</td><td>La persona usuaria revisa antes de reutilizar.</td></tr>
+                <tr><th>Medio</th><td>Contenido externo, análisis operativo o código sin datos sensibles.</td><td>Responsable identificado, fuentes y prueba en entorno seguro.</td></tr>
+                <tr><th>Alto</th><td>Personas, dinero, seguridad, salud, cumplimiento o acciones externas.</td><td>Especialista competente, aprobación explícita y registro; puede no ser un uso permitido.</td></tr>
+              </tbody>
+            </table>
+            <p>La revisión humana solo funciona si la persona tiene tiempo, contexto y autoridad para rechazar la salida. Un botón de “aprobar” no es control cuando se revisan cientos de casos sin acceso a la fuente.</p>
+
+            <h2 id="proveedores">5. Aprueba el proveedor y también la configuración</h2>
+            <p>El nombre de la herramienta no basta. Un plan personal, uno empresarial y una API pueden tener condiciones distintas. Registra plan, región, retención, uso para entrenamiento, administración de usuarios, exportación, eliminación, subencargados y fecha de revisión. Si un dato no está documentado, márcalo como no verificado.</p>
+            <p>Usa cuentas de trabajo administradas cuando existan, autenticación multifactor y privilegio mínimo. Un asistente que solo redacta no necesita acceso completo al correo. Revisa por separado cada conector, complemento o agente capaz de consultar datos o ejecutar acciones.</p>
+            <p>El contenido externo también puede ser una entrada no confiable. Un correo, página o documento puede contener instrucciones que intenten cambiar el comportamiento de un asistente. La política debe exigir confirmación humana antes de que una salida proveniente de esos materiales active herramientas, revele datos o modifique sistemas.</p>
+
+            <h2>6. Incluye propiedad intelectual y transparencia</h2>
+            <p>No cargues documentos, imágenes, código o bases de datos sin permiso. Define quién comprueba licencias, atribución y semejanza con material protegido. La disponibilidad técnica para generar o transformar una obra no resuelve automáticamente los derechos de uso.</p>
+            <p>Indica cuándo debe declararse el uso de IA: una institución educativa, un cliente, un contrato o una audiencia pueden exigirlo. La regla práctica es informar cuando la automatización sea relevante para evaluar autoría, confiabilidad o responsabilidad.</p>
+
+            <h2 id="incidentes">7. Prepara un procedimiento que no dependa de improvisar</h2>
+            <p>Un incidente puede ser cargar el archivo equivocado, exponer datos, recibir una salida discriminatoria, ejecutar una acción no autorizada o publicar información falsa. La primera instrucción debería ser detener el flujo y avisar; no ocultar el error ni borrar evidencia.</p>
+            <ol>
+              <li>Detén la automatización y limita accesos si es seguro hacerlo.</li>
+              <li>Registra herramienta, cuenta, fecha, instrucciones, datos afectados y acciones ejecutadas.</li>
+              <li>Avisa al canal y responsable definidos.</li>
+              <li>Revoca credenciales o conexiones cuando corresponda.</li>
+              <li>Consulta a la persona competente para evaluar notificaciones legales, contractuales o a afectados.</li>
+              <li>Corrige el proceso y decide si el uso continúa, cambia o se prohíbe.</li>
+            </ol>
+
+            <h2>8. Conserva un registro mínimo de usos</h2>
+            <p>No hace falta almacenar cada conversación para siempre. El registro debe ser proporcional y respetar privacidad. Para un caso de uso aprobado conserva: propósito, responsable, herramienta y plan, categoría de datos, prueba realizada, fallos, decisión, fecha y próxima revisión.</p>
+            <p>Ese registro evita que cada persona repita la misma evaluación y permite retirar una herramienta cuando cambian las condiciones. También separa una aprobación concreta —“borradores con datos verdes”— de una falsa aprobación total.</p>
+
+            <h2 id="implantacion">9. Implantación en siete días</h2>
+            <div class="timeline">
+              <div><strong>Día 1</strong><span>Inventaría herramientas y usos actuales sin castigar a quien los declare.</span></div>
+              <div><strong>Días 2–3</strong><span>Clasifica datos y elige tres usos permitidos, tres condicionados y tres prohibidos.</span></div>
+              <div><strong>Día 4</strong><span>Revisa proveedores, cuentas y conectores; cierra accesos innecesarios.</span></div>
+              <div><strong>Día 5</strong><span>Prueba la política con escenarios reales y corrige ambigüedades.</span></div>
+              <div><strong>Día 6</strong><span>Explica las reglas, el canal de dudas y el proceso de incidentes.</span></div>
+              <div><strong>Día 7</strong><span>Aprueba una versión inicial y fija revisión en 90 días.</span></div>
+            </div>
+
+            <h2>10. Prueba la política con escenarios</h2>
+            <p>Pregunta al equipo qué haría en casos concretos: “un cliente envía un contrato y necesito resumirlo”, “un candidato entrega un currículo”, “un asistente pide acceso al correo”, “una fórmula generada afecta una factura” o “se pegó una lista de clientes por error”. Si dos personas llegan a respuestas opuestas, la política necesita un ejemplo o una regla más clara.</p>
+            <p>Una buena política no intenta eliminar el riesgo con frases absolutas. Reduce decisiones improvisadas, crea rutas de escalamiento y deja claro que la responsabilidad permanece en la organización y en las personas autorizadas.</p>
+
+            <section class="source-box" aria-labelledby="fuentes-politica">
+              <h2 id="fuentes-politica">Fuentes oficiales y técnicas consultadas</h2>
+              <ul class="source-list">
+                <li><a href="https://www.aepd.es/guias/recomendaciones-ia-aepd.pdf">AEPD — Recomendaciones para el uso de IA</a><small>Recomendaciones de privacidad para personas usuarias y organizaciones.</small></li>
+                <li><a href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence">NIST AI 600-1</a><small>Perfil de gestión de riesgos para inteligencia artificial generativa.</small></li>
+                <li><a href="https://genai.owasp.org/llmrisk/llm01-prompt-injection/">OWASP — Prompt Injection</a><small>Riesgos y mitigaciones para contenido no confiable, privilegios, pruebas y aprobación humana.</small></li>
+                <li><a href="https://www.edpb.europa.eu/topics/ai-and-technology/artificial-intelligence_en">Comité Europeo de Protección de Datos — IA</a><small>Trabajos y opiniones oficiales sobre modelos de IA y protección de datos.</small></li>
+                <li><a href="https://www.sic.gov.co/content/pruea-guias-y-cartillas-protecci%C3%B3n-de-datos">SIC Colombia — guías de protección de datos</a><small>Recursos de la autoridad colombiana para adaptar obligaciones al contexto local.</small></li>
+              </ul>
+              <p><small>Consultadas el 24 de julio de 2026. La plantilla resume criterios operativos y debe ajustarse con asesoría competente cuando el uso o la jurisdicción lo requieran.</small></p>
+            </section>
+
+            <section class="author-box" aria-labelledby="autor-politica"><div class="author-monogram" aria-hidden="true">SC</div><div><h2 id="autor-politica">Sobre el autor</h2><p><a href="/pages/autor-sebastian-carrillo.html">Sebastián Carrillo</a> es editor responsable de TopiApps. Diseña guías reproducibles, documenta fuentes y mantiene el canal público de correcciones.</p></div></section>
+          </article>
+          <aside class="sidebar-stack">
+            <div class="contact-card"><span class="contact-tag">Plantilla</span><h2>Documento editable</h2><p>Incluye objetivo, semáforo de datos, usos, incidentes y revisión.</p><p><a href="/downloads/plantilla-politica-uso-ia.md" download>Descargar Markdown</a></p></div>
+            <div class="contact-card"><h2>Relacionado</h2><p><a href="/articles/como-evaluar-herramienta-ia-antes-de-pagar.html">Evaluar una herramienta</a><br /><a href="/articles/como-verificar-respuestas-de-ia-metodo-practico.html">Verificar respuestas</a><br /><a href="/articles/calcular-costo-real-ia-en-un-equipo.html">Calcular costo real</a></p></div>
+            <div class="contact-card"><h2>Límite</h2><p>La plantilla no reemplaza las obligaciones legales, laborales, contractuales o de seguridad aplicables.</p></div>
+          </aside>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer"><div class="container footer-grid"><div><a class="brand" href="/">TopiApps</a><p>Guías independientes para elegir y usar IA con evidencia.</p></div><div><h3>Secciones</h3><a href="/pages/articles.html">Artículos</a><a href="/pages/resources.html">Recursos</a><a href="/pages/editorial-policy.html">Política editorial</a><a href="/pages/contact.html">Contacto</a></div><div><h3>Legal</h3><a href="/pages/privacy.html">Privacidad</a><a href="/pages/terms.html">Términos</a></div></div></footer>
+    <script src="/main.js"></script>
+  </body>
+</html>

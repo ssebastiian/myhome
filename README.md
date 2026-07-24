@@ -1,41 +1,44 @@
 # TopiApps
 
-Sitio estático en español enfocado en herramientas de inteligencia artificial, comparativas, métodos prácticos y prompts útiles.
+Sitio editorial estático en español sobre evaluación y uso responsable de herramientas de inteligencia artificial.
 
-La biblioteca contiene 31 artículos. La auditoría y el checklist previo al próximo envío a AdSense están en [REVISION_ADSENSE_2026.md](REVISION_ADSENSE_2026.md).
+## Biblioteca pública
 
-## Enfoque editorial
+La versión del 24 de julio de 2026 mantiene **10 guías activas**. Dos son nuevas:
 
-- Guias originales sobre apps de IA y productividad.
-- Comparativas tipo ChatGPT vs Claude.
-- Prompts para negocios, estudiantes y profesionales.
-- Paginas legales, contacto y sitemap listos para dominio propio.
-- Espacios comentados para insertar Google AdSense cuando la cuenta este aprobada.
+- prueba reproducible de 60 minutos para evaluar una herramienta antes de pagar;
+- plantilla de política interna de uso de IA para equipos pequeños.
 
-## Imagenes recomendadas
+También incluye dos descargas editables en `/downloads/` y una página de recursos sin registro.
 
-Para reducir riesgos de derechos de autor, usa URLs de bancos con licencia clara y evita copiar imagenes desde Google Imagenes o desde otros blogs.
+## Control de calidad
 
-Fuentes recomendadas:
+La auditoría detectó 23 páginas con estructuras, notas editoriales y fuentes demasiado repetidas. Esas páginas:
 
-- Unsplash: https://unsplash.com/s/photos/artificial-intelligence
-- Pexels: https://www.pexels.com/search/artificial%20intelligence/
-- Pixabay: https://pixabay.com/images/search/artificial%20intelligence/
-- Wikimedia Commons: https://commons.wikimedia.org/wiki/Category:Artificial_intelligence
+- no aparecen en la biblioteca pública;
+- se eliminaron del sitemap;
+- tienen `noindex, follow`;
+- no cargan el script de AdSense;
+- permanecen en el repositorio para una futura reescritura sustancial.
 
-Buenas practicas:
+No deben volver al inventario activo mediante cambios superficiales. Cada una necesita una decisión distinta, evidencia relacionada, un método o ejemplo útil y revisión ortotipográfica.
 
-- Revisa la licencia de cada imagen antes de usarla.
-- Guarda la URL de la fuente en tus notas editoriales.
-- Usa texto alternativo descriptivo en cada `<img>`.
-- Evita usar logos de herramientas como imagen principal salvo que sea necesario y con contexto informativo.
-- No uses imagenes de otros sitios sin permiso claro.
+## Archivos principales
 
-## Pendientes antes de solicitar otra revisión
+- `index.html`: portada.
+- `pages/articles.html`: biblioteca curada.
+- `pages/resources.html`: descargas y plantillas.
+- `pages/editorial-policy.html`: proceso editorial y política de retiro.
+- `REVISION_ADSENSE_2026.md`: diagnóstico y tareas previas al próximo envío.
 
-1. Despliega los cambios y verifica que `topiapps.com` sirva esta versión.
-2. Confirma que `contacto@topiapps.com` y `editorial@topiapps.com` reciben mensajes.
-3. Envía el sitemap actualizado en Google Search Console y solicita indexación de las páginas nuevas.
-4. Comprueba en AdSense que `ads.txt` aparece como autorizado.
-5. Configura una CMP certificada por Google si se sirve publicidad a usuarios del EEE, Reino Unido o Suiza.
-6. Solicita la revisión cuando Google ya haya rastreado e indexado los cambios importantes.
+## Antes de solicitar otra revisión de AdSense
+
+1. Desplegar esta versión en `topiapps.com`.
+2. Verificar en Google Search Console que la portada, la biblioteca y las diez guías activas estén indexadas.
+3. Reenviar `https://topiapps.com/sitemap.xml`.
+4. Confirmar que `contacto@topiapps.com` y `editorial@topiapps.com` reciben mensajes.
+5. Confirmar en AdSense el estado autorizado de `ads.txt`.
+6. Configurar una CMP certificada si se sirven anuncios a personas del EEE, Reino Unido o Suiza.
+7. No solicitar revisión solo porque se alcanzó una fecha: esperar a que Google haya rastreado la versión nueva.
+
+No existe un número oficial garantizado de artículos o palabras que produzca aprobación.

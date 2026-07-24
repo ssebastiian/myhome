@@ -1,95 +1,130 @@
 # Revisión de TopiApps para Google AdSense
 
-Fecha de auditoría: 15 de julio de 2026.
+Fecha de auditoría: 24 de julio de 2026.
 
-## Diagnóstico del quinto rechazo
+## Veredicto
 
-El aviso recibido es **“contenido de poco valor”**. El sitio ya tenía 29 artículos de más de 750 palabras, navegación, contacto, privacidad, términos y `ads.txt`. Por tanto, añadir palabras o repetir listas de herramientas no resolvía el problema principal.
+**No reenviar todavía.** El cambio editorial ya está aplicado en el repositorio, pero primero debe desplegarse, rastrearse e indexarse. La captura de AdSense indica que la próxima solicitud solo puede hacerse a partir del 30 de julio de 2026; esa fecha no significa que Google ya haya visto la nueva versión.
 
-Los riesgos encontrados fueron:
+Ningún cambio garantiza la aprobación. Google puede valorar señales que el repositorio no muestra: estado de la cuenta, historial del dominio, indexación, tráfico, consentimiento y comportamiento real de las páginas.
 
-1. Los 29 artículos no enlazaban fuentes externas dentro del contenido.
-2. La firma “TopiApps Editorial” no identificaba a una persona responsable.
-3. La mayoría de las páginas repetía la misma nota editorial y una estructura muy parecida.
-4. Había afirmaciones sobre productos, privacidad, salud, derecho y finanzas sin una fuente primaria visible cerca de la guía.
-5. El código automático de AdSense se cargaba en contacto, privacidad, términos, archivo de artículos y la página 404. Esas superficies no deben competir con el contenido editorial ni mostrar anuncios accidentalmente.
-6. Un artículo destacado seguía presentándose como comparativa de 2025 pese a estar en 2026.
-7. La política editorial afirmaba revisión humana, pero no explicaba con suficiente precisión quién revisaba, cómo se usaba IA ni cómo se documentaban fuentes.
+## Causa probable del quinto rechazo
+
+El problema no era la cantidad. Antes de esta auditoría había 31 artículos con una media aproximada de 861 palabras, pero:
+
+1. 29 compartían cuatro párrafos editoriales idénticos.
+2. 24 repetían exactamente la misma nota de fecha y comprobación de enlaces.
+3. Varias fuentes se añadieron al final sin relacionarlas con una afirmación concreta.
+4. La mayoría de las páginas no enlazaba otra guía.
+5. Muchos artículos eran listas generales de productos o usos con estructuras casi iguales.
+6. El sitio afirmaba tener una biblioteca amplia aunque la diferenciación real era limitada.
+7. Una búsqueda pública no devolvió páginas de TopiApps; esto no sustituye Search Console, pero hace imprescindible revisar el informe de indexación.
+
+La corrección anterior aumentó palabras, firmas y enlaces, pero dejó un patrón visible de ampliación mecánica. Eso no solucionaba “contenido de poco valor”.
 
 ## Cambios implementados
 
-- Se publicaron dos guías originales de unas 2.000 palabras cada una:
-  - método reproducible para verificar respuestas de IA;
-  - plantilla para calcular costo total, ahorro útil y punto de equilibrio.
-- La biblioteca pasó de 29 a 31 artículos.
-- Todos los artículos muestran como autor a Sebastián Carrillo y enlazan un perfil editorial.
-- Los 31 artículos contienen al menos una fuente externa visible en el cuerpo.
-- 26 artículos incluyen bloques de fuentes primarias; los cinco artículos compactos incluyen la fuente junto a la firma.
-- La política editorial ahora explica firma, verificación, fuentes y uso de IA.
-- La página “Nosotros” identifica al responsable editorial.
-- Se retiró el cargador de anuncios de 404, contacto, términos, privacidad, política editorial, nosotros y el archivo de artículos.
-- Se conservó AdSense en la portada y en las 31 páginas editoriales: 32 páginas monetizables.
-- Se actualizaron portada, biblioteca y sitemap con los artículos nuevos.
-- Se validaron enlaces internos, JSON-LD y sintaxis XML del sitemap.
+### Inventario activo
 
-## Cobertura publicitaria segura
+- Se redujo la biblioteca visible de 31 a 10 guías seleccionadas.
+- Se retiraron 23 páginas débiles del sitemap, navegación e inventario monetizable.
+- Las 23 páginas permanecen en el repositorio con `noindex, follow` y sin cargador de AdSense; sus rutas públicas redirigen temporalmente a la biblioteca activa hasta una reescritura sustancial.
+- Las páginas legales, contacto, autor, recursos, archivo y 404 siguen sin cargador de anuncios.
 
-El código base de AdSense ya está presente en la portada y en cada artículo. Con **Anuncios automáticos** activados en la cuenta, Google puede probar formatos dentro de esas páginas sin inventar `data-ad-slot` que no existen en el panel.
+### Dos guías nuevas
 
-No se recomienda añadir bloques manuales antes de la aprobación. Después de aprobar:
+1. **Cómo evaluar una herramienta de IA antes de pagar**
+   - protocolo de 60 minutos;
+   - siete criterios ponderados;
+   - calculadora local;
+   - fallos eliminatorios;
+   - plantilla CSV descargable.
 
-1. Activar Anuncios automáticos para `topiapps.com`.
-2. Habilitar formatos en página y superpuestos compatibles con la experiencia deseada.
-3. Usar la vista previa de AdSense para excluir encabezado, navegación, tablas densas y notas de fuentes.
-4. Revisar móvil antes de guardar.
-5. Si se crean bloques manuales, copiar el `data-ad-slot` real generado por AdSense; nunca inventarlo.
-6. Mantener sin anuncios la página 404, contacto, privacidad, términos, autor y política editorial.
-7. No colocar anuncios pegados a menús, botones, enlaces o elementos que puedan provocar clics accidentales.
-8. No pedir, insinuar ni recompensar clics.
+2. **Política interna de uso de IA para equipos pequeños**
+   - semáforo de datos;
+   - usos permitidos, condicionados y prohibidos;
+   - revisión humana por nivel de riesgo;
+   - proveedores, conectores e incidentes;
+   - plantilla Markdown descargable.
 
-“Más anuncios” no equivale a “más ingresos”. Una densidad que interrumpe la lectura puede reducir permanencia, confianza y posibilidades de aprobación.
+### Revisión de guías existentes
 
-## Acciones externas obligatorias antes de solicitar otra revisión
+Se reforzaron las páginas activas sobre:
 
-Estas tareas no pueden resolverse desde el repositorio:
+- Excel y hojas de cálculo, con conjunto de prueba y registro de validación;
+- resumen de PDF, con protocolo de extracción, resumen y verificación;
+- productividad personal, con experimento medible de siete días;
+- prompts para negocios, con marco C-O-R-E-A y ficha de prueba;
+- estudiantes, con prueba de comprensión sin la herramienta;
+- ChatGPT vs Claude, reescrita como protocolo transparente y sin ganador inventado.
 
-- Publicar los cambios en el hosting.
-- Abrir cada correo publicado (`contacto@topiapps.com` y `editorial@topiapps.com`) y confirmar que recibe mensajes.
-- En Google Search Console:
-  - inspeccionar la portada y los dos artículos nuevos;
-  - solicitar indexación;
-  - reenviar `https://topiapps.com/sitemap.xml`;
-  - comprobar que las páginas no aparezcan como “Descubierta: actualmente sin indexar”, duplicadas o bloqueadas.
-- En AdSense, verificar que el sitio está exactamente como `topiapps.com` y que `ads.txt` aparece como autorizado.
-- Configurar en Privacidad y mensajes una CMP certificada por Google para usuarios del EEE, Reino Unido y Suiza si el sitio recibe ese tráfico.
-- Activar Anuncios automáticos solamente después de revisar la vista previa de ubicaciones.
-- Revisar que el dominio responda con HTTPS, sin redirecciones inesperadas y con todas las páginas accesibles sin iniciar sesión.
+### Confianza y experiencia
 
-## Prueba editorial previa al reenvío
+- La portada ya no contiene consejos internos para conseguir imágenes; ahora dirige a recursos para lectores.
+- Se sustituyó la imagen externa principal por una ilustración SVG local.
+- La biblioteca explica por qué una página se activa o retira.
+- La página “Nosotros” reconoce públicamente el hallazgo de contenido repetido.
+- La política editorial documenta pruebas, fuentes, uso de IA, retiro y monetización.
+- Todas las guías activas revelan el apoyo de IA en la producción.
+- El perfil del editor aclara qué experiencia y credenciales no afirma.
+- Se eliminaron plazos de respuesta al correo que no podían garantizarse.
 
-Abrir diez artículos al azar y responder sí a todo:
+## Cobertura publicitaria
 
-- ¿La intención de la página es distinta a la de sus artículos relacionados?
-- ¿La introducción explica una decisión concreta?
-- ¿Hay ejemplos o criterios que no sean una lista de marcas?
-- ¿Las afirmaciones sensibles tienen una fuente primaria?
-- ¿La firma lleva a un perfil real?
-- ¿La fecha es coherente con el contenido?
-- ¿Todos los enlaces funcionan?
-- ¿El lector puede distinguir publicidad, navegación y contenido?
-- ¿La página funciona en una pantalla pequeña?
-- ¿El contenido seguiría siendo útil si no existiera Google Search?
+El cargador de AdSense permanece solo en:
 
-## Límites y expectativa realista
+- la portada;
+- las 10 guías activas.
 
-Ningún cambio de código garantiza la aprobación: Google toma la decisión y puede evaluar señales que no están en el repositorio, como indexación, historial del dominio, navegación real, cumplimiento de consentimiento y estado de la cuenta. Tampoco existe en la documentación oficial un mínimo garantizado de artículos o palabras.
+No se añadieron bloques manuales ni `data-ad-slot` inventados. Si la cuenta se aprueba, las ubicaciones deben revisarse con la vista previa de Anuncios automáticos. No colocar anuncios junto a navegación, descargas, tablas densas o elementos que puedan provocar clics accidentales.
 
-No conviene reenviar la solicitud en cuanto se despliegue. Primero hay que comprobar que Google rastreó la versión nueva y que las páginas clave están indexadas. Reenviar repetidamente una versión que el rastreador todavía no ve no aporta evidencia nueva.
+## Tareas externas obligatorias
+
+### Hosting
+
+- Desplegar la versión del 24 de julio de 2026.
+- Confirmar HTTPS y respuesta `200` en portada, biblioteca, recursos y diez guías.
+- Confirmar que una página retirada contiene `noindex` y no solicita `adsbygoogle.js`.
+
+### Google Search Console
+
+- Enviar el sitemap actualizado.
+- Inspeccionar la portada, biblioteca, recursos y las dos guías nuevas.
+- Solicitar indexación después del despliegue.
+- Revisar “Descubierta: actualmente sin indexar”, “Rastreada: actualmente sin indexar”, duplicadas y bloqueadas.
+- No reenviar AdSense hasta que las páginas importantes muestren la versión nueva.
+
+### AdSense
+
+- Verificar que el sitio es exactamente `topiapps.com`.
+- Confirmar que `ads.txt` está autorizado.
+- Configurar en “Privacidad y mensajes” una CMP certificada para EEE, Reino Unido y Suiza cuando corresponda.
+- Revisar Anuncios automáticos en móvil antes de activarlos.
+
+### Operación
+
+- Probar recepción real de `contacto@topiapps.com` y `editorial@topiapps.com`.
+- Responder o corregir cualquier reporte prioritario.
+- Mantener fuera de la biblioteca las páginas retiradas hasta una reescritura auténtica.
+
+## Prueba final antes de solicitar revisión
+
+Abrir todas las guías activas y responder sí:
+
+- ¿La intención es distinta de las otras páginas?
+- ¿Existe un método, prueba, tabla, plantilla o ejemplo aplicable?
+- ¿Las afirmaciones cambiantes se apoyan en una fuente relacionada?
+- ¿Se distingue documentación, ejemplo ficticio y experiencia real?
+- ¿La firma y la fecha son visibles?
+- ¿La navegación solo conduce a contenido activo?
+- ¿No hay enlaces rotos ni imágenes externas innecesarias?
+- ¿La página funciona sin anuncios y en una pantalla pequeña?
+- ¿Seguiría siendo útil si no existiera Google Search?
 
 ## Referencias oficiales
 
 - [Comprobar si las páginas están preparadas para AdSense](https://support.google.com/adsense/answer/7299563?hl=es)
-- [Políticas para Editores de Google](https://support.google.com/adsense/answer/10502938?hl=es)
-- [Políticas del Programa AdSense](https://support.google.com/adsense/answer/48182?hl=es-us)
-- [Prácticas recomendadas para colocar anuncios](https://support.google.com/adsense/answer/1282097?hl=es-419)
-- [Crear contenido útil, fiable y centrado en las personas](https://developers.google.com/search/docs/fundamentals/creating-helpful-content?hl=es)
+- [Políticas para Editores de Google](https://support.google.com/adsense/answer/10502938?hl=es-419)
+- [Políticas del programa AdSense](https://support.google.com/adsense/answer/48182?hl=es)
+- [Contenido útil, fiable y centrado en las personas](https://developers.google.com/search/docs/fundamentals/creating-helpful-content?hl=es)
+- [Requisitos de consentimiento para editores](https://support.google.com/adsense/answer/13554116?hl=es)

@@ -1,27 +1,26 @@
-# Ideas de contenido para TopiApps
+# Criterio para nuevo contenido de TopiApps
 
-Estos temas mantienen el sitio enfocado en herramientas IA y pueden crecer bien para SEO si se escriben con experiencia, ejemplos propios y comparativas honestas.
+No publicar por cantidad. Un tema solo entra en la biblioteca activa cuando aporta una decisión, método o recurso diferente.
 
-## Categorias recomendadas
+## Requisitos editoriales
 
-- Mejores IA para editar fotos.
-- ChatGPT vs Claude y otras comparativas.
-- Prompts para negocios.
-- IA para abogados.
-- IA para estudiantes.
-- IA para crear contenido.
-- IA para atencion al cliente.
-- IA para resumir documentos.
-- IA para hacer presentaciones.
+- Definir la pregunta y el lector antes de redactar.
+- Distinguir experiencia realizada, documentación consultada y ejemplo ficticio.
+- Incluir una prueba, tabla, plantilla, cálculo o caso que el lector pueda repetir.
+- Enlazar fuentes primarias que sostengan afirmaciones concretas.
+- Explicar límites, trabajo de revisión y condiciones donde no conviene usar IA.
+- Revelar el apoyo de IA cuando sea material.
+- Revisar ortografía, navegación, móvil, enlaces y datos estructurados.
 
-## Reglas para AdSense
+## No activar
 
-- No publiques articulos copiados o generados sin revision humana.
-- Agrega ejemplos propios, capturas autorizadas o imagenes con licencia clara.
-- Evita prometer dinero facil, resultados garantizados o sustitucion profesional.
-- Manten contacto, privacidad, terminos, sitemap y `ads.txt` actualizados.
-- Publica suficientes articulos antes de pedir revision.
+- Listas de “mejores herramientas” sin muestra ni criterios.
+- Variantes de un artículo existente cambiando profesión o industria.
+- Fuentes añadidas como decoración al final.
+- Bloques editoriales repetidos para aumentar palabras.
+- Experiencias, pruebas, citas, métricas o credenciales inventadas.
+- Páginas creadas principalmente para anuncios o posicionamiento.
 
-## Imagenes seguras
+## Imágenes
 
-Usa URLs de bancos como Unsplash, Pexels, Pixabay o Wikimedia Commons, revisando la licencia antes de publicar.
+Priorizar recursos locales originales, diagramas en HTML/CSS o SVG. Si una imagen externa es necesaria, revisar licencia, atribución, estabilidad y privacidad antes de publicarla.

@@ -2,158 +2,78 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://topiapps.com/</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-07-24</lastmod>
   </url>
   <url>
     <loc>https://topiapps.com/pages/articles.html</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-07-24</lastmod>
+  </url>
+  <url>
+    <loc>https://topiapps.com/pages/resources.html</loc>
+    <lastmod>2026-07-24</lastmod>
   </url>
   <url>
     <loc>https://topiapps.com/pages/about.html</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-07-24</lastmod>
   </url>
   <url>
     <loc>https://topiapps.com/pages/editorial-policy.html</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-07-24</lastmod>
   </url>
   <url>
     <loc>https://topiapps.com/pages/autor-sebastian-carrillo.html</loc>
-    <lastmod>2026-07-15</lastmod>
-  </url>
-  <url>
-    <loc>https://topiapps.com/articles/como-verificar-respuestas-de-ia-metodo-practico.html</loc>
-    <lastmod>2026-07-15</lastmod>
-  </url>
-  <url>
-    <loc>https://topiapps.com/articles/calcular-costo-real-ia-en-un-equipo.html</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-07-24</lastmod>
   </url>
   <url>
     <loc>https://topiapps.com/pages/contact.html</loc>
-    <lastmod>2026-06-18</lastmod>
+    <lastmod>2026-07-24</lastmod>
   </url>
   <url>
     <loc>https://topiapps.com/pages/privacy.html</loc>
-    <lastmod>2026-06-18</lastmod>
+    <lastmod>2026-07-24</lastmod>
   </url>
   <url>
     <loc>https://topiapps.com/pages/terms.html</loc>
-    <lastmod>2026-06-18</lastmod>
+    <lastmod>2026-07-24</lastmod>
   </url>
   <url>
-    <loc>https://topiapps.com/articles/como-usar-ia-para-productividad-personal.html</loc>
-    <lastmod>2026-06-18</lastmod>
+    <loc>https://topiapps.com/articles/como-evaluar-herramienta-ia-antes-de-pagar.html</loc>
+    <lastmod>2026-07-24</lastmod>
   </url>
   <url>
-    <loc>https://topiapps.com/articles/mejores-herramientas-ia-para-emprendedores.html</loc>
-    <lastmod>2026-06-18</lastmod>
+    <loc>https://topiapps.com/articles/politica-interna-uso-ia-plantilla.html</loc>
+    <lastmod>2026-07-24</lastmod>
   </url>
   <url>
-    <loc>https://topiapps.com/articles/ia-para-crear-presentaciones-profesionales.html</loc>
-    <lastmod>2026-06-18</lastmod>
+    <loc>https://topiapps.com/articles/como-verificar-respuestas-de-ia-metodo-practico.html</loc>
+    <lastmod>2026-07-24</lastmod>
   </url>
   <url>
-    <loc>https://topiapps.com/articles/como-automatizar-tareas-con-ia-sin-programar.html</loc>
-    <lastmod>2026-06-18</lastmod>
-  </url>
-  <url>
-    <loc>https://topiapps.com/articles/ia-para-crear-contenido-en-redes-sociales.html</loc>
-    <lastmod>2026-06-18</lastmod>
-  </url>
-  <url>
-    <loc>https://topiapps.com/articles/mejores-ia-para-editar-fotos.html</loc>
-    <lastmod>2026-06-18</lastmod>
-  </url>
-  <url>
-    <loc>https://topiapps.com/articles/chatgpt-vs-claude.html</loc>
-    <lastmod>2026-06-18</lastmod>
-  </url>
-  <url>
-    <loc>https://topiapps.com/articles/prompts-para-negocios.html</loc>
-    <lastmod>2026-06-18</lastmod>
-  </url>
-  <url>
-    <loc>https://topiapps.com/articles/ia-para-abogados.html</loc>
-    <lastmod>2026-06-18</lastmod>
-  </url>
-  <url>
-    <loc>https://topiapps.com/articles/ia-para-estudiantes.html</loc>
-    <lastmod>2026-06-18</lastmod>
-  </url>
-  <url>
-    <loc>https://topiapps.com/articles/las-mejores-ia-para-escribir-contenido-en-2025.html</loc>
-    <lastmod>2026-07-15</lastmod>
-  </url>
-  <url>
-    <loc>https://topiapps.com/articles/alternativas-a-chatgpt-cual-usar-segun-tu-caso.html</loc>
-    <lastmod>2026-06-18</lastmod>
-  </url>
-  <url>
-    <loc>https://topiapps.com/articles/mejores-herramientas-de-ia-para-diseno-grafico.html</loc>
-    <lastmod>2026-06-18</lastmod>
-  </url>
-  <url>
-    <loc>https://topiapps.com/articles/ia-para-contadores-y-finanzas.html</loc>
-    <lastmod>2026-06-18</lastmod>
-  </url>
-  <url>
-    <loc>https://topiapps.com/articles/mejores-herramientas-de-productividad-con-ia.html</loc>
-    <lastmod>2026-06-18</lastmod>
-  </url>
-  <url>
-    <loc>https://topiapps.com/articles/alternativas-a-google-workspace-para-empresas.html</loc>
-    <lastmod>2026-06-18</lastmod>
-  </url>
-  <url>
-    <loc>https://topiapps.com/articles/ia-para-recursos-humanos-reclutamiento-y-talento.html</loc>
-    <lastmod>2026-06-18</lastmod>
-  </url>
-  <url>
-    <loc>https://topiapps.com/articles/mejores-herramientas-de-email-marketing.html</loc>
-    <lastmod>2026-06-18</lastmod>
-  </url>
-  <url>
-    <loc>https://topiapps.com/articles/ia-para-medicos-y-profesionales-de-la-salud.html</loc>
-    <lastmod>2026-06-18</lastmod>
-  </url>
-  <url>
-    <loc>https://topiapps.com/articles/como-crear-una-tienda-online-con-ia-desde-cero.html</loc>
-    <lastmod>2026-06-18</lastmod>
-  </url>
-  <url>
-    <loc>https://topiapps.com/articles/mejores-herramientas-de-ia-para-redes-sociales.html</loc>
-    <lastmod>2026-06-18</lastmod>
-  </url>
-  <url>
-    <loc>https://topiapps.com/articles/alternativas-a-zoom-para-videollamadas-de-trabajo.html</loc>
-    <lastmod>2026-06-18</lastmod>
-  </url>
-  <url>
-    <loc>https://topiapps.com/articles/ia-para-profesores-y-educadores.html</loc>
-    <lastmod>2026-06-18</lastmod>
-  </url>
-  <url>
-    <loc>https://topiapps.com/articles/mejores-gestores-de-contrasenas.html</loc>
-    <lastmod>2026-06-18</lastmod>
-  </url>
-  <url>
-    <loc>https://topiapps.com/articles/como-elegir-el-mejor-software-de-facturacion.html</loc>
-    <lastmod>2026-06-18</lastmod>
-  </url>
-  <url>
-    <loc>https://topiapps.com/articles/ia-para-atencion-al-cliente.html</loc>
-    <lastmod>2026-06-18</lastmod>
-  </url>
-  <url>
-    <loc>https://topiapps.com/articles/herramientas-no-code-con-ia-para-automatizar-negocios.html</loc>
-    <lastmod>2026-06-18</lastmod>
-  </url>
-  <url>
-    <loc>https://topiapps.com/articles/ia-para-resumir-pdf-y-documentos-largos.html</loc>
-    <lastmod>2026-06-18</lastmod>
+    <loc>https://topiapps.com/articles/calcular-costo-real-ia-en-un-equipo.html</loc>
+    <lastmod>2026-07-24</lastmod>
   </url>
   <url>
     <loc>https://topiapps.com/articles/ia-para-excel-y-hojas-de-calculo.html</loc>
-    <lastmod>2026-06-18</lastmod>
+    <lastmod>2026-07-24</lastmod>
+  </url>
+  <url>
+    <loc>https://topiapps.com/articles/ia-para-resumir-pdf-y-documentos-largos.html</loc>
+    <lastmod>2026-07-24</lastmod>
+  </url>
+  <url>
+    <loc>https://topiapps.com/articles/como-usar-ia-para-productividad-personal.html</loc>
+    <lastmod>2026-07-24</lastmod>
+  </url>
+  <url>
+    <loc>https://topiapps.com/articles/prompts-para-negocios.html</loc>
+    <lastmod>2026-07-24</lastmod>
+  </url>
+  <url>
+    <loc>https://topiapps.com/articles/ia-para-estudiantes.html</loc>
+    <lastmod>2026-07-24</lastmod>
+  </url>
+  <url>
+    <loc>https://topiapps.com/articles/chatgpt-vs-claude.html</loc>
+    <lastmod>2026-07-24</lastmod>
   </url>
 </urlset>

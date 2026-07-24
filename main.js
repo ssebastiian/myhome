@@ -28,7 +28,7 @@ if (articleList && articleSearch && articleResults && pagination) {
 
   const updateResultsText = () => {
     const total = filteredArticles.length;
-    const noun = total === 1 ? "articulo" : "articulos";
+    const noun = total === 1 ? "artículo" : "artículos";
     articleResults.textContent = `${total} ${noun} encontrados`;
   };
 
@@ -46,6 +46,9 @@ if (articleList && articleSearch && articleResults && pagination) {
       button.textContent = label;
       button.disabled = Boolean(options.disabled);
       button.classList.toggle("is-active", page === currentPage && !options.control);
+      if (page === currentPage && !options.control) {
+        button.setAttribute("aria-current", "page");
+      }
       button.addEventListener("click", () => {
         currentPage = page;
         renderArticles();
@@ -92,4 +95,43 @@ if (articleList && articleSearch && articleResults && pagination) {
   });
 
   renderArticles();
+}
+
+const scoreCalculator = document.querySelector("[data-score-calculator]");
+
+if (scoreCalculator) {
+  const scoreInputs = Array.from(scoreCalculator.querySelectorAll("[data-score]"));
+  const scoreResult = scoreCalculator.querySelector("[data-score-result]");
+  const scoreVerdict = scoreCalculator.querySelector("[data-score-verdict]");
+
+  const renderScore = () => {
+    const score = scoreInputs.reduce((total, input) => {
+      const value = Math.min(4, Math.max(0, Number(input.value) || 0));
+      const weight = Number(input.dataset.weight) || 0;
+      return total + (value / 4) * weight;
+    }, 0);
+    const roundedScore = Math.round(score);
+
+    scoreResult.textContent = `${roundedScore} / 100`;
+
+    if (roundedScore >= 80) {
+      scoreVerdict.textContent = "Puede justificar un piloto controlado si no existe ningún fallo eliminatorio.";
+    } else if (roundedScore >= 60) {
+      scoreVerdict.textContent = "Corrige el flujo, reduce el alcance o compara otra opción antes de comprar.";
+    } else if (roundedScore > 0) {
+      scoreVerdict.textContent = "La carga de corrección o el riesgo no justifican todavía la compra.";
+    } else {
+      scoreVerdict.textContent = "Completa la prueba antes de decidir.";
+    }
+  };
+
+  scoreInputs.forEach((input) => {
+    input.addEventListener("input", renderScore);
+  });
+
+  scoreCalculator.addEventListener("submit", (event) => {
+    event.preventDefault();
+  });
+
+  renderScore();
 }
