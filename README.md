@@ -41,4 +41,6 @@ No deben volver al inventario activo mediante cambios superficiales. Cada una ne
 6. Configurar una CMP certificada si se sirven anuncios a personas del EEE, Reino Unido o Suiza.
 7. No solicitar revisión solo porque se alcanzó una fecha: esperar a que Google haya rastreado la versión nueva.
 
+Las URL públicas y canónicas no llevan `.html`, porque Cloudflare redirige automáticamente los nombres de archivo a rutas limpias.
+
 No existe un número oficial garantizado de artículos o palabras que produzca aprobación.

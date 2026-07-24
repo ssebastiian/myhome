@@ -85,10 +85,12 @@ No se añadieron bloques manuales ni `data-ad-slot` inventados. Si la cuenta se 
 - Desplegar la versión del 24 de julio de 2026.
 - Confirmar HTTPS y respuesta `200` en portada, biblioteca, recursos y diez guías.
 - Confirmar que una página retirada contiene `noindex` y no solicita `adsbygoogle.js`.
+- Mantener como canónicas las rutas finales sin `.html`; Cloudflare redirige automáticamente las variantes con extensión.
 
 ### Google Search Console
 
 - Enviar el sitemap actualizado.
+- Inspeccionar y solicitar indexación usando las URL finales sin `.html`, no las variantes redirigidas.
 - Inspeccionar la portada, biblioteca, recursos y las dos guías nuevas.
 - Solicitar indexación después del despliegue.
 - Revisar “Descubierta: actualmente sin indexar”, “Rastreada: actualmente sin indexar”, duplicadas y bloqueadas.
