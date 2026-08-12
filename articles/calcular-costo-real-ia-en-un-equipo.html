@@ -13,6 +13,9 @@
     <meta property="og:title" content="Cómo calcular el costo real de la IA en un equipo" />
     <meta property="og:description" content="Una plantilla de costo total y punto de equilibrio que evita decidir solo por el precio mensual." />
     <meta property="og:type" content="article" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:url" content="https://topiapps.com/articles/calcular-costo-real-ia-en-un-equipo" />
+    <meta property="og:image" content="https://topiapps.com/assets/hero-topiapps.png" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -21,8 +24,9 @@
         "description": "Plantilla para calcular licencias, consumo, integración, revisión y punto de equilibrio antes de contratar una herramienta de IA para un equipo.",
         "inLanguage": "es",
         "url": "https://topiapps.com/articles/calcular-costo-real-ia-en-un-equipo",
+        "image": "https://topiapps.com/assets/hero-topiapps.png",
         "datePublished": "2026-07-15",
-        "dateModified": "2026-07-24",
+        "dateModified": "2026-08-12",
         "author": {"@type": "Person", "name": "Sebastián Carrillo", "url": "https://topiapps.com/pages/autor-sebastian-carrillo"},
         "publisher": {"@type": "Organization", "name": "TopiApps", "url": "https://topiapps.com/"},
         "mainEntityOfPage": "https://topiapps.com/articles/calcular-costo-real-ia-en-un-equipo"
@@ -40,7 +44,7 @@
           <p class="eyebrow">Decisiones de compra</p>
           <h1>Cómo calcular el costo real de usar IA en un equipo</h1>
           <p class="page-intro">La suscripción es solo una parte. Esta plantilla suma licencias, consumo, integración, aprendizaje, revisión y riesgo para estimar un punto de equilibrio realista.</p>
-          <p class="mini-meta"><span>Por <a href="/pages/autor-sebastian-carrillo">Sebastián Carrillo</a></span><span>11 min de lectura</span><span>Publicado: 15 de julio de 2026</span></p>
+          <p class="mini-meta"><span>Por <a href="/pages/autor-sebastian-carrillo">Sebastián Carrillo</a></span><span>11 min de lectura</span><span>Publicado: <time datetime="2026-07-15">15 de julio de 2026</time></span><span>Actualizado: <time datetime="2026-08-12">12 de agosto de 2026</time></span></p>
           <p class="article-disclosure"><strong>Transparencia de producción:</strong> se utilizó IA como apoyo para organizar y revisar el borrador. La selección de fuentes, los límites y la publicación quedan bajo responsabilidad editorial de Sebastián Carrillo.</p>
           <p class="article-disclosure">Modelo editorial original con cifras ficticias para explicar el cálculo. No constituye asesoría financiera ni una cotización de proveedores.</p>
         </div>
@@ -53,7 +57,7 @@
             <p>Una herramienta puede costar poco por usuario y resultar cara para el equipo. También puede parecer costosa y pagarse sola si elimina una tarea repetitiva sin crear errores nuevos. La diferencia no está en el anuncio del proveedor, sino en el proceso donde se incorpora.</p>
             <p>El cálculo falla cuando solo multiplica precio por número de personas. Quedan fuera el tiempo de configurar, la capacitación, las integraciones, la revisión humana y el trabajo que aparece cuando una respuesta sale mal. Esta guía propone un modelo que puedes llevar a una hoja de cálculo sin depender de una marca concreta.</p>
 
-            <nav class="method-box" aria-label="Contenido del artículo"><h2>Ruta de cálculo</h2><ol class="content-index"><li><a href="#unidad">Define una unidad de trabajo</a></li><li><a href="#costos">Registra seis grupos de costo</a></li><li><a href="#beneficio">Calcula el beneficio útil</a></li><li><a href="#ejemplo">Resuelve un escenario completo</a></li><li><a href="#prueba">Diseña una prueba de 30 días</a></li><li><a href="#plantilla">Copia la plantilla</a></li></ol></nav>
+            <nav class="method-box" aria-label="Contenido del artículo"><h2>Ruta de cálculo</h2><ol class="content-index"><li><a href="#unidad">Define una unidad de trabajo</a></li><li><a href="#costos">Registra seis grupos de costo</a></li><li><a href="#beneficio">Calcula el beneficio útil</a></li><li><a href="#ejemplo">Revisa un escenario completo</a></li><li><a href="#calculadora-costos">Calcula con tus propios datos</a></li><li><a href="#prueba">Diseña una prueba de 30 días</a></li><li><a href="#plantilla">Copia la plantilla</a></li></ol></nav>
 
             <h2 id="unidad">1. Define la unidad de trabajo antes de hablar de ahorro</h2>
             <p>“Usar IA para marketing” es demasiado amplio. Elige una unidad observable: preparar un borrador de correo, clasificar un ticket, resumir una entrevista, limpiar una tabla o convertir notas en una minuta. Una unidad clara permite medir cuántas veces ocurre, cuánto tarda hoy y qué significa terminarla bien.</p>
@@ -118,7 +122,52 @@
               <li>reserva de incidencias: 30.</li>
             </ul>
             <p>El costo mensual real es 280 y el beneficio neto estimado es 95. El punto de equilibrio es 280 dividido por el valor ahorrado por ticket. Cada ticket ahorra 0,625 unidades monetarias, así que hacen falta 448 tickets al mes para cubrir el costo.</p>
-            <div class="score-card"><div><strong>375</strong><span>Valor bruto del tiempo ahorrado</span></div><div><strong>280</strong><span>Costo mensual real estimado</span></div><div><strong>95</strong><span>Beneficio neto antes de impuestos</span></div></div>
+            <h2 id="calculadora-costos">Calculadora de costo real y punto de equilibrio</h2>
+            <p>Los campos empiezan con las cifras ficticias del ejemplo. Puedes sustituirlas por datos de tu piloto. El cálculo ocurre en este navegador; TopiApps no recibe ni almacena los valores.</p>
+            <form class="cost-calculator" data-cost-calculator aria-labelledby="calculadora-costos">
+              <div class="cost-fieldsets">
+                <fieldset>
+                  <legend>Volumen, tiempo y valor</legend>
+                  <div class="cost-fields">
+                    <div class="cost-field"><label for="cost-volume">Unidades procesadas al mes</label><input id="cost-volume" type="number" min="0" step="1" value="600" inputmode="numeric" data-cost-input="volume" /></div>
+                    <div class="cost-field"><label for="cost-before">Tiempo anterior por unidad (minutos)</label><input id="cost-before" type="number" min="0" step="0.1" value="12" inputmode="decimal" data-cost-input="before" /></div>
+                    <div class="cost-field"><label for="cost-with-ai">Generación y adaptación con IA por unidad (minutos)</label><input id="cost-with-ai" type="number" min="0" step="0.1" value="6" inputmode="decimal" data-cost-input="withAi" /></div>
+                    <div class="cost-field"><label for="cost-review">Revisión obligatoria por unidad (minutos)</label><input id="cost-review" type="number" min="0" step="0.1" value="3" inputmode="decimal" data-cost-input="review" /></div>
+                    <div class="cost-field"><label for="cost-correction-rate">Unidades que requieren corrección adicional (%)</label><input id="cost-correction-rate" type="number" min="0" max="100" step="0.1" value="10" inputmode="decimal" data-cost-input="correctionRate" /></div>
+                    <div class="cost-field"><label for="cost-correction-time">Tiempo adicional cuando hay corrección (minutos)</label><input id="cost-correction-time" type="number" min="0" step="0.1" value="5" inputmode="decimal" data-cost-input="correctionTime" /></div>
+                    <div class="cost-field"><label for="cost-hourly-rate">Costo por hora de trabajo</label><input id="cost-hourly-rate" type="number" min="0" step="0.01" value="15" inputmode="decimal" data-cost-input="hourlyRate" /></div>
+                    <div class="cost-field"><label for="cost-currency">Símbolo o código monetario</label><input id="cost-currency" type="text" value="UM" maxlength="8" autocomplete="off" data-cost-input="currency" aria-describedby="cost-currency-help" /><small id="cost-currency-help">Por ejemplo: COP, EUR, USD o UM.</small></div>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend>Costos mensuales</legend>
+                  <div class="cost-fields">
+                    <div class="cost-field"><label for="cost-licenses">Licencias</label><input id="cost-licenses" type="number" min="0" step="0.01" value="120" inputmode="decimal" data-cost-input="licenses" /></div>
+                    <div class="cost-field"><label for="cost-variable">Consumo variable</label><input id="cost-variable" type="number" min="0" step="0.01" value="25" inputmode="decimal" data-cost-input="variable" /></div>
+                    <div class="cost-field"><label for="cost-implementation">Implementación amortizada</label><input id="cost-implementation" type="number" min="0" step="0.01" value="60" inputmode="decimal" data-cost-input="implementation" /></div>
+                    <div class="cost-field"><label for="cost-training">Capacitación y soporte</label><input id="cost-training" type="number" min="0" step="0.01" value="45" inputmode="decimal" data-cost-input="training" /></div>
+                    <div class="cost-field"><label for="cost-incidents">Reserva por incidencias</label><input id="cost-incidents" type="number" min="0" step="0.01" value="30" inputmode="decimal" data-cost-input="incidents" /></div>
+                  </div>
+                </fieldset>
+              </div>
+
+              <section class="cost-results" aria-labelledby="cost-results-heading">
+                <h3 id="cost-results-heading">Resultado mensual estimado</h3>
+                <div class="cost-result"><span id="cost-minutes-label">Ahorro útil por unidad</span><output aria-labelledby="cost-minutes-label" for="cost-before cost-with-ai cost-review cost-correction-rate cost-correction-time" data-cost-result="minutesSaved">2,5 min</output></div>
+                <div class="cost-result"><span id="cost-gross-label">Valor bruto del tiempo</span><output aria-labelledby="cost-gross-label" for="cost-volume cost-before cost-with-ai cost-review cost-correction-rate cost-correction-time cost-hourly-rate cost-currency" data-cost-result="grossValue">375,00 UM</output></div>
+                <div class="cost-result"><span id="cost-monthly-label">Costo mensual real</span><output aria-labelledby="cost-monthly-label" for="cost-licenses cost-variable cost-implementation cost-training cost-incidents cost-currency" data-cost-result="monthlyCost">280,00 UM</output></div>
+                <div class="cost-result"><span id="cost-net-label">Beneficio neto</span><output aria-labelledby="cost-net-label" for="cost-volume cost-before cost-with-ai cost-review cost-correction-rate cost-correction-time cost-hourly-rate cost-licenses cost-variable cost-implementation cost-training cost-incidents cost-currency" data-cost-result="netBenefit">95,00 UM</output></div>
+                <div class="cost-result"><span id="cost-break-even-label">Punto de equilibrio</span><output aria-labelledby="cost-break-even-label" for="cost-before cost-with-ai cost-review cost-correction-rate cost-correction-time cost-hourly-rate cost-licenses cost-variable cost-implementation cost-training cost-incidents" data-cost-result="breakEven">448 unidades/mes</output></div>
+                <p class="cost-status" role="status" aria-live="polite" aria-atomic="true" data-cost-status>Con los valores del ejemplo, el beneficio neto estimado es positivo.</p>
+              </section>
+
+              <div class="calculator-actions">
+                <button class="button primary" type="submit">Calcular</button>
+                <button class="button secondary" type="button" data-cost-download disabled>Descargar resultados CSV</button>
+                <button class="button secondary" type="reset">Restablecer ejemplo</button>
+              </div>
+            </form>
+            <p><a class="button secondary download-link" href="/downloads/plantilla-costo-real-ia.csv" download>Descargar modelo con fórmulas</a></p>
             <p>El caso parece viable, pero no es una aprobación automática. El equipo debe confirmar que la calidad no baja, que el tiempo liberado se utiliza y que los datos enviados cumplen su política. Si la revisión real sube a cinco minutos, el beneficio cambia de forma importante.</p>
 
             <h2>5. Haz análisis de sensibilidad</h2>
@@ -169,7 +218,7 @@
             </ul>
 
             <h2>Conclusión</h2>
-            <p>La pregunta útil no es “¿cuánto cuesta la IA?”, sino “¿cuánto cuesta incorporarla a este proceso con el nivel de calidad que necesitamos?”. Una decisión sólida parte de una unidad medible, suma costos visibles y ocultos, descuenta revisión y válida el resultado durante un piloto. Si el punto de equilibrio depende de supuestos optimistas, conserva la flexibilidad y vuelve a medir.</p>
+            <p>La pregunta útil no es “¿cuánto cuesta la IA?”, sino “¿cuánto cuesta incorporarla a este proceso con el nivel de calidad que necesitamos?”. Una decisión sólida parte de una unidad medible, suma costos visibles y ocultos, descuenta revisión y valida el resultado durante un piloto. Si el punto de equilibrio depende de supuestos optimistas, conserva la flexibilidad y vuelve a medir.</p>
 
             <section class="source-box" aria-labelledby="fuentes-costos"><h2 id="fuentes-costos">Fuentes oficiales para verificar precios y riesgos</h2><ul class="source-list">
               <li><a href="https://openai.com/api/pricing/">OpenAI — precios de API</a><small>Referencia oficial para comprobar unidades y tarifas vigentes; la API se factura por separado de suscripciones de ChatGPT.</small></li>
@@ -183,7 +232,7 @@
           </article>
           <aside class="sidebar-stack">
             <div class="contact-card"><span class="contact-tag">No olvides</span><p>Una suscripción de chat y el consumo de una API suelen ser productos con facturación separada. Confírmalo antes del piloto.</p></div>
-            <div class="contact-card"><h2>Relacionado</h2><p><a href="/articles/como-evaluar-herramienta-ia-antes-de-pagar">Evaluar antes de pagar</a><br /><a href="/articles/politica-interna-uso-ia-plantilla">Definir reglas de uso</a><br /><a href="/articles/como-usar-ia-para-productividad-personal">Medir productividad personal</a></p></div>
+            <div class="contact-card"><h2>Relacionado</h2><p><a href="/articles/como-evaluar-herramienta-ia-antes-de-pagar">Evaluar antes de pagar</a><br /><a href="/articles/politica-interna-uso-ia-plantilla">Definir reglas de uso</a><br /><a href="/articles/como-verificar-respuestas-de-ia-metodo-practico">Verificar resultados</a><br /><a href="/articles/ia-para-excel-y-hojas-de-calculo">Validar cálculos y fórmulas</a></p></div>
             <div class="contact-card"><h2>Correcciones</h2><p>Reporta enlaces o tarifas desactualizadas en <a href="mailto:editorial@topiapps.com">editorial@topiapps.com</a>.</p></div>
           </aside>
         </div>

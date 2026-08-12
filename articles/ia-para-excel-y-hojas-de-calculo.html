@@ -3,22 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IA para Excel y hojas de cálculo | TopiApps</title>
-    <meta name="description" content="Cómo usar IA en Excel y Google Sheets con casos de prueba para fórmulas, limpieza de datos, análisis, reportes y automatizaciones." />
+    <title>Laboratorio de fórmulas con IA para Excel y Sheets | TopiApps</title>
+    <meta name="description" content="Laboratorio reproducible con CSV, fórmula exacta, resultado esperado y casos límite para revisar una fórmula propuesta por IA en Excel o Google Sheets." />
     <meta name="robots" content="index, follow" />
     <meta name="google-adsense-account" content="ca-pub-9439862036060464" />
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9439862036060464" crossorigin="anonymous"></script>
     <link rel="icon" type="image/svg+xml" href="/assets/topiapps-icon.svg" />
     <link rel="canonical" href="https://topiapps.com/articles/ia-para-excel-y-hojas-de-calculo" />
+    <meta property="og:title" content="Laboratorio de fórmulas con IA para Excel y Google Sheets" />
+    <meta property="og:description" content="CSV, fórmula exacta, resultado esperado y casos límite para revisar una fórmula antes de usarla." />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:url" content="https://topiapps.com/articles/ia-para-excel-y-hojas-de-calculo" />
+    <meta property="og:image" content="https://topiapps.com/assets/hero-topiapps.png" />
     <script type="application/ld+json">
 {
       "@context": "https://schema.org",
       "@type": "Article",
-      "headline": "IA para Excel y hojas de cálculo",
-      "description": "Cómo usar IA en Excel y Google Sheets con casos de prueba para fórmulas, limpieza de datos, análisis, reportes y automatizaciones.",
+      "headline": "Laboratorio de fórmulas con IA para Excel y Google Sheets",
+      "description": "Laboratorio reproducible con CSV, fórmula exacta, resultado esperado y casos límite para revisar una fórmula propuesta por IA en Excel o Google Sheets.",
       "inLanguage": "es",
       "url": "https://topiapps.com/articles/ia-para-excel-y-hojas-de-calculo",
-      "dateModified": "2026-07-24",
+      "image": "https://topiapps.com/assets/hero-topiapps.png",
+      "dateModified": "2026-08-12",
       "datePublished": "2026-06-18",
       "author": {
             "@type": "Person",
@@ -64,95 +71,135 @@
         <div class="container">
           <div class="breadcrumb"><a href="/">Inicio</a><span>/</span><a href="/pages/articles">Artículos</a><span>/</span><span>Datos IA</span></div>
           <p class="eyebrow">Datos IA</p>
-          <h1>IA para Excel y hojas de cálculo: fórmulas, análisis y reportes</h1>
-          <p class="page-intro">La IA puede ayudarte a escribir fórmulas, limpiar datos y explicar tablas, pero los números importantes siempre deben verificarse antes de tomar decisiones.</p>
-          <p class="mini-meta"><span>Por <a href="/pages/autor-sebastian-carrillo">Sebastián Carrillo</a></span><span>Revisión humana</span><span>Actualizado: 24 de julio de 2026</span></p>
+          <h1>Laboratorio de fórmulas con IA para Excel y Google Sheets</h1>
+          <p class="page-intro">Descarga una tabla pequeña, aplica una fórmula concreta y comprueba por qué el resultado esperado es 150 antes de llevar una sugerencia de IA a una hoja real.</p>
+          <p class="mini-meta"><span>Por <a href="/pages/autor-sebastian-carrillo">Sebastián Carrillo</a></span><span>Prueba reproducible</span><span>Publicado: 18 de junio de 2026</span><span>Actualizado: 12 de agosto de 2026</span></p>
           <p class="article-disclosure"><strong>Transparencia de producción:</strong> se utilizó IA como apoyo para organizar y revisar el borrador. La selección de fuentes, los límites y la publicación quedan bajo responsabilidad editorial de Sebastián Carrillo.</p>
+          <p class="article-disclosure"><strong>Alcance de la comprobación:</strong> TopiApps verificó la suma y las reglas de inclusión de forma aritmética. No ejecutó la fórmula en una versión concreta de Excel o Google Sheets ni comparó respuestas de asistentes de IA.</p>
         </div>
       </section>
       <section class="section">
         <div class="container page-layout">
-          <article class="copy-block">
+          <article class="copy-block" id="laboratorio">
             <div class="key-takeaway">
-              <h2>Prueba antes de copiar</h2>
-              <p>Una fórmula generada solo está lista cuando produce el resultado esperado con un caso normal, una celda vacía, un valor límite y una entrada incorrecta. Guarda esos cuatro casos junto a la hoja.</p>
+              <h2>El resultado esperado se escribe antes que la fórmula</h2>
+              <p>En este laboratorio, solo deben sumarse las ventas numéricas de Laura ocurridas durante mayo de 2026. Las dos filas que cumplen esas condiciones valen 100 y 50; por tanto, el resultado esperado es <strong>150</strong>.</p>
             </div>
-            <p>Excel, Google Sheets y otras hojas de cálculo siguen siendo herramientas centrales para negocios, finanzas, inventarios, ventas, operaciones y proyectos personales. La IA no reemplaza una hoja bien construida, pero puede acelerar tareas que antes requerían mucha paciencia: explicar fórmulas, limpiar datos, crear tablas, detectar errores y preparar reportes.</p>
-            <p>La clave es usarla como asistente de análisis, no como contador automático. Si una hoja afecta pagos, impuestos, inventario, nómina o decisiones financieras, cada resultado debe revisarse con fórmulas visibles y datos de origen claros.</p>
-            <h2>1. Crear fórmulas con instrucciones claras</h2>
-            <p>Uno de los usos más prácticos es pedir fórmulas. En vez de buscar durante media hora cómo combinar SI, BUSCARX, CONTAR.SI.CONJUNTO o QUERY, puedes describir el resultado esperado y pedir una fórmula compatible con tu herramienta.</p>
-            <p>Prompt útil: "Necesito una fórmula para Google Sheets. En A tengo fechas, en B vendedor, en C monto. Quiero sumar ventas de Laura durante mayo de 2026. Explica la fórmula y dime qué cambiar si mi separador regional usa punto y coma".</p>
-            <h3>Ejemplo reproducible con cuatro filas</h3>
-            <p>Antes de usar la fórmula sobre cientos de registros, crea una hoja aparte: Laura, 10 de mayo, 100; Laura, 31 de mayo, 50; Laura, 1 de junio, 80; y una fila del 20 de mayo con monto vacío. El resultado esperado para mayo debe ser 150. Después cambia el monto vacío por texto y comprueba si la fórmula lo ignora, avisa o falla.</p>
-            <p>Este conjunto pequeño permite detectar tres errores frecuentes: incluir junio, excluir el último día del mes o convertir una celda inválida en cero sin advertencia. Si la IA no explica cómo trata esos casos, la respuesta necesita otra revisión.</p>
-            <h2>2. Explicar fórmulas que no entiendes</h2>
-            <p>Muchas hojas heredadas tienen fórmulas largas que nadie quiere tocar. La IA puede explicarlas por partes, identificar dependencias y sugerir una versión más legible. Esto es muy útil antes de modificar archivos de trabajo.</p>
-            <p>Antes de cambiar una fórmula, copia una pequeña muestra de datos ficticios y prueba el resultado. Si la hoja tiene información sensible, no pegues datos reales; usa nombres y montos inventados que mantengan la estructura.</p>
-            <h2>3. Limpiar datos desordenados</h2>
-            <p>La IA puede ayudarte a separar nombres, normalizar fechas, detectar duplicados, corregir mayúsculas, crear categorías y convertir texto sucio en columnas útiles. También puede sugerir pasos para limpiar datos con funciones nativas, Power Query, Apps Script o fórmulas.</p>
-            <p>Ejemplo: una lista de clientes puede tener teléfonos con formatos distintos, ciudades escritas de varias formas y correos con espacios. Pide un plan de limpieza antes de aplicar cambios. Así reduces el riesgo de borrar información válida.</p>
-            <h2>4. Analizar tablas y encontrar patrones</h2>
-            <p>Si tienes ventas por mes, gastos por categoría o tickets de soporte, puedes pedir a la IA que proponga preguntas de análisis: qué producto creció más, qué cliente bajó compras, que categoría consume presupuesto o qué canal genera más conversiones.</p>
-            <p>La IA puede ayudarte a pensar, pero no debe inventar conclusiones. Dale datos resumidos o una tabla anónima y pide que separe observaciones de hipótesis. Una observación sale de los datos; una hipótesis necesita comprobación adicional.</p>
-            <h2>5. Crear reportes entendibles</h2>
-            <p>Una hoja puede tener números correctos y aun así comunicar mal. La IA puede convertir resultados en un resumen ejecutivo: tres hallazgos, dos riesgos, una recomendación y preguntas para la reunión. También puede ayudarte a titular gráficos y explicar variaciones.</p>
-            <p>Evita frases exageradas como "crecimiento impresionante" si el dato no lo justifica. Pide lenguaje sobrio y orientado a decisión: qué pasó, por qué podría haber pasado y qué revisar después.</p>
-            <h2>6. Automatizar tareas repetitivas</h2>
-            <p>Para usuarios avanzados, la IA puede proponer scripts, macros o flujos no-code. Puede ayudar a generar un Apps Script para enviar correos, crear reportes semanales o mover datos entre hojas. Pero cualquier automatización debe probarse en una copia del archivo.</p>
-            <p>No ejecutes código generado directamente sobre una hoja importante. Primero pide explicación paso a paso, revisa permisos y prueba con datos ficticios. Un script mal hecho puede borrar filas, duplicar registros o enviar información a destinatarios equivocados.</p>
-            <h2>Herramientas que puedes considerar</h2>
-            <p>Microsoft Copilot puede ser útil para usuarios de Excel y Microsoft 365. Gemini puede integrarse con Google Workspace. ChatGPT, Claude y otros asistentes sirven para explicar fórmulas, preparar scripts y revisar estructuras. También existen complementos específicos para hojas de cálculo, aunque conviene revisar permisos antes de instalarlos.</p>
-            <h2>Checklist antes de confiar en el resultado</h2>
-            <ul>
-              <li>Prueba fórmulas con datos pequeños donde ya conoces el resultado.</li>
-              <li>Revisa separadores regionales, idioma de funciones y formato de fechas.</li>
-              <li>No pegues datos sensibles de clientes, empleados o finanzas sin autorización.</li>
-              <li>Conserva una copia del archivo antes de aplicar limpieza masiva o scripts.</li>
-              <li>Separa conclusiones verificadas de hipótesis generadas por la IA.</li>
-            </ul>
-            <h2>Registro mínimo de validación</h2>
+
+            <p>Una fórmula propuesta por IA puede parecer correcta porque usa nombres de funciones conocidos. La comprobación útil no consiste en volver a preguntarle al asistente si está seguro, sino en ejecutar la fórmula sobre una muestra donde ya conoces la respuesta y has preparado casos capaces de revelar un error.</p>
+            <p>Este ejercicio utiliza datos ficticios y una sola pregunta. No evalúa cuál asistente escribe mejores fórmulas ni demuestra compatibilidad universal entre versiones, idiomas o configuraciones regionales.</p>
+
+            <nav class="method-box" aria-label="Contenido del laboratorio">
+              <h2>Ruta del laboratorio</h2>
+              <ol class="content-index">
+                <li><a href="#alcance">Distinguir lo comprobado de lo pendiente</a></li>
+                <li><a href="#archivo">Descargar y revisar el conjunto de datos</a></li>
+                <li><a href="#formula">Aplicar la fórmula exacta</a></li>
+                <li><a href="#aritmetica">Comprobar el resultado 150</a></li>
+                <li><a href="#limites">Ejecutar casos límite</a></li>
+                <li><a href="#registro">Registrar el resultado obtenido</a></li>
+              </ol>
+            </nav>
+
+            <h2 id="alcance">Qué comprobó TopiApps y qué no</h2>
             <table class="review-table">
-              <thead><tr><th>Elemento</th><th>Qué anotar</th></tr></thead>
+              <thead><tr><th>Estado</th><th>Alcance</th></tr></thead>
               <tbody>
-                <tr><th>Entrada</th><td>Una muestra ficticia que incluya valores normales, vacíos, límites y errores.</td></tr>
-                <tr><th>Resultado esperado</th><td>El cálculo hecho manualmente o con una fórmula ya comprobada.</td></tr>
-                <tr><th>Resultado obtenido</th><td>Valor, mensaje de error y cualquier conversión automática.</td></tr>
-                <tr><th>Entorno</th><td>Excel o Sheets, idioma, separador regional y versión o plan.</td></tr>
-                <tr><th>Decisión</th><td>Aprobar, corregir o descartar; responsable y fecha.</td></tr>
+                <tr><th>Comprobado</th><td>La estructura del CSV, las siete filas de prueba, las condiciones de inclusión y la suma manual 100 + 50 = 150.</td></tr>
+                <tr><th>No ejecutado</th><td>La fórmula no fue pegada ni calculada por TopiApps en una versión concreta de Excel o Google Sheets.</td></tr>
+                <tr><th>No comparado</th><td>No se pidió esta fórmula a varios asistentes ni se midieron precisión, velocidad o consistencia entre productos.</td></tr>
+                <tr><th>Debe comprobar el lector</th><td>Importación de fechas, idioma de funciones, separador regional y comportamiento de su versión o cuenta.</td></tr>
               </tbody>
             </table>
-            <p>Cuando una fórmula controla pagos, impuestos, inventario o nómina, una muestra no sustituye la conciliación completa ni la revisión de la persona responsable. La prueba pequeña sirve para encontrar fallos pronto, no para certificar toda la hoja.</p>
-            <h2>Prompts útiles</h2>
-            <ul>
-              <li>"Explica esta fórmula por partes y dime qué celdas afecta".</li>
-              <li>"Crea una fórmula para detectar duplicados por correo y teléfono".</li>
-              <li>"Propón un plan para limpiar esta tabla sin borrar datos importantes".</li>
-              <li>"Convierte estos resultados en un resumen ejecutivo para una reunión".</li>
-              <li>"Sugiere cinco preguntas de análisis para entender esta tabla de ventas".</li>
-            </ul>
-            <h2>Errores comunes</h2>
-            <p>El primer error es pegar toda la base de datos sin anonimizar. El segundo es confiar en una fórmula sin probarla. El tercero es pedir análisis con datos incompletos y aceptar conclusiones definitivas. El cuarto es ejecutar macros o scripts generados sin entender permisos ni efectos.</p>
-            <h2>Conclusión</h2>
-            <p>La IA puede convertir Excel y Google Sheets en herramientas más fáciles de usar: explica fórmulas, limpia datos, sugiere análisis y ayuda a comunicar resultados. Su mejor uso aparece cuando mantienes control sobre los datos, pruebas con ejemplos pequeños y verificas todo resultado que pueda afectar dinero, clientes o decisiones operativas.</p>
+            <p>Esta separación evita presentar una revisión aritmética como una prueba de producto. Si reproduces el ejercicio, registra aplicación, versión, idioma, fórmula utilizada y valor obtenido.</p>
+
+            <h2 id="archivo">1. Descarga el conjunto de datos</h2>
+            <p><a class="button secondary download-link" href="/downloads/laboratorio-formulas-hojas-calculo.csv" download>Descargar CSV del laboratorio</a></p>
+            <p>Al importarlo, la fila 1 contiene los encabezados y las filas 2 a 8 contienen estos casos:</p>
+            <table class="review-table">
+              <thead><tr><th>Fila</th><th>Fecha</th><th>Vendedor</th><th>Monto</th><th>Función del caso</th></tr></thead>
+              <tbody>
+                <tr><th>2</th><td>10/05/2026</td><td>Laura</td><td>100</td><td>Caso normal: incluir.</td></tr>
+                <tr><th>3</th><td>31/05/2026</td><td>Laura</td><td>50</td><td>Último día del periodo: incluir.</td></tr>
+                <tr><th>4</th><td>01/06/2026</td><td>Laura</td><td>80</td><td>Fuera del periodo: excluir.</td></tr>
+                <tr><th>5</th><td>20/05/2026</td><td>Laura</td><td>vacío</td><td>Celda vacía: no suma.</td></tr>
+                <tr><th>6</th><td>15/05/2026</td><td>Carlos</td><td>200</td><td>Vendedor distinto: excluir.</td></tr>
+                <tr><th>7</th><td>30/04/2026</td><td>Laura</td><td>30</td><td>Día anterior al periodo: excluir.</td></tr>
+                <tr><th>8</th><td>21/05/2026</td><td>Laura</td><td>pendiente</td><td>Texto en monto: detectar y corregir.</td></tr>
+              </tbody>
+            </table>
+            <p>Antes de calcular, confirma que la columna A fue reconocida como fecha y que los valores 100, 50, 80, 200 y 30 son números. El texto <em>pendiente</em> es intencional: representa un problema de calidad que no debe convertirse silenciosamente en una venta.</p>
+
+            <h2 id="formula">2. Usa una fórmula exacta y visible</h2>
+            <p>Con funciones en español y punto y coma como separador, escribe en una celda vacía:</p>
+            <div class="method-box"><p><code>=SUMAR.SI.CONJUNTO(C2:C8;B2:B8;"Laura";A2:A8;">="&amp;FECHA(2026;5;1);A2:A8;"&lt;"&amp;FECHA(2026;6;1))</code></p></div>
+            <p>Si tu hoja usa funciones en inglés y coma como separador, la expresión equivalente es:</p>
+            <div class="method-box"><p><code>=SUMIFS(C2:C8,B2:B8,"Laura",A2:A8,">="&amp;DATE(2026,5,1),A2:A8,"&lt;"&amp;DATE(2026,6,1))</code></p></div>
+            <p>Usar “anterior al 1 de junio” como límite superior evita depender del número de días del mes y también excluye valores del 1 de junio. Si la aplicación rechaza la fórmula, revisa primero idioma y separadores; no cambies las condiciones al azar hasta que deje de mostrar un error.</p>
+
+            <h2 id="aritmetica">3. Comprueba por qué debe devolver 150</h2>
+            <p>La fórmula aplica tres filtros: vendedor igual a Laura, fecha igual o posterior al 1 de mayo y fecha anterior al 1 de junio. Solo dos montos numéricos pasan los tres filtros:</p>
+            <div class="method-box">
+              <p><strong>10 de mayo, Laura:</strong> 100.</p>
+              <p><strong>31 de mayo, Laura:</strong> 50.</p>
+              <p><strong>Suma esperada:</strong> 100 + 50 = 150.</p>
+            </div>
+            <p>Los valores 80 y 30 pertenecen a fechas fuera de mayo; 200 corresponde a Carlos; la celda vacía no aporta valor; y <em>pendiente</em> no es un monto válido. Si obtienes 460, probablemente sumaste toda la columna numérica sin aplicar los criterios. Si obtienes 100, revisa si el 31 de mayo fue importado como texto o si el límite final lo excluye.</p>
+
+            <h2 id="limites">4. Cambia un dato cada vez</h2>
+            <p>Después de obtener 150, duplica la hoja y realiza estas modificaciones por separado. Volver al archivo original entre pruebas impide mezclar efectos.</p>
+            <table class="review-table">
+              <thead><tr><th>Cambio aislado</th><th>Resultado esperado</th><th>Qué comprueba</th></tr></thead>
+              <tbody>
+                <tr><th>Mover la fila del 31 de mayo al 1 de junio</th><td>100</td><td>El límite superior excluye junio.</td></tr>
+                <tr><th>Mover la venta de 80 del 1 de junio al 31 de mayo</th><td>230</td><td>El último día de mayo sigue incluido.</td></tr>
+                <tr><th>Cambiar Carlos por Laura</th><td>350</td><td>El criterio de vendedor controla la fila de 200.</td></tr>
+                <tr><th>Reemplazar “pendiente” por 25</th><td>175</td><td>Un monto válido de Laura en mayo se incorpora.</td></tr>
+                <tr><th>Vaciar el monto 100</th><td>50</td><td>Una celda vacía no se trata como una venta.</td></tr>
+              </tbody>
+            </table>
+            <p>Estos resultados también fueron derivados aritméticamente; TopiApps no afirma haberlos ejecutado en Excel o Sheets. Al reproducirlos, conserva una copia o captura de cada resultado, incluso si la fórmula falla.</p>
+
+            <h2>5. Si pides ayuda a una IA, conserva la primera respuesta</h2>
+            <p>Una instrucción comparable puede ser:</p>
+            <div class="method-box"><p>“Con la tabla de A1:E8, escribe una sola fórmula para sumar los montos numéricos de Laura desde el 1 de mayo de 2026 inclusive hasta el 1 de junio de 2026 exclusivo. Mi hoja usa funciones en [español/inglés] y separador [punto y coma/coma]. Explica qué ocurre con una celda vacía y con el texto ‘pendiente’. No cambies los datos”.</p></div>
+            <p>Guarda la primera salida antes de corregirla. Luego compárala con las condiciones y los resultados esperados de este laboratorio. Que la fórmula sea distinta no la vuelve incorrecta; debe producir los mismos resultados en el caso base y en cada modificación aislada.</p>
+
+            <h2 id="registro">6. Registra la ejecución sin exagerar el alcance</h2>
+            <table class="review-table">
+              <tbody>
+                <tr><th>Aplicación y versión</th><td>[Excel o Google Sheets; versión, cuenta o fecha]</td></tr>
+                <tr><th>Idioma y separador</th><td>[español + punto y coma / inglés + coma / otro]</td></tr>
+                <tr><th>Fórmula utilizada</th><td>[copia exacta]</td></tr>
+                <tr><th>Resultado base</th><td>[valor obtenido; esperado: 150]</td></tr>
+                <tr><th>Casos límite</th><td>[resultado obtenido frente al esperado]</td></tr>
+                <tr><th>Origen de la fórmula</th><td>[escrita manualmente o asistente, modelo y fecha]</td></tr>
+                <tr><th>Decisión</th><td>[aceptar para este alcance / corregir / descartar]</td></tr>
+              </tbody>
+            </table>
+            <p>Superar siete filas ficticias no certifica una hoja de producción. Antes de usar la fórmula con pagos, impuestos, inventario o nómina, trabaja sobre una copia, valida tipos de datos, concilia el total con una ruta independiente y pide revisión a la persona responsable.</p>
+
+            <h2>Qué aprendemos del laboratorio</h2>
+            <p>El valor no está en memorizar <code>SUMAR.SI.CONJUNTO</code>, sino en construir una prueba que pueda refutar una respuesta plausible. Un resultado esperado previo, límites de fecha explícitos y cambios aislados permiten saber qué condición falló. Ese mismo patrón puede adaptarse a búsquedas, conteos o clasificaciones sin asumir que una fórmula generada ya está lista.</p>
+
             <section class="source-box" aria-labelledby="fuentes-hojas">
-              <h2 id="fuentes-hojas">Documentación para comprobar funciones</h2>
+              <h2 id="fuentes-hojas">Documentación de la función</h2>
               <ul class="source-list">
-                <li><a href="https://support.microsoft.com/excel">Microsoft — ayuda y aprendizaje de Excel</a><small>Referencia oficial para sintaxis, funciones, importación y comportamiento de Excel.</small></li>
-                <li><a href="https://support.google.com/docs/">Google — ayuda de Editores de Documentos</a><small>Referencia oficial para funciones, configuración y comportamiento de Google Sheets.</small></li>
-                <li><a href="https://airc.nist.gov/airmf-resources/airmf/5-sec-core/">NIST AI RMF Core</a><small>Marco para documentar pruebas, métricas y evaluación en condiciones cercanas al uso.</small></li>
+                <li><a href="https://support.microsoft.com/excel">Microsoft — ayuda y aprendizaje de Excel</a><small>Referencia oficial para comprobar nombres, sintaxis y comportamiento en Excel.</small></li>
+                <li><a href="https://support.google.com/docs/answer/3238496?hl=es">Google — función SUMAR.SI.CONJUNTO</a><small>Referencia oficial de la función y sus criterios en Google Sheets.</small></li>
               </ul>
-              <p><small>Consultadas el 24 de julio de 2026. Las funciones pueden variar por aplicación, idioma, versión y plan.</small></p>
+              <p><small>Documentación consultada el 24 de julio de 2026. El conjunto de datos, los casos límite y los cálculos manuales fueron revisados el 12 de agosto de 2026.</small></p>
             </section>
-            <section class="author-box" aria-labelledby="autor-hojas"><div class="author-monogram" aria-hidden="true">SC</div><div><h2 id="autor-hojas">Sobre el autor</h2><p><a href="/pages/autor-sebastian-carrillo">Sebastián Carrillo</a> edita TopiApps y prepara ejemplos con datos ficticios para que los procedimientos puedan repetirse sin exponer información real.</p></div></section>
+            <section class="author-box" aria-labelledby="autor-hojas"><div class="author-monogram" aria-hidden="true">SC</div><div><h2 id="autor-hojas">Sobre el autor</h2><p><a href="/pages/autor-sebastian-carrillo">Sebastián Carrillo</a> edita TopiApps y prepara muestras ficticias para separar el resultado esperado de la salida de una herramienta.</p></div></section>
           </article>
           <aside class="sidebar-stack">
-            <div class="contact-card"><span class="contact-tag">Datos</span><p>Trabaja con copias antes de aplicar fórmulas, limpieza masiva, macros o scripts generados con IA.</p></div>
+            <div class="contact-card"><span class="contact-tag">Archivo de prueba</span><p><a href="/downloads/laboratorio-formulas-hojas-calculo.csv" download>Descargar las siete filas del laboratorio</a>.</p></div>
             <div class="contact-card"><h3>Relacionado</h3><p><a href="/articles/como-verificar-respuestas-de-ia-metodo-practico">Verificar respuestas de IA</a><br /><a href="/articles/como-evaluar-herramienta-ia-antes-de-pagar">Evaluar una herramienta</a><br /><a href="/articles/calcular-costo-real-ia-en-un-equipo">Calcular el costo real</a></p></div>
           </aside>
         </div>
       </section>
     </main>
-    <footer class="site-footer"><div class="container footer-grid"><div><a class="brand" href="/">TopiApps</a><p>Guías originales sobre herramientas IA, comparativas y prompts.</p></div><div><h3>Secciones</h3><a href="/pages/articles">Artículos</a><a href="/pages/about">Nosotros</a><a href="/pages/contact">Contacto</a></div><div><h3>Legal</h3><a href="/pages/privacy">Privacidad</a><a href="/pages/terms">Términos</a></div></div></footer>
+    <footer class="site-footer"><div class="container footer-grid"><div><a class="brand" href="/">TopiApps</a><p>Guías independientes para elegir y usar IA con evidencia.</p></div><div><h3>Secciones</h3><a href="/pages/articles">Artículos</a><a href="/pages/resources">Recursos</a><a href="/pages/editorial-policy">Política editorial</a><a href="/pages/contact">Contacto</a></div><div><h3>Legal</h3><a href="/pages/privacy">Privacidad</a><a href="/pages/terms">Términos</a></div></div></footer>
     <script src="/main.js"></script>
   </body>
 </html>

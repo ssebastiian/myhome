@@ -1,0 +1,5 @@
+escenario,volumen_mensual,minutos_antes,minutos_con_ia,minutos_revision,tasa_correccion,minutos_por_correccion,costo_por_hora,licencias,consumo,operacion_e_incidencias,implementacion_inicial,meses_amortizacion,minutos_utiles_por_unidad,valor_mensual_del_tiempo,costo_mensual_real,beneficio_neto,valor_ahorrado_por_unidad,punto_equilibrio_unidades
+ejemplo_ficticio,600,12,6,3,0.10,5,15,120,25,75,360,6,=C2-(D2+E2+(F2*G2)),=(N2*B2/60)*H2,=I2+J2+K2+(L2/M2),=O2-P2,=(N2/60)*H2,"=IF(R2>0,P2/R2,"""")"
+conservador,,,,,,,,,,,,,=C3-(D3+E3+(F3*G3)),=(N3*B3/60)*H3,=I3+J3+K3+(L3/M3),=O3-P3,=(N3/60)*H3,"=IF(R3>0,P3/R3,"""")"
+esperado,,,,,,,,,,,,,=C4-(D4+E4+(F4*G4)),=(N4*B4/60)*H4,=I4+J4+K4+(L4/M4),=O4-P4,=(N4/60)*H4,"=IF(R4>0,P4/R4,"""")"
+alto,,,,,,,,,,,,,=C5-(D5+E5+(F5*G5)),=(N5*B5/60)*H5,=I5+J5+K5+(L5/M5),=O5-P5,=(N5/60)*H5,"=IF(R5>0,P5/R5,"""")"

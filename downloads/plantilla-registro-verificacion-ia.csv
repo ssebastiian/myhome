@@ -1,0 +1,4 @@
+id,afirmacion_original,impacto_si_falla,fuente_primaria_url,seccion_fecha_y_alcance,prueba_independiente,estado,correccion,limite_de_uso,responsable,fecha
+1,[copia una afirmacion verificable],[bajo/medio/alto],[URL de la fuente],[seccion fecha pais y condiciones],[calculo consulta o segunda ruta],[confirmada/corregida/no verificada],[texto corregido],[uso aprobado y lo que queda fuera],[rol],[AAAA-MM-DD]
+2,[separa otra afirmacion],[bajo/medio/alto],[URL de la fuente],[seccion fecha pais y condiciones],[calculo consulta o segunda ruta],[confirmada/corregida/no verificada],[texto corregido],[uso aprobado y lo que queda fuera],[rol],[AAAA-MM-DD]
+3,[separa otra afirmacion],[bajo/medio/alto],[URL de la fuente],[seccion fecha pais y condiciones],[calculo consulta o segunda ruta],[confirmada/corregida/no verificada],[texto corregido],[uso aprobado y lo que queda fuera],[rol],[AAAA-MM-DD]

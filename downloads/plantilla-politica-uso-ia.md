@@ -68,7 +68,7 @@ Conservar: propósito, responsable, herramienta, categoría de datos, prueba rea
 
 ## 11. Capacitación y revisión
 
-La política se explica antes de habilitar una herramienta. Se revisa cada [90 días / 6 meses] y también cuando cambia un proveedor, aparece un incidente o se incorpora una función con acceso a datos o acciones externas.
+La política se explica antes de habilitar una herramienta. La organización define una fecha de revisión proporcional al riesgo y también la revisa cuando cambia un proveedor, aparece un incidente o se incorpora una función con acceso a datos o acciones externas.
 
 ## 12. Aprobación
 

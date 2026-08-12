@@ -8,3 +8,41 @@ node_modules/**
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Documentación interna: nunca debe formar parte del sitio público.
+/README.md
+/REVISION_ADSENSE_2026.md
+/CONTENT_ADSENSE_TOPIAPPS.md
+
+# Borradores retirados del inventario editorial. Se conservan únicamente
+# en Git para una posible reescritura y deben responder 404 en producción.
+/articles/alternativas-a-chatgpt-cual-usar-segun-tu-caso.html
+/articles/alternativas-a-google-workspace-para-empresas.html
+/articles/alternativas-a-zoom-para-videollamadas-de-trabajo.html
+/articles/como-automatizar-tareas-con-ia-sin-programar.html
+/articles/como-crear-una-tienda-online-con-ia-desde-cero.html
+/articles/como-elegir-el-mejor-software-de-facturacion.html
+/articles/herramientas-no-code-con-ia-para-automatizar-negocios.html
+/articles/ia-para-abogados.html
+/articles/ia-para-atencion-al-cliente.html
+/articles/ia-para-contadores-y-finanzas.html
+/articles/ia-para-crear-contenido-en-redes-sociales.html
+/articles/ia-para-crear-presentaciones-profesionales.html
+/articles/ia-para-medicos-y-profesionales-de-la-salud.html
+/articles/ia-para-profesores-y-educadores.html
+/articles/ia-para-recursos-humanos-reclutamiento-y-talento.html
+/articles/las-mejores-ia-para-escribir-contenido-en-2025.html
+/articles/mejores-gestores-de-contrasenas.html
+/articles/mejores-herramientas-de-email-marketing.html
+/articles/mejores-herramientas-de-ia-para-diseno-grafico.html
+/articles/mejores-herramientas-de-ia-para-redes-sociales.html
+/articles/mejores-herramientas-de-productividad-con-ia.html
+/articles/mejores-herramientas-ia-para-emprendedores.html
+/articles/mejores-ia-para-editar-fotos.html
+
+# Guías adicionales retiradas hasta contar con evidencia propia suficiente.
+/articles/chatgpt-vs-claude.html
+/articles/como-usar-ia-para-productividad-personal.html
+/articles/ia-para-estudiantes.html
+/articles/ia-para-resumir-pdf-y-documentos-largos.html
+/articles/prompts-para-negocios.html

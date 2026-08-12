@@ -1,15 +1,11 @@
-campo,instruccion,herramienta_a,herramienta_b,notas_y_evidencia
-fecha_de_prueba,Usa la misma fecha para todas las opciones,,,
-tarea_y_resultado_esperado,Describe una tarea real y cómo sabrás que está bien,,,
-datos_de_prueba,Usa información ficticia o autorizada y conserva la misma muestra,,,
-precision_0_a_4,0 falla de forma crítica; 4 cumple sin errores relevantes,,,
-ajuste_a_la_tarea_0_a_4,0 no resuelve; 4 resuelve el flujo completo,,,
-tiempo_de_revision_0_a_4,0 exige rehacer; 4 requiere cambios mínimos,,,
-privacidad_y_control_0_a_4,0 sin información suficiente; 4 controles adecuados y documentados,,,
-facilidad_de_uso_0_a_4,0 bloquea al equipo; 4 uso claro y consistente,,,
-integracion_0_a_4,0 flujo manual inviable; 4 encaja con las herramientas actuales,,,
-costo_total_0_a_4,0 costo injustificable; 4 costo sostenible para el valor obtenido,,,
-fallo_eliminatorio,Anota filtración de datos errores graves acciones no autorizadas o falta de control,,,
-fuente_primaria,Enlaza documentación de privacidad seguridad precio y funciones,,,
-decision,APROBAR PILOTO / CORREGIR Y REPETIR / DESCARTAR,,,
-responsable_y_fecha_de_revision,Define quién decide y cuándo vuelve a comprobarse,,,
+fecha,herramienta,plan_o_modelo,tarea_id,tarea,resultado_esperado,entrada_o_archivo,primera_salida,precision_0_a_4,ajuste_0_a_4,revision_0_a_4,privacidad_0_a_4,facilidad_0_a_4,integracion_0_a_4,costo_0_a_4,minutos_revision,fallo_eliminatorio,evidencia_o_fuente,decision
+[fecha],[opcion A],[plan o modelo],A-1,[tarea 1],[condiciones observables],[archivo ficticio o autorizado],[enlace o nombre del registro],,,,,,,,,[sí/no y motivo],[fuente o captura],[piloto/corregir/descartar]
+[fecha],[opcion A],[plan o modelo],A-2,[tarea 2],[condiciones observables],[archivo ficticio o autorizado],[enlace o nombre del registro],,,,,,,,,[sí/no y motivo],[fuente o captura],[piloto/corregir/descartar]
+[fecha],[opcion A],[plan o modelo],A-3,[tarea 3],[condiciones observables],[archivo ficticio o autorizado],[enlace o nombre del registro],,,,,,,,,[sí/no y motivo],[fuente o captura],[piloto/corregir/descartar]
+[fecha],[opcion A],[plan o modelo],A-4,[tarea 4],[condiciones observables],[archivo ficticio o autorizado],[enlace o nombre del registro],,,,,,,,,[sí/no y motivo],[fuente o captura],[piloto/corregir/descartar]
+[fecha],[opcion A],[plan o modelo],A-5,[tarea 5],[condiciones observables],[archivo ficticio o autorizado],[enlace o nombre del registro],,,,,,,,,[sí/no y motivo],[fuente o captura],[piloto/corregir/descartar]
+[fecha],[opcion B],[plan o modelo],B-1,[misma tarea 1],[mismas condiciones],[mismo archivo],[enlace o nombre del registro],,,,,,,,,[sí/no y motivo],[fuente o captura],[piloto/corregir/descartar]
+[fecha],[opcion B],[plan o modelo],B-2,[misma tarea 2],[mismas condiciones],[mismo archivo],[enlace o nombre del registro],,,,,,,,,[sí/no y motivo],[fuente o captura],[piloto/corregir/descartar]
+[fecha],[opcion B],[plan o modelo],B-3,[misma tarea 3],[mismas condiciones],[mismo archivo],[enlace o nombre del registro],,,,,,,,,[sí/no y motivo],[fuente o captura],[piloto/corregir/descartar]
+[fecha],[opcion B],[plan o modelo],B-4,[misma tarea 4],[mismas condiciones],[mismo archivo],[enlace o nombre del registro],,,,,,,,,[sí/no y motivo],[fuente o captura],[piloto/corregir/descartar]
+[fecha],[opcion B],[plan o modelo],B-5,[misma tarea 5],[mismas condiciones],[mismo archivo],[enlace o nombre del registro],,,,,,,,,[sí/no y motivo],[fuente o captura],[piloto/corregir/descartar]

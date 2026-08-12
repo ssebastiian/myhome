@@ -1,0 +1,8 @@
+fecha,vendedor,monto,caso,resultado_esperado
+2026-05-10,Laura,100,normal,incluir
+2026-05-31,Laura,50,ultimo_dia_del_periodo,incluir
+2026-06-01,Laura,80,fuera_del_periodo,excluir
+2026-05-20,Laura,,celda_vacia,no_suma
+2026-05-15,Carlos,200,vendedor_distinto,excluir
+2026-04-30,Laura,30,dia_anterior_al_periodo,excluir
+2026-05-21,Laura,pendiente,texto_en_columna_monto,detectar_y_corregir
