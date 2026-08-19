@@ -8,7 +8,7 @@ Mejorar `https://topiapps.com/`, conseguir tráfico orgánico útil y preparar u
 
 ## Estado actual
 
-El código fuente está disponible en este workspace y el remoto es `https://github.com/ssebastiian/myhome.git`. AdSense indicó contenido de poco valor y el sitio figura como “Requiere revisión”. Se preparó una mejora editorial y técnica local, todavía sin desplegar ni enviar nuevamente a revisión.
+El código fuente está disponible en este workspace y el remoto es `https://github.com/ssebastiian/myhome.git`. AdSense indicó contenido de poco valor y el sitio figura como “Requiere revisión”. La mejora editorial y técnica ya está desplegada; todavía no se ha confirmado una nueva solicitud de revisión.
 
 ## Trabajo completado
 
@@ -53,6 +53,7 @@ El código fuente está disponible en este workspace y el remoto es `https://git
 - Cloudflare quedó corregido el 2026-08-19: HTTP y ambas variantes `www` redirigen con `301` en un solo salto a `https://topiapps.com/`.
 - Las redirecciones conservan rutas internas y parámetros de consulta.
 - Search Console confirmó el 2026-08-19 que `https://topiapps.com/` está indexada y se sirve por HTTPS.
+- AdSense muestra dos mensajes activos para reglamentos europeos y uno para normativas estatales de EE. UU.; queda confirmar dentro de la configuración que `topiapps.com` esté incluido y publicado.
 - No se detectó una CMP activa; la política de privacidad reconoce que debe incorporarse cuando corresponda.
 - La búsqueda pública usada en la auditoría no mostró páginas de `topiapps.com`; Search Console debe confirmar el estado real de indexación.
 - PageSpeed Insights no devolvió métricas por agotamiento de la cuota pública de la API.
@@ -64,11 +65,11 @@ El código fuente está disponible en este workspace y el remoto es `https://git
 - No se detectaron destinos internos ni fragmentos rotos en los archivos cambiados.
 - `git diff --check` terminó sin errores.
 - Las cuatro fuentes nuevas de NIST, ICO y OWASP respondieron HTTP `200`.
+- En producción, el cargador de AdSense aparece únicamente en la portada y las seis guías; está ausente en las ocho páginas auxiliares y en la página 404.
+- La guía nueva y el sitemap actualizado ya están desplegados públicamente.
 
 ## Pendientes o bloqueos
 
-- Desplegar los cambios locales en producción.
-- Configurar una CMP certificada por Google si se servirán anuncios a usuarios del EEE, Reino Unido o Suiza.
 - Verificar la propiedad en Search Console, enviar el sitemap y revisar cobertura de indexación.
 - Confirmar que `ads.txt` aparezca como “Autorizado” dentro de AdSense.
 - Obtener métricas reales de Search Console, AdSense y, si se instala, analítica.

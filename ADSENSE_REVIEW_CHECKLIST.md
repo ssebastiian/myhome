@@ -24,20 +24,20 @@ La redirección por host no debe simularse dentro de `_redirects`: Cloudflare re
 
 ## 3. AdSense: consentimiento y estado del sitio
 
-- [ ] En “Privacidad y mensajes”, crear o revisar el mensaje para EEE, Reino Unido y Suiza usando una CMP certificada por Google.
-- [ ] Confirmar que `topiapps.com` aparece en “Sitios” y que el identificador de editor es `pub-9439862036060464`.
-- [ ] Confirmar que el estado de `ads.txt` sea “Autorizado”.
-- [ ] Mantener el cargador de AdSense solo en portada y artículos con contenido sustancial durante la revisión.
-- [ ] No colocar anuncios en privacidad, términos, contacto, error 404 ni páginas sin contenido editorial suficiente.
+- [x] En “Privacidad y mensajes”, crear o revisar el mensaje para EEE, Reino Unido y Suiza usando la CMP de Google. AdSense muestra dos mensajes europeos activos; confirmar que `topiapps.com` esté incluido y publicado.
+- [x] Confirmar que `topiapps.com` aparece en “Sitios” y que el identificador de editor es `pub-9439862036060464`.
+- [x] Confirmar que el estado de `ads.txt` sea “Autorizado”.
+- [x] Mantener el cargador de AdSense solo en portada y artículos con contenido sustancial durante la revisión. Validado en producción: portada + 6 guías; ausente en páginas auxiliares y 404.
+- [x] No colocar anuncios en privacidad, términos, contacto, error 404 ni páginas sin contenido editorial suficiente. Validado públicamente mediante ausencia de `pagead2.googlesyndication.com` y `adsbygoogle`.
 
 ## 4. Calidad editorial antes de reenviar
 
-- [ ] Leer cada guía en móvil y escritorio y comprobar que la tarea prometida se puede completar.
-- [ ] Probar calculadoras, orientador y descargas sin conexión a cuentas personales.
-- [ ] Verificar enlaces externos y fechas de consulta.
-- [ ] Corregir afirmaciones que no estén respaldadas o presentarlas como criterio editorial.
-- [ ] Añadir experiencia propia únicamente cuando exista evidencia real; no inventar pruebas, cifras, credenciales ni casos.
-- [ ] Publicar nuevas guías solo si aportan una prueba, herramienta, conjunto de datos o procedimiento distinto.
+- [x] Leer cada guía en móvil y escritorio y comprobar que la tarea prometida se puede completar.
+- [x] Probar calculadoras, orientador y descargas sin conexión a cuentas personales.
+- [x] Verificar enlaces externos y fechas de consulta.
+- [x] Corregir afirmaciones que no estén respaldadas o presentarlas como criterio editorial.
+- [x] Añadir experiencia propia únicamente cuando exista evidencia real; no inventar pruebas, cifras, credenciales ni casos.
+- [x] Publicar nuevas guías solo si aportan una prueba, herramienta, conjunto de datos o procedimiento distinto.
 
 ## 5. Momento de solicitar revisión
 
