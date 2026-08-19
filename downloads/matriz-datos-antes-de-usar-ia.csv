@@ -1,0 +1,5 @@
+campo_o_grupo,es_necesario_para_la_tarea,categoria_editorial,identificador_directo,identificador_indirecto,transformacion_propuesta,herramienta_y_plan_aprobados,responsable,evidencia_o_documentacion,decision,fecha_revision
+[ejemplo: correo del cliente],no,personal,si,no,eliminar,no,[rol],[URL o politica],no compartir,AAAA-MM-DD
+[campo 1],[si/no],[publica/interna/personal/confidencial/especial/secreto],[si/no],[si/no],[eliminar/generalizar/sustituir/separar/mantener],[si/no],[rol],[fuente],[continuar/minimizar/escalar/detener],AAAA-MM-DD
+[campo 2],[si/no],[publica/interna/personal/confidencial/especial/secreto],[si/no],[si/no],[eliminar/generalizar/sustituir/separar/mantener],[si/no],[rol],[fuente],[continuar/minimizar/escalar/detener],AAAA-MM-DD
+[campo 3],[si/no],[publica/interna/personal/confidencial/especial/secreto],[si/no],[si/no],[eliminar/generalizar/sustituir/separar/mantener],[si/no],[rol],[fuente],[continuar/minimizar/escalar/detener],AAAA-MM-DD

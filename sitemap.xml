@@ -2,19 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://topiapps.com/</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-08-19</lastmod>
   </url>
   <url>
     <loc>https://topiapps.com/pages/articles</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-08-19</lastmod>
   </url>
   <url>
     <loc>https://topiapps.com/pages/resources</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-08-19</lastmod>
   </url>
   <url>
     <loc>https://topiapps.com/pages/about</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-08-19</lastmod>
   </url>
   <url>
     <loc>https://topiapps.com/pages/editorial-policy</loc>
@@ -22,7 +22,7 @@
   </url>
   <url>
     <loc>https://topiapps.com/pages/autor-sebastian-carrillo</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-08-19</lastmod>
   </url>
   <url>
     <loc>https://topiapps.com/pages/contact</loc>
@@ -55,5 +55,9 @@
   <url>
     <loc>https://topiapps.com/articles/ia-para-excel-y-hojas-de-calculo</loc>
     <lastmod>2026-08-12</lastmod>
+  </url>
+  <url>
+    <loc>https://topiapps.com/articles/que-datos-puedes-compartir-con-una-ia</loc>
+    <lastmod>2026-08-19</lastmod>
   </url>
 </urlset>

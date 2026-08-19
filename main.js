@@ -270,3 +270,90 @@ if (costCalculator) {
   downloadButton.disabled = false;
   calculateCost();
 }
+
+const dataAssessment = document.querySelector("[data-data-assessment]");
+
+if (dataAssessment) {
+  const kinds = Array.from(dataAssessment.querySelectorAll("[data-data-kind]"));
+  const approvedEnvironment = dataAssessment.querySelector("[data-approved-environment]");
+  const externalAction = dataAssessment.querySelector("[data-external-action]");
+  const result = dataAssessment.querySelector("[data-data-result]");
+  const level = dataAssessment.querySelector("[data-data-level]");
+  const title = dataAssessment.querySelector("[data-data-title]");
+  const message = dataAssessment.querySelector("[data-data-message]");
+  const actions = dataAssessment.querySelector("[data-data-actions]");
+
+  const renderActions = (items) => {
+    actions.innerHTML = "";
+    items.forEach((item) => {
+      const listItem = document.createElement("li");
+      listItem.textContent = item;
+      actions.appendChild(listItem);
+    });
+  };
+
+  const renderAssessment = () => {
+    const selected = new Set(kinds.filter((input) => input.checked).map((input) => input.value));
+
+    if (selected.size === 0) {
+      result.dataset.level = "empty";
+      level.textContent = "Falta clasificar";
+      title.textContent = "Selecciona al menos una categoría";
+      message.textContent = "No introduzcas contenido real en este formulario.";
+      renderActions(["Describe la entrada por categorías, sin copiar datos."]);
+      return;
+    }
+
+    if (selected.has("secret") || selected.has("regulated")) {
+      result.dataset.level = "stop";
+      level.textContent = "Detener y escalar";
+      title.textContent = "No pegues esta información";
+      message.textContent = "La entrada incluye secretos técnicos o una categoría que necesita revisión especializada.";
+      renderActions([
+        "Usa el canal y la persona responsable definidos por tu organización.",
+        "Si ya compartiste una credencial, revócala y reporta el incidente.",
+        "Prueba el flujo con datos ficticios mientras se evalúa el uso real.",
+      ]);
+      return;
+    }
+
+    if (selected.has("personal") || selected.has("confidential")) {
+      result.dataset.level = "minimize";
+      level.textContent = "Minimizar y autorizar";
+      title.textContent = approvedEnvironment.checked ? "Reduce los datos antes de continuar" : "No uses este entorno todavía";
+      message.textContent = "La aprobación de una herramienta no elimina la necesidad de retirar campos y limitar el propósito.";
+      renderActions([
+        "Elimina identificadores y campos que no cambian el resultado.",
+        "Confirma que el plan y esta categoría de datos estén aprobados.",
+        externalAction.checked ? "Exige revisión humana antes de publicar, decidir o ejecutar." : "Registra propósito, responsable y fecha de revisión.",
+      ]);
+      return;
+    }
+
+    if (selected.has("internal") || !approvedEnvironment.checked) {
+      result.dataset.level = "caution";
+      level.textContent = "Comprobar el entorno";
+      title.textContent = "Continúa solo en una herramienta aprobada";
+      message.textContent = "La información no pública necesita una decisión explícita sobre cuenta, plan, retención y acceso.";
+      renderActions([
+        "Confirma herramienta, plan, cuenta y controles de acceso.",
+        "Usa una muestra mínima y evita conectores innecesarios.",
+        externalAction.checked ? "Añade revisión humana antes de cualquier acción externa." : "Conserva evidencia de la aprobación.",
+      ]);
+      return;
+    }
+
+    result.dataset.level = "continue";
+    level.textContent = "Continuar con límites";
+    title.textContent = "La entrada parece pública o ficticia";
+    message.textContent = "Todavía debes comprobar fuente, licencia, datos incrustados y la exactitud de la salida.";
+    renderActions([
+      "Confirma que no existan comentarios, metadatos o identificadores ocultos.",
+      "Mantén la muestra necesaria para la tarea.",
+      externalAction.checked ? "Revisa la salida antes de publicarla o ejecutar acciones." : "Documenta el alcance de la prueba.",
+    ]);
+  };
+
+  dataAssessment.addEventListener("change", renderAssessment);
+  renderAssessment();
+}
