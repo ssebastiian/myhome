@@ -1,6 +1,6 @@
 # Preparación de TopiApps para una nueva revisión de AdSense
 
-Última actualización: 2026-08-19
+Última actualización: 2026-08-28
 
 No solicitar otra revisión hasta desplegar los cambios, comprobar que Google puede rastrearlos y revisar los puntos siguientes. AdSense no garantiza aprobación aunque todos estén completos.
 
@@ -27,7 +27,7 @@ La redirección por host no debe simularse dentro de `_redirects`: Cloudflare re
 - [x] En “Privacidad y mensajes”, crear o revisar el mensaje para EEE, Reino Unido y Suiza usando la CMP de Google. AdSense muestra dos mensajes europeos activos; confirmar que `topiapps.com` esté incluido y publicado.
 - [x] Confirmar que `topiapps.com` aparece en “Sitios” y que el identificador de editor es `pub-9439862036060464`.
 - [x] Confirmar que el estado de `ads.txt` sea “Autorizado”.
-- [x] Mantener el cargador de AdSense solo en portada y artículos con contenido sustancial durante la revisión. Validado en producción: portada + 6 guías; ausente en páginas auxiliares y 404.
+- [x] Mantener el cargador de AdSense solo en artículos con contenido sustancial durante la revisión. En el código local queda limitado a las 6 guías; la portada conserva la metaetiqueta oficial de la cuenta para verificación, pero no carga anuncios.
 - [x] No colocar anuncios en privacidad, términos, contacto, error 404 ni páginas sin contenido editorial suficiente. Validado públicamente mediante ausencia de `pagead2.googlesyndication.com` y `adsbygoogle`.
 
 ## 4. Calidad editorial antes de reenviar
@@ -41,12 +41,14 @@ La redirección por host no debe simularse dentro de `_redirects`: Cloudflare re
 
 ## 5. Momento de solicitar revisión
 
+El 2026-08-28 el sitio recibió un nuevo rechazo por “contenido de poco valor”; el usuario indica que es la décima revisión. No reenviar únicamente por haber cambiado estilos, metadatos o unas pocas frases.
+
 Solicitar la revisión cuando:
 
 - los cambios estén desplegados;
 - portada y guías sean accesibles para Google;
 - Search Console muestre que el sitemap fue leído;
-- la guía nueva esté descubierta o indexada;
+- las seis guías estén descubiertas y se conozca el estado de indexación de cada una;
 - HTTP y `www` estén corregidos;
 - el mensaje de consentimiento esté configurado;
 - no haya enlaces ni herramientas rotas.
