@@ -8,7 +8,7 @@ Corregir el rechazo repetido de AdSense por “contenido de poco valor”, confi
 
 ## Estado actual
 
-El código fuente está disponible en este workspace y el remoto es `https://github.com/ssebastiian/myhome.git`. El 2026-08-28 AdSense volvió a indicar “contenido de poco valor”; el usuario informa que es la décima revisión. El código ya contiene seis guías extensas y diferenciadas, pero todavía no existe evidencia disponible en esta sesión de que las seis estén indexadas. Los cambios de esta sesión son únicamente locales y no se desplegaron.
+El código fuente está disponible en este workspace y el remoto es `https://github.com/ssebastiian/myhome.git`. El 2026-08-28 AdSense volvió a indicar “contenido de poco valor”; el usuario informa que es la décima revisión. El código ya contiene seis guías extensas y diferenciadas, pero todavía no existe evidencia disponible en esta sesión de que las seis estén indexadas. Search Console mostró fallos temporales de obtención al probar `/pages/about` y al reenviar `sitemap.xml`. El informe del sitemap conserva la última lectura correcta del 2026-08-19 y 14 páginas descubiertas. Las comprobaciones públicas inmediatamente posteriores no reprodujeron los errores. El cambio de AdSense fue desplegado por el usuario en el commit `ad574ce`; no se hicieron despliegues adicionales.
 
 ## Trabajo completado
 
@@ -25,6 +25,8 @@ El código fuente está disponible en este workspace y el remoto es `https://git
 - Se auditó el rechazo más reciente contra las políticas vigentes de AdSense y la guía de contenido útil de Google.
 - Se retiró el cargador de AdSense de la portada, cuya función principal es orientar y navegar; la metaetiqueta oficial de verificación permanece en el `<head>`.
 - Se actualizó la política de privacidad para indicar que el cargador publicitario queda limitado a las seis guías editoriales.
+- Se diagnosticó el fallo de inspección de `/pages/about` sin modificar el sitio: no se encontró una regla o respuesta distinta para esa URL.
+- Se comparó el sitemap publicado con el repositorio después del aviso “No se ha podido obtener”: ambos archivos son idénticos y válidos.
 
 ## Decisiones y restricciones
 
@@ -37,6 +39,8 @@ El código fuente está disponible en este workspace y el remoto es `https://git
 - No responder al décimo rechazo con cambios cosméticos, relleno ni artículos masivos. La siguiente solicitud debe esperar a conocer la indexación de cada guía.
 - Mantener anuncios solo en páginas cuyo contenido editorial sea el centro de atención. La portada se verifica mediante `google-adsense-account`, método admitido por Google cuando no se desea cargar anuncios allí.
 - No realizar despliegues en esta tarea, por solicitud expresa del usuario.
+- No modificar `robots.txt` por un único fallo de la prueba en vivo cuando el archivo y la página responden correctamente; volver a probar y escalar solo si el error persiste o afecta más URLs.
+- No revertir ni regenerar `sitemap.xml`: el único cambio del commit `ad574ce` dentro del sitemap fue actualizar la fecha real de modificación de privacidad; el formato y las URLs no cambiaron.
 
 ## Archivos importantes
 
@@ -49,6 +53,7 @@ El código fuente está disponible en este workspace y el remoto es `https://git
 - `styles.css`: ficha de evidencia y componentes del orientador.
 - `index.html`: conserva la verificación de AdSense, pero ya no carga el script publicitario.
 - `pages/privacy.html`: refleja el alcance real del cargador de AdSense y la fecha de revisión actual.
+- `robots.txt`: permite todo el rastreo y declara el sitemap; no requirió cambios tras el fallo aislado de Search Console.
 
 ## Verificaciones
 
@@ -79,10 +84,20 @@ El código fuente está disponible en este workspace y el remoto es `https://git
 - La portada, la biblioteca, una guía, `sitemap.xml` y `robots.txt` respondieron HTTP `200` en la comprobación pública.
 - En local, la portada conserva `google-adsense-account` y no carga `adsbygoogle`; una guía sí carga el script y las páginas auxiliares no lo hacen.
 - `node --check main.js`, `xmllint --noout sitemap.xml`, los 15 bloques JSON-LD, los enlaces internos y `git diff --check` finalizaron sin errores.
+- El 2026-08-28, `robots.txt` y `/pages/about` respondieron HTTP `200` con `cf-cache-status: HIT` usando agentes de navegador, Googlebot, Google Inspection Tool y Mediapartners-Google.
+- Cinco solicitudes consecutivas a `robots.txt` y cinco a `/pages/about` respondieron `200`, aproximadamente en 0,25 segundos cada una.
+- Las variantes HTTP y `www` de `robots.txt` y `/pages/about` llegaron a la URL HTTPS canónica con una sola redirección y terminaron en `200`.
+- La comprobación IPv6 desde el entorno local no tuvo conectividad para ninguna de las dos rutas; al afectar por igual a `robots.txt` y `/pages/about`, no demuestra un fallo específico del sitio ni de esa página.
+- El sitemap publicado responde `200`, `Content-Type: application/xml`, 1.839 bytes, XML válido y sin BOM; su SHA-256 coincide con el archivo local.
+- El sitemap publicado contiene 15 URLs y todas respondieron `200`. Search Console muestra 14 porque conserva la lectura anterior del 2026-08-19.
+- Googlebot, Google Inspection Tool y Mediapartners-Google descargaron el sitemap con `200`; cinco descargas consecutivas adicionales también devolvieron `200`.
+- Google Public DNS y Cloudflare DNS resolvieron correctamente los registros A y AAAA de `topiapps.com`; los dos destinos IPv4 sirvieron `sitemap.xml` y `robots.txt` con `200`.
 
 ## Pendientes o bloqueos
 
 - Iniciar sesión en Search Console, comprobar que `sitemap.xml` fue leído e inspeccionar por separado la portada y las seis guías.
+- Repetir “Probar URL publicada” para `/pages/about`; si el mismo error continúa durante 24 horas o aparece en varias URLs, revisar Estadísticas de rastreo de Search Console y los eventos de seguridad de Cloudflare antes de cambiar reglas.
+- Dar a Google unos días para reintentar la obtención del sitemap. Si el estado sigue igual, abrir el detalle del error, probar la URL exacta del sitemap en vivo y revisar Acciones manuales, Estadísticas de rastreo y eventos de Cloudflare antes de reenviarlo otra vez.
 - Obtener métricas reales de Search Console, AdSense y, si se instala, analítica.
 - Completar el perfil de autor con experiencia y enlaces externos solo si el usuario aporta datos comprobables.
 - Desplegar los cambios locales únicamente cuando el usuario decida hacerlo; esta tarea no autorizó despliegue.
