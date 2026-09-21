@@ -97,6 +97,162 @@ if (articleList && articleSearch && articleResults && pagination) {
   renderArticles();
 }
 
+const calculateWeightedScore = (items) => {
+  const score = items.reduce((total, item) => {
+    const value = Math.min(4, Math.max(0, Number(item.value) || 0));
+    const weight = Math.max(0, Number(item.weight) || 0);
+    return total + (value / 4) * weight;
+  }, 0);
+  const roundedScore = Math.round(score);
+
+  if (roundedScore >= 80) {
+    return {
+      score: roundedScore,
+      verdict: "pilot",
+      message: "Puede justificar un piloto controlado si no existe ningún fallo eliminatorio.",
+    };
+  }
+  if (roundedScore >= 60) {
+    return {
+      score: roundedScore,
+      verdict: "adjust",
+      message: "Corrige el flujo, reduce el alcance o compara otra opción antes de comprar.",
+    };
+  }
+  if (roundedScore > 0) {
+    return {
+      score: roundedScore,
+      verdict: "stop",
+      message: "La carga de corrección o el riesgo no justifican todavía la compra.",
+    };
+  }
+  return {
+    score: 0,
+    verdict: "incomplete",
+    message: "Completa la prueba antes de decidir.",
+  };
+};
+
+const calculateCostModel = (input) => {
+  const number = (value, maximum = Number.POSITIVE_INFINITY) => {
+    const parsed = Number(value);
+    return Math.min(maximum, Math.max(0, Number.isFinite(parsed) ? parsed : 0));
+  };
+  const values = {
+    volume: number(input.volume),
+    before: number(input.before),
+    withAi: number(input.withAi),
+    review: number(input.review),
+    correctionRate: number(input.correctionRate, 100),
+    correctionTime: number(input.correctionTime),
+    hourlyRate: number(input.hourlyRate),
+    licenses: number(input.licenses),
+    variable: number(input.variable),
+    implementation: number(input.implementation),
+    training: number(input.training),
+    incidents: number(input.incidents),
+    currency: String(input.currency || "UM").trim().slice(0, 8) || "UM",
+  };
+  const averageCorrection = (values.correctionRate / 100) * values.correctionTime;
+  const minutesSaved = values.before - (values.withAi + values.review + averageCorrection);
+  const valuePerUnit = (minutesSaved / 60) * values.hourlyRate;
+  const grossValue = valuePerUnit * values.volume;
+  const monthlyCost =
+    values.licenses + values.variable + values.implementation + values.training + values.incidents;
+  const netBenefit = grossValue - monthlyCost;
+  const breakEven = valuePerUnit > 0 ? Math.ceil(monthlyCost / valuePerUnit) : null;
+  const status =
+    minutesSaved <= 0
+      ? "no_time_savings"
+      : netBenefit > 0
+        ? "positive"
+        : netBenefit === 0
+          ? "break_even"
+          : "negative";
+
+  return {
+    ...values,
+    averageCorrection,
+    minutesSaved,
+    valuePerUnit,
+    grossValue,
+    monthlyCost,
+    netBenefit,
+    breakEven,
+    status,
+  };
+};
+
+const assessDataSelection = ({ kinds = [], approvedEnvironment = false, externalAction = false }) => {
+  const selected = new Set(kinds);
+
+  if (selected.size === 0) {
+    return {
+      level: "empty",
+      label: "Falta clasificar",
+      title: "Selecciona al menos una categoría",
+      message: "No introduzcas contenido real en este formulario.",
+      actions: ["Describe la entrada por categorías, sin copiar datos."],
+    };
+  }
+  if (selected.has("secret") || selected.has("regulated")) {
+    return {
+      level: "stop",
+      label: "Detener y escalar",
+      title: "No pegues esta información",
+      message: "La entrada incluye secretos técnicos o una categoría que necesita revisión especializada.",
+      actions: [
+        "Usa el canal y la persona responsable definidos por tu organización.",
+        "Si ya compartiste una credencial, revócala y reporta el incidente.",
+        "Prueba el flujo con datos ficticios mientras se evalúa el uso real.",
+      ],
+    };
+  }
+  if (selected.has("personal") || selected.has("confidential")) {
+    return {
+      level: "minimize",
+      label: "Minimizar y autorizar",
+      title: approvedEnvironment ? "Reduce los datos antes de continuar" : "No uses este entorno todavía",
+      message: "La aprobación de una herramienta no elimina la necesidad de retirar campos y limitar el propósito.",
+      actions: [
+        "Elimina identificadores y campos que no cambian el resultado.",
+        "Confirma que el plan y esta categoría de datos estén aprobados.",
+        externalAction
+          ? "Exige revisión humana antes de publicar, decidir o ejecutar."
+          : "Registra propósito, responsable y fecha de revisión.",
+      ],
+    };
+  }
+  if (selected.has("internal") || !approvedEnvironment) {
+    return {
+      level: "caution",
+      label: "Comprobar el entorno",
+      title: "Continúa solo en una herramienta aprobada",
+      message: "La información no pública necesita una decisión explícita sobre cuenta, plan, retención y acceso.",
+      actions: [
+        "Confirma herramienta, plan, cuenta y controles de acceso.",
+        "Usa una muestra mínima y evita conectores innecesarios.",
+        externalAction
+          ? "Añade revisión humana antes de cualquier acción externa."
+          : "Conserva evidencia de la aprobación.",
+      ],
+    };
+  }
+  return {
+    level: "continue",
+    label: "Continuar con límites",
+    title: "La entrada parece pública o ficticia",
+    message: "Todavía debes comprobar fuente, licencia, datos incrustados y la exactitud de la salida.",
+    actions: [
+      "Confirma que no existan comentarios, metadatos o identificadores ocultos.",
+      "Mantén la muestra necesaria para la tarea.",
+      externalAction
+        ? "Revisa la salida antes de publicarla o ejecutar acciones."
+        : "Documenta el alcance de la prueba.",
+    ],
+  };
+};
+
 const scoreCalculator = document.querySelector("[data-score-calculator]");
 
 if (scoreCalculator) {
@@ -105,24 +261,11 @@ if (scoreCalculator) {
   const scoreVerdict = scoreCalculator.querySelector("[data-score-verdict]");
 
   const renderScore = () => {
-    const score = scoreInputs.reduce((total, input) => {
-      const value = Math.min(4, Math.max(0, Number(input.value) || 0));
-      const weight = Number(input.dataset.weight) || 0;
-      return total + (value / 4) * weight;
-    }, 0);
-    const roundedScore = Math.round(score);
-
-    scoreResult.textContent = `${roundedScore} / 100`;
-
-    if (roundedScore >= 80) {
-      scoreVerdict.textContent = "Puede justificar un piloto controlado si no existe ningún fallo eliminatorio.";
-    } else if (roundedScore >= 60) {
-      scoreVerdict.textContent = "Corrige el flujo, reduce el alcance o compara otra opción antes de comprar.";
-    } else if (roundedScore > 0) {
-      scoreVerdict.textContent = "La carga de corrección o el riesgo no justifican todavía la compra.";
-    } else {
-      scoreVerdict.textContent = "Completa la prueba antes de decidir.";
-    }
+    const calculation = calculateWeightedScore(
+      scoreInputs.map((input) => ({ value: input.value, weight: input.dataset.weight })),
+    );
+    scoreResult.textContent = `${calculation.score} / 100`;
+    scoreVerdict.textContent = calculation.message;
   };
 
   scoreInputs.forEach((input) => {
@@ -151,66 +294,39 @@ if (costCalculator) {
   let latestCalculation;
 
   const getInput = (name) => costCalculator.querySelector(`[data-cost-input="${name}"]`);
-  const getNumber = (name, maximum = Number.POSITIVE_INFINITY) => {
-    const value = Number(getInput(name).value);
-    return Math.min(maximum, Math.max(0, Number.isFinite(value) ? value : 0));
-  };
   const formatNumber = (value) => numberFormatter.format(value);
-  const getCurrency = () => getInput("currency").value.trim().slice(0, 8) || "UM";
   const formatMoney = (value, currency) => `${formatNumber(value)} ${currency}`;
 
   const calculateCost = () => {
-    const values = {
-      volume: getNumber("volume"),
-      before: getNumber("before"),
-      withAi: getNumber("withAi"),
-      review: getNumber("review"),
-      correctionRate: getNumber("correctionRate", 100),
-      correctionTime: getNumber("correctionTime"),
-      hourlyRate: getNumber("hourlyRate"),
-      licenses: getNumber("licenses"),
-      variable: getNumber("variable"),
-      implementation: getNumber("implementation"),
-      training: getNumber("training"),
-      incidents: getNumber("incidents"),
-      currency: getCurrency(),
-    };
+    latestCalculation = calculateCostModel({
+      volume: getInput("volume").value,
+      before: getInput("before").value,
+      withAi: getInput("withAi").value,
+      review: getInput("review").value,
+      correctionRate: getInput("correctionRate").value,
+      correctionTime: getInput("correctionTime").value,
+      hourlyRate: getInput("hourlyRate").value,
+      licenses: getInput("licenses").value,
+      variable: getInput("variable").value,
+      implementation: getInput("implementation").value,
+      training: getInput("training").value,
+      incidents: getInput("incidents").value,
+      currency: getInput("currency").value,
+    });
+    const data = latestCalculation;
 
-    const averageCorrection = (values.correctionRate / 100) * values.correctionTime;
-    const minutesSaved = values.before - (values.withAi + values.review + averageCorrection);
-    const valuePerUnit = (minutesSaved / 60) * values.hourlyRate;
-    const grossValue = valuePerUnit * values.volume;
-    const monthlyCost =
-      values.licenses +
-      values.variable +
-      values.implementation +
-      values.training +
-      values.incidents;
-    const netBenefit = grossValue - monthlyCost;
-    const breakEven = valuePerUnit > 0 ? Math.ceil(monthlyCost / valuePerUnit) : null;
+    result("minutesSaved").textContent = `${formatNumber(data.minutesSaved)} min`;
+    result("grossValue").textContent = formatMoney(data.grossValue, data.currency);
+    result("monthlyCost").textContent = formatMoney(data.monthlyCost, data.currency);
+    result("netBenefit").textContent = formatMoney(data.netBenefit, data.currency);
+    result("breakEven").textContent =
+      data.breakEven === null ? "No alcanzable" : `${formatNumber(data.breakEven)} unidades/mes`;
 
-    latestCalculation = {
-      ...values,
-      averageCorrection,
-      minutesSaved,
-      valuePerUnit,
-      grossValue,
-      monthlyCost,
-      netBenefit,
-      breakEven,
-    };
-
-    result("minutesSaved").textContent = `${formatNumber(minutesSaved)} min`;
-    result("grossValue").textContent = formatMoney(grossValue, values.currency);
-    result("monthlyCost").textContent = formatMoney(monthlyCost, values.currency);
-    result("netBenefit").textContent = formatMoney(netBenefit, values.currency);
-    result("breakEven").textContent = breakEven === null ? "No alcanzable" : `${formatNumber(breakEven)} unidades/mes`;
-
-    if (minutesSaved <= 0) {
+    if (data.status === "no_time_savings") {
       status.textContent = "El flujo no ahorra tiempo por unidad; el punto de equilibrio no es alcanzable con estos datos.";
-    } else if (netBenefit > 0) {
+    } else if (data.status === "positive") {
       status.textContent = "El beneficio neto estimado es positivo. Confirma calidad, demanda y riesgos antes de decidir.";
-    } else if (netBenefit === 0) {
+    } else if (data.status === "break_even") {
       status.textContent = "El escenario está exactamente en equilibrio antes de impuestos y riesgos no cuantificados.";
     } else {
       status.textContent = "El costo mensual supera el valor del tiempo ahorrado con estos datos.";
@@ -226,7 +342,7 @@ if (costCalculator) {
     const data = latestCalculation;
     const rows = [
       ["campo", "valor", "unidad_o_moneda"],
-      ["fecha_de_revision_de_la_calculadora", "2026-08-12", "AAAA-MM-DD"],
+      ["fecha_de_revision_de_la_calculadora", "2026-09-21", "AAAA-MM-DD"],
       ["unidades_mensuales", data.volume, "unidades"],
       ["tiempo_anterior_por_unidad", data.before, "minutos"],
       ["tiempo_con_ia_por_unidad", data.withAi, "minutos"],
@@ -251,7 +367,7 @@ if (costCalculator) {
     const url = URL.createObjectURL(new Blob([csv], { type: "text/csv;charset=utf-8" }));
     const link = document.createElement("a");
     link.href = url;
-    link.download = "calculo-costo-real-ia-2026-08-12.csv";
+    link.download = "calculo-costo-real-ia-2026-09-21.csv";
     document.body.appendChild(link);
     link.click();
     link.remove();
@@ -293,67 +409,22 @@ if (dataAssessment) {
   };
 
   const renderAssessment = () => {
-    const selected = new Set(kinds.filter((input) => input.checked).map((input) => input.value));
-
-    if (selected.size === 0) {
-      result.dataset.level = "empty";
-      level.textContent = "Falta clasificar";
-      title.textContent = "Selecciona al menos una categoría";
-      message.textContent = "No introduzcas contenido real en este formulario.";
-      renderActions(["Describe la entrada por categorías, sin copiar datos."]);
-      return;
-    }
-
-    if (selected.has("secret") || selected.has("regulated")) {
-      result.dataset.level = "stop";
-      level.textContent = "Detener y escalar";
-      title.textContent = "No pegues esta información";
-      message.textContent = "La entrada incluye secretos técnicos o una categoría que necesita revisión especializada.";
-      renderActions([
-        "Usa el canal y la persona responsable definidos por tu organización.",
-        "Si ya compartiste una credencial, revócala y reporta el incidente.",
-        "Prueba el flujo con datos ficticios mientras se evalúa el uso real.",
-      ]);
-      return;
-    }
-
-    if (selected.has("personal") || selected.has("confidential")) {
-      result.dataset.level = "minimize";
-      level.textContent = "Minimizar y autorizar";
-      title.textContent = approvedEnvironment.checked ? "Reduce los datos antes de continuar" : "No uses este entorno todavía";
-      message.textContent = "La aprobación de una herramienta no elimina la necesidad de retirar campos y limitar el propósito.";
-      renderActions([
-        "Elimina identificadores y campos que no cambian el resultado.",
-        "Confirma que el plan y esta categoría de datos estén aprobados.",
-        externalAction.checked ? "Exige revisión humana antes de publicar, decidir o ejecutar." : "Registra propósito, responsable y fecha de revisión.",
-      ]);
-      return;
-    }
-
-    if (selected.has("internal") || !approvedEnvironment.checked) {
-      result.dataset.level = "caution";
-      level.textContent = "Comprobar el entorno";
-      title.textContent = "Continúa solo en una herramienta aprobada";
-      message.textContent = "La información no pública necesita una decisión explícita sobre cuenta, plan, retención y acceso.";
-      renderActions([
-        "Confirma herramienta, plan, cuenta y controles de acceso.",
-        "Usa una muestra mínima y evita conectores innecesarios.",
-        externalAction.checked ? "Añade revisión humana antes de cualquier acción externa." : "Conserva evidencia de la aprobación.",
-      ]);
-      return;
-    }
-
-    result.dataset.level = "continue";
-    level.textContent = "Continuar con límites";
-    title.textContent = "La entrada parece pública o ficticia";
-    message.textContent = "Todavía debes comprobar fuente, licencia, datos incrustados y la exactitud de la salida.";
-    renderActions([
-      "Confirma que no existan comentarios, metadatos o identificadores ocultos.",
-      "Mantén la muestra necesaria para la tarea.",
-      externalAction.checked ? "Revisa la salida antes de publicarla o ejecutar acciones." : "Documenta el alcance de la prueba.",
-    ]);
+    const assessment = assessDataSelection({
+      kinds: kinds.filter((input) => input.checked).map((input) => input.value),
+      approvedEnvironment: approvedEnvironment.checked,
+      externalAction: externalAction.checked,
+    });
+    result.dataset.level = assessment.level;
+    level.textContent = assessment.label;
+    title.textContent = assessment.title;
+    message.textContent = assessment.message;
+    renderActions(assessment.actions);
   };
 
   dataAssessment.addEventListener("change", renderAssessment);
   renderAssessment();
+}
+
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = { calculateWeightedScore, calculateCostModel, assessDataSelection };
 }

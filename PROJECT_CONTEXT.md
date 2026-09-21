@@ -1,14 +1,14 @@
 # Contexto del proyecto
 
-Última actualización: 2026-08-28
+Última actualización: 2026-09-21
 
 ## Objetivo actual
 
-Corregir el rechazo repetido de AdSense por “contenido de poco valor”, confirmar que Google conoce las seis guías y preparar una nueva revisión solo cuando exista evidencia de indexación y rastreo.
+Salir del ciclo de rechazos de AdSense por “contenido de poco valor” mediante evidencia real de indexación, utilidad original y audiencia antes de solicitar otra revisión.
 
 ## Estado actual
 
-El código fuente está disponible en este workspace y el remoto es `https://github.com/ssebastiian/myhome.git`. El 2026-08-28 AdSense volvió a indicar “contenido de poco valor”; el usuario informa que es la décima revisión. El código ya contiene seis guías extensas y diferenciadas, pero todavía no existe evidencia disponible en esta sesión de que las seis estén indexadas. Search Console mostró fallos temporales de obtención al probar `/pages/about` y al reenviar `sitemap.xml`. El informe del sitemap conserva la última lectura correcta del 2026-08-19 y 14 páginas descubiertas. Las comprobaciones públicas inmediatamente posteriores no reprodujeron los errores. El cambio de AdSense fue desplegado por el usuario en el commit `ad574ce`; no se hicieron despliegues adicionales.
+El código fuente está disponible en este workspace y el remoto es `https://github.com/ssebastiian/myhome.git`. El 2026-09-21 el usuario informó un decimoquinto rechazo con el mismo motivo de AdSense y confirmó que la validación de Search Console ya fue completada; no se guardaron exportaciones de rendimiento en el repositorio. La base técnica y editorial contiene seis guías extensas, siete descargas, tres herramientas locales, navegación clara, autor, política editorial, sitemap y páginas legales. Para reforzar evidencia propia se publicaron localmente pruebas reproducibles de la rúbrica, la calculadora de costos y el orientador: 10 comprobaciones automatizadas cubren 15 escenarios y todas pasan. Los cambios todavía no están desplegados. El riesgo restante es demostrar interés sostenido de usuarios y experiencia real con tareas o productos externos, sin inventar casos.
 
 ## Trabajo completado
 
@@ -27,6 +27,14 @@ El código fuente está disponible en este workspace y el remoto es `https://git
 - Se actualizó la política de privacidad para indicar que el cargador publicitario queda limitado a las seis guías editoriales.
 - Se diagnosticó el fallo de inspección de `/pages/about` sin modificar el sitio: no se encontró una regla o respuesta distinta para esa URL.
 - Se comparó el sitemap publicado con el repositorio después del aviso “No se ha podido obtener”: ambos archivos son idénticos y válidos.
+- Se auditó el decimoquinto rechazo contra las políticas y guías oficiales vigentes de AdSense y Google Search al 2026-09-21.
+- Se comprobó mediante búsqueda pública que Google ya descubre varias páginas importantes de TopiApps; la hipótesis de desindexación total queda descartada.
+- Se revisaron de nuevo autoría, política editorial, estructura, inventario, sitemap y presencia de analítica en el repositorio sin modificar el sitio.
+- El usuario confirmó que completó la validación pendiente en Search Console; `ADSENSE_REVIEW_CHECKLIST.md` quedó actualizado con esa confirmación.
+- Se separó la lógica de las tres herramientas locales de su interfaz para poder probar exactamente las mismas funciones que usa el navegador.
+- Se añadió `tests/main.test.js` con 10 comprobaciones automatizadas que cubren valores normales, fronteras, entradas fuera de rango, ausencia de ahorro, equilibrio, beneficio negativo y las rutas del orientador.
+- Se creó `downloads/registro-pruebas-herramientas-locales.csv` con 15 escenarios, entradas resumidas, resultado esperado, observado, estado, método y límite.
+- Se publicaron los resultados y sus límites en las guías de evaluación, costos y clasificación de datos; también se enlazaron desde Recursos y el perfil editorial.
 
 ## Decisiones y restricciones
 
@@ -36,11 +44,15 @@ El código fuente está disponible en este workspace y el remoto es `https://git
 - No solicitar una nueva revisión de AdSense hasta comprobar indexación, consentimiento y configuración de dominio.
 - Añadir pocas guías con utilidad demostrable —herramienta, conjunto de datos, prueba o procedimiento— en lugar de aumentar el volumen por sí mismo.
 - No inventar credenciales, experiencia, cifras o pruebas para reforzar la autoría; pedir evidencia real al usuario cuando haga falta.
-- No responder al décimo rechazo con cambios cosméticos, relleno ni artículos masivos. La siguiente solicitud debe esperar a conocer la indexación de cada guía.
+- No responder al decimoquinto rechazo con cambios cosméticos, relleno ni artículos masivos.
 - Mantener anuncios solo en páginas cuyo contenido editorial sea el centro de atención. La portada se verifica mediante `google-adsense-account`, método admitido por Google cuando no se desea cargar anuncios allí.
-- No realizar despliegues en esta tarea, por solicitud expresa del usuario.
+- No desplegar ni solicitar una nueva revisión de AdSense hasta que el usuario revise los cambios locales.
 - No modificar `robots.txt` por un único fallo de la prueba en vivo cuando el archivo y la página responden correctamente; volver a probar y escalar solo si el error persiste o afecta más URLs.
 - No revertir ni regenerar `sitemap.xml`: el único cambio del commit `ad574ce` dentro del sitemap fue actualizar la fecha real de modificación de privacidad; el formato y las URLs no cambiaron.
+- No tratar el decimoquinto mensaje como diagnóstico preciso de una URL: “contenido de poco valor” es una categoría amplia y debe contrastarse con Search Console y datos de audiencia.
+- No volver a solicitar revisión por cambios cosméticos, más palabras o nuevas páginas legales. La próxima mejora debe aportar evidencia propia: pruebas ejecutadas, resultados, capturas o datos descargables reproducibles.
+- La declaración de apoyo de IA no es por sí misma la causa del rechazo y debe mantenerse por transparencia; el problema probable es que gran parte del valor actual puede percibirse como síntesis de fuentes y escenarios ficticios, sin suficiente experiencia de primera mano demostrable.
+- No existe un número oficial mínimo de artículos, visitas ni semanas que garantice aprobación. Usar señales operativas internas sin presentarlas como requisitos de Google.
 
 ## Archivos importantes
 
@@ -50,6 +62,11 @@ El código fuente está disponible en este workspace y el remoto es `https://git
 - `articles/que-datos-puedes-compartir-con-una-ia.html`: nueva guía de privacidad y clasificación de datos.
 - `downloads/matriz-datos-antes-de-usar-ia.csv`: hoja editable asociada a la guía.
 - `main.js`: incluye la lógica del orientador local de datos.
+- `tests/main.test.js`: pruebas automatizadas de la rúbrica, calculadora de costos y orientador.
+- `downloads/registro-pruebas-herramientas-locales.csv`: evidencia pública de 15 escenarios ejecutados.
+- `articles/como-evaluar-herramienta-ia-antes-de-pagar.html`: resultados verificables de la rúbrica ponderada.
+- `articles/calcular-costo-real-ia-en-un-equipo.html`: resultados verificables de cálculo y punto de equilibrio.
+- `pages/autor-sebastian-carrillo.html`: alcance y enlaces a pruebas publicadas sin atribuir credenciales no demostradas.
 - `styles.css`: ficha de evidencia y componentes del orientador.
 - `index.html`: conserva la verificación de AdSense, pero ya no carga el script publicitario.
 - `pages/privacy.html`: refleja el alcance real del cargador de AdSense y la fecha de revisión actual.
@@ -66,9 +83,8 @@ El código fuente está disponible en este workspace y el remoto es `https://git
 - Las redirecciones conservan rutas internas y parámetros de consulta.
 - Search Console confirmó el 2026-08-19 que `https://topiapps.com/` está indexada y se sirve por HTTPS.
 - En la revisión documentada del 2026-08-19, AdSense mostraba dos mensajes activos para reglamentos europeos y uno para normativas estatales de EE. UU.; la CMP no forma parte del código estático del repositorio.
-- La búsqueda pública usada en la auditoría no mostró páginas de `topiapps.com`; Search Console debe confirmar el estado real de indexación.
 - PageSpeed Insights no devolvió métricas por agotamiento de la cuota pública de la API.
-- El repositorio contiene ahora 6 artículos, 6 descargas y 6 URLs de artículos en el sitemap.
+- El repositorio contiene ahora 6 artículos, 7 descargas y 6 URLs de artículos en el sitemap.
 - `node --check main.js` terminó correctamente.
 - `xmllint --noout sitemap.xml` terminó correctamente.
 - Los 15 bloques JSON-LD de los archivos HTML se analizaron correctamente.
@@ -79,8 +95,6 @@ El código fuente está disponible en este workspace y el remoto es `https://git
 - En producción, el cargador de AdSense aparece únicamente en la portada y las seis guías; está ausente en las ocho páginas auxiliares y en la página 404.
 - La guía nueva y el sitemap actualizado ya están desplegados públicamente.
 - Las seis guías contienen entre 1.351 y 1.958 palabras visibles; el solapamiento de secuencias de ocho palabras entre pares fue de 1,22 % a 3,80 %, por lo que no se detectó duplicación interna sustancial.
-- Una búsqueda pública `site:topiapps.com` no devolvió resultados en la herramienta consultada. No es una prueba definitiva de desindexación, pero refuerza la necesidad de revisar Search Console.
-- Search Console no pudo revisarse en el navegador disponible porque no había una sesión iniciada; no se modificó ninguna cuenta.
 - La portada, la biblioteca, una guía, `sitemap.xml` y `robots.txt` respondieron HTTP `200` en la comprobación pública.
 - En local, la portada conserva `google-adsense-account` y no carga `adsbygoogle`; una guía sí carga el script y las páginas auxiliares no lo hacen.
 - `node --check main.js`, `xmllint --noout sitemap.xml`, los 15 bloques JSON-LD, los enlaces internos y `git diff --check` finalizaron sin errores.
@@ -89,19 +103,23 @@ El código fuente está disponible en este workspace y el remoto es `https://git
 - Las variantes HTTP y `www` de `robots.txt` y `/pages/about` llegaron a la URL HTTPS canónica con una sola redirección y terminaron en `200`.
 - La comprobación IPv6 desde el entorno local no tuvo conectividad para ninguna de las dos rutas; al afectar por igual a `robots.txt` y `/pages/about`, no demuestra un fallo específico del sitio ni de esa página.
 - El sitemap publicado responde `200`, `Content-Type: application/xml`, 1.839 bytes, XML válido y sin BOM; su SHA-256 coincide con el archivo local.
-- El sitemap publicado contiene 15 URLs y todas respondieron `200`. Search Console muestra 14 porque conserva la lectura anterior del 2026-08-19.
+- El sitemap publicado contenía 15 URLs y todas respondieron `200` en la comprobación documentada.
 - Googlebot, Google Inspection Tool y Mediapartners-Google descargaron el sitemap con `200`; cinco descargas consecutivas adicionales también devolvieron `200`.
 - Google Public DNS y Cloudflare DNS resolvieron correctamente los registros A y AAAA de `topiapps.com`; los dos destinos IPv4 sirvieron `sitemap.xml` y `robots.txt` con `200`.
+- El 2026-09-21 la búsqueda pública devolvió resultados individuales para portada, biblioteca, recursos, Nosotros, política editorial y al menos dos de las seis guías; las consultas exactas no devolvieron de forma fiable las otras cuatro guías. Es una señal parcial, no sustituto de Inspección de URLs.
+- El sitemap sigue declarando 15 URLs: 6 guías y 9 páginas estructurales/editoriales. El sitio ofrece además 7 archivos descargables enlazados desde las guías y recursos.
+- No se encontró integración de Google Analytics, Matomo, Plausible, Umami ni Cloudflare Web Analytics en el HTML o JavaScript local; no hay datos de audiencia disponibles en el repositorio.
+- `git status --short` estaba limpio antes de esta actualización de contexto.
+- `node --test tests/main.test.js` completó 13/13 pruebas: 10 funcionales sobre 15 escenarios y 3 estructurales para JSON-LD, enlaces/fragmentos e identificadores únicos.
+- La comprobación local en navegador confirmó el caso de costo sin ahorro (`−1 min`, punto de equilibrio no alcanzable), el umbral de rúbrica (`80/100`) y la ruta del orientador para secretos (`Detener y escalar`).
 
 ## Pendientes o bloqueos
 
-- Iniciar sesión en Search Console, comprobar que `sitemap.xml` fue leído e inspeccionar por separado la portada y las seis guías.
-- Repetir “Probar URL publicada” para `/pages/about`; si el mismo error continúa durante 24 horas o aparece en varias URLs, revisar Estadísticas de rastreo de Search Console y los eventos de seguridad de Cloudflare antes de cambiar reglas.
-- Dar a Google unos días para reintentar la obtención del sitemap. Si el estado sigue igual, abrir el detalle del error, probar la URL exacta del sitemap en vivo y revisar Acciones manuales, Estadísticas de rastreo y eventos de Cloudflare antes de reenviarlo otra vez.
 - Obtener métricas reales de Search Console, AdSense y, si se instala, analítica.
 - Completar el perfil de autor con experiencia y enlaces externos solo si el usuario aporta datos comprobables.
-- Desplegar los cambios locales únicamente cuando el usuario decida hacerlo; esta tarea no autorizó despliegue.
+- Desplegar los cambios locales y solicitar recrawl de las tres guías actualizadas, Recursos, Autor, Biblioteca y portada.
+- Añadir en una fase posterior pruebas reales de tareas o productos externos únicamente cuando el usuario pueda ejecutarlas y documentarlas con evidencia propia.
 
 ## Próximo paso recomendado
 
-Cuando el usuario quiera continuar, desplegar los cambios y usar Search Console para confirmar que las seis guías están descubiertas/indexadas. No solicitar otra revisión de AdSense hasta conocer ese estado y dejar tiempo para que Google procese los cambios.
+Revisar y desplegar las mejoras de evidencia; después solicitar recrawl de las URLs modificadas y observar rendimiento orgánico durante varias semanas. No solicitar otra revisión de AdSense hasta que Google haya procesado los cambios y exista una señal sostenida de uso real.

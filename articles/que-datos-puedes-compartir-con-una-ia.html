@@ -26,7 +26,7 @@
         "url": "https://topiapps.com/articles/que-datos-puedes-compartir-con-una-ia",
         "image": "https://topiapps.com/assets/hero-topiapps.png",
         "datePublished": "2026-08-19",
-        "dateModified": "2026-08-19",
+        "dateModified": "2026-09-21",
         "author": {"@type": "Person", "name": "Sebastián Carrillo", "url": "https://topiapps.com/pages/autor-sebastian-carrillo"},
         "publisher": {"@type": "Organization", "name": "TopiApps", "url": "https://topiapps.com/"},
         "mainEntityOfPage": "https://topiapps.com/articles/que-datos-puedes-compartir-con-una-ia"
@@ -44,9 +44,10 @@
           <p class="eyebrow">Datos antes que prompts</p>
           <h1>Qué datos puedes compartir con una IA</h1>
           <p class="page-intro">Una matriz para detectar identificadores, secretos e información interna antes de pegarla, reducir lo que compartes y decidir cuándo debes detenerte.</p>
-          <p class="mini-meta"><span>Por <a href="/pages/autor-sebastian-carrillo">Sebastián Carrillo</a></span><span>14 min de lectura</span><span>Publicado: 19 de agosto de 2026</span><span>Orientador local</span></p>
+          <p class="mini-meta"><span>Por <a href="/pages/autor-sebastian-carrillo">Sebastián Carrillo</a></span><span>14 min de lectura</span><span>Publicado: 19 de agosto de 2026</span><span>Actualizado: 21 de septiembre de 2026</span><span>Orientador local</span></p>
           <p class="article-disclosure"><strong>Transparencia de producción:</strong> se utilizó IA como apoyo para organizar y revisar el borrador. La selección de fuentes, la matriz y la publicación quedan bajo responsabilidad editorial de Sebastián Carrillo.</p>
           <p class="article-disclosure"><strong>Alcance:</strong> la matriz es una ayuda editorial, no una clasificación legal ni una autorización para tratar datos. Debe adaptarse a contratos, políticas, sector y jurisdicción.</p>
+          <p class="article-disclosure"><strong>Comprobación técnica:</strong> las seis rutas del orientador se probaron el 21 de septiembre de 2026 sin introducir información personal ni conectarse a servicios externos.</p>
         </div>
       </section>
       <section class="section">
@@ -60,7 +61,7 @@
             <div class="key-takeaway"><h2>La regla más segura</h2><p>Si la tarea puede resolverse con menos datos, comparte menos. Si contiene credenciales, secretos o información especialmente protegida, no la pegues: detén el flujo y usa el canal autorizado de tu organización.</p></div>
             <p>Copiar información en un asistente parece una acción pequeña, pero puede crear una nueva transferencia, copia, registro o permiso. El riesgo no depende solo del nombre de la herramienta. También cambia según el plan contratado, la configuración, la retención, los conectores activos, las personas con acceso y el uso que se dará a la respuesta.</p>
             <p>Por eso esta guía empieza antes del prompt. No pide que pegues el contenido para “analizarlo”; solo te ayuda a reconocer categorías y escoger una ruta. El orientador funciona en tu navegador, no almacena respuestas y no convierte una decisión sensible en un puntaje engañoso.</p>
-            <nav class="method-box" aria-label="Contenido del artículo"><h2>Ruta de clasificación</h2><ol class="content-index"><li><a href="#inventario">Describe la tarea sin copiar los datos</a></li><li><a href="#categorias">Clasifica cada campo</a></li><li><a href="#orientador">Usa el orientador local</a></li><li><a href="#minimizar">Minimiza y separa identificadores</a></li><li><a href="#proveedor">Comprueba el entorno</a></li><li><a href="#ejemplo">Documenta la decisión</a></li></ol></nav>
+            <nav class="method-box" aria-label="Contenido del artículo"><h2>Ruta de clasificación</h2><ol class="content-index"><li><a href="#inventario">Describe la tarea sin copiar los datos</a></li><li><a href="#categorias">Clasifica cada campo</a></li><li><a href="#orientador">Usa el orientador local</a></li><li><a href="#pruebas-orientador">Revisa las pruebas ejecutadas</a></li><li><a href="#minimizar">Minimiza y separa identificadores</a></li><li><a href="#proveedor">Comprueba el entorno</a></li><li><a href="#ejemplo">Documenta la decisión</a></li></ol></nav>
 
             <h2 id="inventario">1. Describe la tarea sin copiar los datos</h2>
             <p>Escribe primero el propósito en una frase abstracta: “resumir diez respuestas de una encuesta”, “clasificar solicitudes por tema” o “corregir el tono de un correo”. Después pregunta qué parte de la información es realmente necesaria. Para corregir tono quizá baste un párrafo ficticio con la misma estructura; para clasificar temas pueden bastar etiquetas ya anonimizadas.</p>
@@ -96,6 +97,22 @@
               <div class="risk-result" data-data-result aria-live="polite"><span data-data-level>Falta clasificar</span><strong data-data-title>Selecciona al menos una categoría</strong><p data-data-message>No introduzcas contenido real en este formulario.</p><ul data-data-actions><li>Describe la entrada por categorías, sin copiar datos.</li></ul></div>
             </form>
             <p><a class="button secondary download-link" href="/downloads/matriz-datos-antes-de-usar-ia.csv" download>Descargar matriz CSV</a></p>
+
+            <h2 id="pruebas-orientador">Pruebas ejecutadas sobre el orientador</h2>
+            <p>El 21 de septiembre de 2026 se ejecutaron rutas normales y de mayor precaución sobre la misma función que responde al formulario. Las entradas fueron nombres de categorías; la prueba no utilizó documentos, nombres, correos ni otros datos reales.</p>
+            <table class="review-table">
+              <thead><tr><th>Selección</th><th>Ruta esperada</th><th>Ruta observada</th><th>Estado</th></tr></thead>
+              <tbody>
+                <tr><th>Ninguna categoría</th><td>Falta clasificar</td><td>Falta clasificar</td><td>Pasa</td></tr>
+                <tr><th>Secreto técnico</th><td>Detener y escalar</td><td>Detener y escalar</td><td>Pasa</td></tr>
+                <tr><th>Categoría especialmente protegida</th><td>Detener y escalar</td><td>Detener y escalar</td><td>Pasa</td></tr>
+                <tr><th>Dato personal en entorno aprobado</th><td>Minimizar y autorizar</td><td>Minimizar y autorizar</td><td>Pasa</td></tr>
+                <tr><th>Información interna sin entorno aprobado</th><td>Comprobar el entorno</td><td>Comprobar el entorno</td><td>Pasa</td></tr>
+                <tr><th>Información pública en entorno aprobado</th><td>Continuar con límites</td><td>Continuar con límites</td><td>Pasa</td></tr>
+              </tbody>
+            </table>
+            <p>La prueba confirma que el árbol de decisión aplica las reglas publicadas. No valida que una entrada concreta pueda compartirse ni sustituye la autorización de una organización.</p>
+            <p><a class="button secondary download-link" href="/downloads/registro-pruebas-herramientas-locales.csv" download>Descargar registro completo de pruebas</a></p>
 
             <h2 id="minimizar">4. Minimiza antes de pensar en anonimizar</h2>
             <p>La primera opción no es ocultar todo el archivo: es evitar enviarlo. Elimina columnas que la tarea no necesita, reduce el periodo, usa una muestra y reemplaza texto real por ejemplos ficticios cuando quieras probar el flujo. Una tarea de formato rara vez necesita nombres, correos o cifras exactas.</p>

@@ -26,7 +26,7 @@
         "url": "https://topiapps.com/articles/calcular-costo-real-ia-en-un-equipo",
         "image": "https://topiapps.com/assets/hero-topiapps.png",
         "datePublished": "2026-07-15",
-        "dateModified": "2026-08-12",
+        "dateModified": "2026-09-21",
         "author": {"@type": "Person", "name": "Sebastián Carrillo", "url": "https://topiapps.com/pages/autor-sebastian-carrillo"},
         "publisher": {"@type": "Organization", "name": "TopiApps", "url": "https://topiapps.com/"},
         "mainEntityOfPage": "https://topiapps.com/articles/calcular-costo-real-ia-en-un-equipo"
@@ -44,9 +44,10 @@
           <p class="eyebrow">Decisiones de compra</p>
           <h1>Cómo calcular el costo real de usar IA en un equipo</h1>
           <p class="page-intro">La suscripción es solo una parte. Esta plantilla suma licencias, consumo, integración, aprendizaje, revisión y riesgo para estimar un punto de equilibrio realista.</p>
-          <p class="mini-meta"><span>Por <a href="/pages/autor-sebastian-carrillo">Sebastián Carrillo</a></span><span>11 min de lectura</span><span>Publicado: <time datetime="2026-07-15">15 de julio de 2026</time></span><span>Actualizado: <time datetime="2026-08-12">12 de agosto de 2026</time></span></p>
+          <p class="mini-meta"><span>Por <a href="/pages/autor-sebastian-carrillo">Sebastián Carrillo</a></span><span>11 min de lectura</span><span>Publicado: <time datetime="2026-07-15">15 de julio de 2026</time></span><span>Actualizado: <time datetime="2026-09-21">21 de septiembre de 2026</time></span></p>
           <p class="article-disclosure"><strong>Transparencia de producción:</strong> se utilizó IA como apoyo para organizar y revisar el borrador. La selección de fuentes, los límites y la publicación quedan bajo responsabilidad editorial de Sebastián Carrillo.</p>
           <p class="article-disclosure">Modelo editorial original con cifras ficticias para explicar el cálculo. No constituye asesoría financiera ni una cotización de proveedores.</p>
+          <p class="article-disclosure"><strong>Comprobación técnica:</strong> la función de cálculo se probó el 21 de septiembre de 2026 con un caso base, ausencia de ahorro, equilibrio exacto y beneficio negativo.</p>
         </div>
       </section>
       <section class="section">
@@ -57,7 +58,7 @@
             <p>Una herramienta puede costar poco por usuario y resultar cara para el equipo. También puede parecer costosa y pagarse sola si elimina una tarea repetitiva sin crear errores nuevos. La diferencia no está en el anuncio del proveedor, sino en el proceso donde se incorpora.</p>
             <p>El cálculo falla cuando solo multiplica precio por número de personas. Quedan fuera el tiempo de configurar, la capacitación, las integraciones, la revisión humana y el trabajo que aparece cuando una respuesta sale mal. Esta guía propone un modelo que puedes llevar a una hoja de cálculo sin depender de una marca concreta.</p>
 
-            <nav class="method-box" aria-label="Contenido del artículo"><h2>Ruta de cálculo</h2><ol class="content-index"><li><a href="#unidad">Define una unidad de trabajo</a></li><li><a href="#costos">Registra seis grupos de costo</a></li><li><a href="#beneficio">Calcula el beneficio útil</a></li><li><a href="#ejemplo">Revisa un escenario completo</a></li><li><a href="#calculadora-costos">Calcula con tus propios datos</a></li><li><a href="#prueba">Diseña una prueba de 30 días</a></li><li><a href="#plantilla">Copia la plantilla</a></li></ol></nav>
+            <nav class="method-box" aria-label="Contenido del artículo"><h2>Ruta de cálculo</h2><ol class="content-index"><li><a href="#unidad">Define una unidad de trabajo</a></li><li><a href="#costos">Registra seis grupos de costo</a></li><li><a href="#beneficio">Calcula el beneficio útil</a></li><li><a href="#ejemplo">Revisa un escenario completo</a></li><li><a href="#calculadora-costos">Calcula con tus propios datos</a></li><li><a href="#pruebas-costos">Revisa las pruebas ejecutadas</a></li><li><a href="#prueba">Diseña una prueba de 30 días</a></li><li><a href="#plantilla">Copia la plantilla</a></li></ol></nav>
 
             <h2 id="unidad">1. Define la unidad de trabajo antes de hablar de ahorro</h2>
             <p>“Usar IA para marketing” es demasiado amplio. Elige una unidad observable: preparar un borrador de correo, clasificar un ticket, resumir una entrevista, limpiar una tabla o convertir notas en una minuta. Una unidad clara permite medir cuántas veces ocurre, cuánto tarda hoy y qué significa terminarla bien.</p>
@@ -169,6 +170,20 @@
             </form>
             <p><a class="button secondary download-link" href="/downloads/plantilla-costo-real-ia.csv" download>Descargar modelo con fórmulas</a></p>
             <p>El caso parece viable, pero no es una aprobación automática. El equipo debe confirmar que la calidad no baja, que el tiempo liberado se utiliza y que los datos enviados cumplen su política. Si la revisión real sube a cinco minutos, el beneficio cambia de forma importante.</p>
+
+            <h2 id="pruebas-costos">Pruebas ejecutadas sobre la calculadora</h2>
+            <p>La lógica se aisló de la interfaz y se ejecutó de forma automatizada el 21 de septiembre de 2026. Los valores observados se compararon con operaciones independientes escritas antes de ejecutar la prueba.</p>
+            <table class="review-table">
+              <thead><tr><th>Caso</th><th>Resultado esperado</th><th>Resultado observado</th><th>Estado</th></tr></thead>
+              <tbody>
+                <tr><th>Ejemplo publicado</th><td>2,5 min; 375 UM brutos; 95 UM netos; equilibrio en 448</td><td>2,5 min; 375 UM brutos; 95 UM netos; equilibrio en 448</td><td>Pasa</td></tr>
+                <tr><th>Sin ahorro de tiempo</th><td>−1 min; equilibrio no alcanzable</td><td>−1 min; equilibrio no alcanzable</td><td>Pasa</td></tr>
+                <tr><th>Equilibrio exacto</th><td>0 UM netas; equilibrio en 100 unidades</td><td>0 UM netas; equilibrio en 100 unidades</td><td>Pasa</td></tr>
+                <tr><th>Costo mayor que valor</th><td>−100 UM netas; equilibrio en 120 unidades</td><td>−100 UM netas; equilibrio en 120 unidades</td><td>Pasa</td></tr>
+              </tbody>
+            </table>
+            <p>Las pruebas confirman las operaciones y los estados de la interfaz. No demuestran que las cifras ficticias correspondan a un equipo real ni sustituyen un piloto con tiempos medidos.</p>
+            <p><a class="button secondary download-link" href="/downloads/registro-pruebas-herramientas-locales.csv" download>Descargar entradas y resultados de las pruebas</a></p>
 
             <h2>5. Haz análisis de sensibilidad</h2>
             <p>No presentes una sola cifra. Cambia las tres variables más frágiles: volumen, minutos ahorrados y consumo. Crea un escenario conservador, uno esperado y uno alto. Si la compra solo funciona en el escenario optimista, trátala como experimento, no como ahorro comprometido.</p>

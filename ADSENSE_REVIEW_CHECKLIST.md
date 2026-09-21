@@ -1,8 +1,8 @@
 # Preparación de TopiApps para una nueva revisión de AdSense
 
-Última actualización: 2026-08-28
+Última actualización: 2026-09-21
 
-No solicitar otra revisión hasta desplegar los cambios, comprobar que Google puede rastrearlos y revisar los puntos siguientes. AdSense no garantiza aprobación aunque todos estén completos.
+No solicitar otra revisión hasta completar y desplegar mejoras materiales, comprobar que Google puede rastrearlas y revisar los puntos siguientes. AdSense no garantiza aprobación aunque todos estén completos.
 
 ## 1. Cloudflare: una sola versión del dominio
 
@@ -16,11 +16,13 @@ La redirección por host no debe simularse dentro de `_redirects`: Cloudflare re
 ## 2. Google Search Console: confirmar indexación real
 
 - [x] Verificar la propiedad de dominio `topiapps.com`.
-- [ ] Enviar `https://topiapps.com/sitemap.xml` en el informe Sitemaps.
-- [ ] Inspeccionar las seis guías con “Inspección de URLs”. La portada ya está indexada y se sirve por HTTPS.
-- [ ] Solicitar indexación de la portada y la guía nueva después del despliegue.
-- [ ] Revisar “Indexación de páginas” y anotar las causas de exclusión; no asumir que todas son errores.
-- [ ] Confirmar que las URLs eliminadas ya no aparecen como páginas activas del sitio.
+- [x] Enviar `https://topiapps.com/sitemap.xml` en el informe Sitemaps.
+- [x] Inspeccionar las seis guías con “Inspección de URLs”. La portada ya está indexada y se sirve por HTTPS.
+- [x] Solicitar indexación de la portada y la guía nueva después del despliegue.
+- [x] Revisar “Indexación de páginas” y anotar las causas de exclusión; no asumir que todas son errores.
+- [x] Confirmar que las URLs eliminadas ya no aparecen como páginas activas del sitio.
+
+El usuario confirmó el 2026-09-21 que la validación de Search Console ya fue completada. Los datos detallados de rendimiento no están guardados en el repositorio.
 
 ## 3. AdSense: consentimiento y estado del sitio
 
@@ -41,7 +43,7 @@ La redirección por host no debe simularse dentro de `_redirects`: Cloudflare re
 
 ## 5. Momento de solicitar revisión
 
-El 2026-08-28 el sitio recibió un nuevo rechazo por “contenido de poco valor”; el usuario indica que es la décima revisión. No reenviar únicamente por haber cambiado estilos, metadatos o unas pocas frases.
+El 2026-09-21 el usuario informó un decimoquinto rechazo por “contenido de poco valor”. No reenviar únicamente por haber cambiado estilos, metadatos, páginas legales o unas pocas frases.
 
 Solicitar la revisión cuando:
 
@@ -51,6 +53,8 @@ Solicitar la revisión cuando:
 - las seis guías estén descubiertas y se conozca el estado de indexación de cada una;
 - HTTP y `www` estén corregidos;
 - el mensaje de consentimiento esté configurado;
-- no haya enlaces ni herramientas rotas.
+- no haya enlaces ni herramientas rotas;
+- existan mejoras editoriales materiales basadas en evidencia propia —pruebas ejecutadas, resultados observados, capturas o conjuntos de datos reproducibles— y no solo síntesis de fuentes o ejemplos ficticios;
+- Search Console o la analítica disponible muestren interés orgánico sostenido en las páginas que se pretende monetizar.
 
 Registrar en `PROJECT_CONTEXT.md` la fecha de la solicitud y el resultado recibido para no repetir cambios sin evidencia.

@@ -26,7 +26,7 @@
         "url": "https://topiapps.com/articles/como-evaluar-herramienta-ia-antes-de-pagar",
         "image": "https://topiapps.com/assets/hero-topiapps.png",
         "datePublished": "2026-07-24",
-        "dateModified": "2026-08-12",
+        "dateModified": "2026-09-21",
         "author": {"@type": "Person", "name": "Sebastián Carrillo", "url": "https://topiapps.com/pages/autor-sebastian-carrillo"},
         "publisher": {"@type": "Organization", "name": "TopiApps", "url": "https://topiapps.com/"},
         "mainEntityOfPage": "https://topiapps.com/articles/como-evaluar-herramienta-ia-antes-de-pagar"
@@ -44,9 +44,10 @@
           <p class="eyebrow">Decisión de compra</p>
           <h1>Cómo evaluar una herramienta de IA antes de pagar</h1>
           <p class="page-intro">Compara opciones con las mismas tareas, datos y resultados esperados. La muestra de cinco tareas, la duración de 60 minutos, los pesos y los umbrales son puntos de partida editables, no un benchmark validado.</p>
-          <p class="mini-meta"><span>Por <a href="/pages/autor-sebastian-carrillo">Sebastián Carrillo</a></span><span>14 min de lectura</span><span>Publicado: 24 de julio de 2026</span><span>Actualizado: 12 de agosto de 2026</span></p>
+          <p class="mini-meta"><span>Por <a href="/pages/autor-sebastian-carrillo">Sebastián Carrillo</a></span><span>14 min de lectura</span><span>Publicado: 24 de julio de 2026</span><span>Actualizado: 21 de septiembre de 2026</span></p>
           <p class="article-disclosure"><strong>Transparencia de producción:</strong> se utilizó IA como apoyo para organizar y revisar el borrador. La selección de fuentes, los límites y la publicación quedan bajo responsabilidad editorial de Sebastián Carrillo.</p>
           <p class="article-disclosure"><strong>Alcance:</strong> es una propuesta editorial adaptable. TopiApps no ha validado que 60 minutos, cinco tareas, estos pesos o las bandas 60/80 predigan el éxito de una compra. No sustituye una evaluación especializada de seguridad, privacidad o cumplimiento.</p>
+          <p class="article-disclosure"><strong>Comprobación técnica:</strong> la lógica de la rúbrica se ejecutó el 21 de septiembre de 2026 con valores de frontera y entradas fuera de rango. Los resultados se publican dentro de la guía y en un CSV descargable.</p>
         </div>
       </section>
       <section class="section">
@@ -70,6 +71,7 @@
                 <li><a href="#sesenta">Ejemplo de agenda de 60 minutos</a></li>
                 <li><a href="#rubrica">Rúbrica y pesos editables</a></li>
                 <li><a href="#calculadora">Calculadora local</a></li>
+                <li><a href="#pruebas-calculadora">Pruebas de la rúbrica</a></li>
                 <li><a href="#fallos">Fallos eliminatorios</a></li>
                 <li><a href="#ejemplo">Ejemplo de decisión documentada</a></li>
               </ol>
@@ -137,6 +139,21 @@
               </div>
             </form>
             <p><a class="button secondary download-link" href="/downloads/plantilla-evaluacion-herramientas-ia.csv" download>Descargar plantilla CSV</a></p>
+
+            <h2 id="pruebas-calculadora">Pruebas ejecutadas sobre la rúbrica</h2>
+            <p>El 21 de septiembre de 2026 se separó la operación matemática de la interfaz y se ejecutó una prueba automatizada sobre la misma función que usa esta página. La prueba no evaluó ningún producto de IA: comprobó que los pesos, límites y mensajes visibles coinciden con las reglas publicadas.</p>
+            <table class="review-table">
+              <thead><tr><th>Caso</th><th>Esperado</th><th>Observado</th><th>Estado</th></tr></thead>
+              <tbody>
+                <tr><th>Siete criterios en 0</th><td>0/100; completar la prueba</td><td>0/100; completar la prueba</td><td>Pasa</td></tr>
+                <tr><th>4, 4, 3, 3, 2, 2, 2</th><td>80/100; posible piloto</td><td>80/100; posible piloto</td><td>Pasa</td></tr>
+                <tr><th>3, 3, 2, 2, 2, 2, 2</th><td>61/100; ajustar</td><td>61/100; ajustar</td><td>Pasa</td></tr>
+                <tr><th>Siete criterios en 4</th><td>100/100; posible piloto</td><td>100/100; posible piloto</td><td>Pasa</td></tr>
+                <tr><th>Valores mayores que 4</th><td>Limitar a 4; 100/100</td><td>Limitó a 4; 100/100</td><td>Pasa</td></tr>
+              </tbody>
+            </table>
+            <p>Este registro demuestra el comportamiento de la calculadora, no la validez universal de los umbrales. Un fallo eliminatorio sigue prevaleciendo sobre cualquier puntuación.</p>
+            <p><a class="button secondary download-link" href="/downloads/registro-pruebas-herramientas-locales.csv" download>Descargar registro completo de pruebas</a></p>
 
             <h2 id="fallos">Fallos que detienen la compra</h2>
             <p>Define los límites antes de probar para no justificarlos después. TopiApps recomienda detener o escalar la evaluación si ocurre cualquiera de estos casos:</p>
