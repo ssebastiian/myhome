@@ -8,7 +8,7 @@ Salir del ciclo de rechazos de AdSense por “contenido de poco valor” mediant
 
 ## Estado actual
 
-El código fuente está disponible en este workspace y el remoto es `https://github.com/ssebastiian/myhome.git`. El 2026-09-21 el usuario informó un decimoquinto rechazo con el mismo motivo de AdSense y confirmó que la validación de Search Console ya fue completada; no se guardaron exportaciones de rendimiento en el repositorio. La base técnica y editorial contiene seis guías extensas, siete descargas, tres herramientas locales, navegación clara, autor, política editorial, sitemap y páginas legales. Para reforzar evidencia propia se publicaron localmente pruebas reproducibles de la rúbrica, la calculadora de costos y el orientador: 10 comprobaciones automatizadas cubren 15 escenarios y todas pasan. Los cambios todavía no están desplegados. El riesgo restante es demostrar interés sostenido de usuarios y experiencia real con tareas o productos externos, sin inventar casos.
+El código fuente está disponible en este workspace y el remoto es `https://github.com/ssebastiian/myhome.git`. El 2026-09-21 el usuario informó un decimoquinto rechazo con el mismo motivo de AdSense y confirmó que la validación de Search Console ya fue completada. El Excel de Rendimiento para 2026-06-20 a 2026-09-19 muestra 4 clics, 801 impresiones, CTR de 0,5 % y posición media 27; todavía no refleja las mejoras publicadas el 2026-09-21. Las impresiones aumentaron de 168 en los 28 días anteriores a 577 en los últimos 28 días del archivo, mientras la posición ponderada permaneció cerca de 27. La base técnica y editorial contiene seis guías extensas, siete descargas, tres herramientas locales, navegación clara, autor, política editorial, sitemap y páginas legales. Para reforzar evidencia propia se publicaron pruebas reproducibles de la rúbrica, la calculadora de costos y el orientador: 10 comprobaciones automatizadas cubren 15 escenarios y todas pasan. El commit `ce034fb` está en `main` y `origin/main`, y la presencia pública de las tres secciones de pruebas se confirmó el 2026-09-21. Las tres guías actualizadas fueron rastreadas por Google después del despliegue y están indexadas. No existe un bloqueo técnico local. El riesgo restante es convertir la visibilidad creciente en interés sostenido de usuarios y experiencia real con tareas o productos externos, sin inventar casos.
 
 ## Trabajo completado
 
@@ -35,6 +35,12 @@ El código fuente está disponible en este workspace y el remoto es `https://git
 - Se añadió `tests/main.test.js` con 10 comprobaciones automatizadas que cubren valores normales, fronteras, entradas fuera de rango, ausencia de ahorro, equilibrio, beneficio negativo y las rutas del orientador.
 - Se creó `downloads/registro-pruebas-herramientas-locales.csv` con 15 escenarios, entradas resumidas, resultado esperado, observado, estado, método y límite.
 - Se publicaron los resultados y sus límites en las guías de evaluación, costos y clasificación de datos; también se enlazaron desde Recursos y el perfil editorial.
+- Se depuró la sección de pendientes: las métricas, las credenciales del autor y las pruebas con productos externos son mejoras futuras condicionadas a evidencia real, no bloqueos técnicos.
+- Se aclaró que solicitar un nuevo rastreo solo sirve para que Google Search conozca la versión actualizada; no corrige por sí solo el rechazo de AdSense por “contenido de poco valor”.
+- Se recibió una línea base de Search Console anterior a las mejoras: 4 clics y 801 impresiones en tres meses, con CTR de 0,5 % y posición media 27.
+- Se analizó el Excel exportado de Search Console: la guía de verificación concentra 377 impresiones y 3 clics; la portada tiene 65 impresiones y 1 clic; las otras páginas no registran clics en el periodo.
+- Se confirmó que la guía de evaluación fue rastreada el 2026-09-21 a las 16:01:07, después del commit de las mejoras a las 11:24:13, y figura como “La URL está en Google”. No debe solicitarse otra indexación para esa URL.
+- Se confirmó que las guías de costos y datos fueron rastreadas el 2026-09-21 a las 16:03:07, después del despliegue, y figuran como “La URL está en Google”. Ya no debe solicitarse indexación para ninguna de las tres guías.
 
 ## Decisiones y restricciones
 
@@ -50,6 +56,7 @@ El código fuente está disponible en este workspace y el remoto es `https://git
 - No modificar `robots.txt` por un único fallo de la prueba en vivo cuando el archivo y la página responden correctamente; volver a probar y escalar solo si el error persiste o afecta más URLs.
 - No revertir ni regenerar `sitemap.xml`: el único cambio del commit `ad574ce` dentro del sitemap fue actualizar la fecha real de modificación de privacidad; el formato y las URLs no cambiaron.
 - No tratar el decimoquinto mensaje como diagnóstico preciso de una URL: “contenido de poco valor” es una categoría amplia y debe contrastarse con Search Console y datos de audiencia.
+- No volver a solicitar la indexación de una URL si Search Console ya muestra un último rastreo del 2026-09-21 o posterior. Repetir solicitudes no acelera el rastreo y la indexación no equivale a aprobación de AdSense.
 - No volver a solicitar revisión por cambios cosméticos, más palabras o nuevas páginas legales. La próxima mejora debe aportar evidencia propia: pruebas ejecutadas, resultados, capturas o datos descargables reproducibles.
 - La declaración de apoyo de IA no es por sí misma la causa del rechazo y debe mantenerse por transparencia; el problema probable es que gran parte del valor actual puede percibirse como síntesis de fuentes y escenarios ficticios, sin suficiente experiencia de primera mano demostrable.
 - No existe un número oficial mínimo de artículos, visitas ni semanas que garantice aprobación. Usar señales operativas internas sin presentarlas como requisitos de Google.
@@ -112,14 +119,21 @@ El código fuente está disponible en este workspace y el remoto es `https://git
 - `git status --short` estaba limpio antes de esta actualización de contexto.
 - `node --test tests/main.test.js` completó 13/13 pruebas: 10 funcionales sobre 15 escenarios y 3 estructurales para JSON-LD, enlaces/fragmentos e identificadores únicos.
 - La comprobación local en navegador confirmó el caso de costo sin ahorro (`−1 min`, punto de equilibrio no alcanzable), el umbral de rúbrica (`80/100`) y la ruta del orientador para secretos (`Detener y escalar`).
+- `main` y `origin/main` apuntan al commit `ce034fb`, que contiene las pruebas y la evidencia nueva.
+- La versión pública de las tres guías contiene las secciones “Pruebas ejecutadas” y el sitemap público declara `lastmod` 2026-09-21.
+- La captura de Search Console aportada por el usuario cubre aproximadamente del 2026-06-20 al 2026-09-18 y muestra 4 clics, 801 impresiones, CTR de 0,5 % y posición media 27. La visibilidad creció al final del periodo, pero los datos terminan antes del despliegue de las mejoras.
+- El Excel descargado amplía la línea base hasta el 2026-09-19. Los últimos 28 días reúnen 577 impresiones y 3 clics frente a 168 impresiones y 0 clics en los 28 días anteriores; es crecimiento de visibilidad, todavía con una muestra pequeña de visitas.
+- Entre las tres guías mejoradas, la guía de datos registra 50 impresiones y posición media 6,52; costos, 48 y posición 6,15; evaluación, 16 y posición 13,12. Ninguna recibió clics en el periodo anterior a las mejoras.
+- Las URLs antiguas de facturación, resumen de PDF y la variante `-ai-` que aparecen en el histórico responden actualmente `404` y no están en el sitemap. Las variantes `.html` de Contacto y Privacidad redirigen correctamente a sus canónicas.
+- “Página de referencia: No se ha detectado ninguna” en Inspección de URLs no es una métrica de visitas; indica que Google no informa otra página de descubrimiento. Las capturas sí muestran el sitemap y un rastreo correcto.
 
 ## Pendientes o bloqueos
 
-- Obtener métricas reales de Search Console, AdSense y, si se instala, analítica.
-- Completar el perfil de autor con experiencia y enlaces externos solo si el usuario aporta datos comprobables.
-- Desplegar los cambios locales y solicitar recrawl de las tres guías actualizadas, Recursos, Autor, Biblioteca y portada.
-- Añadir en una fase posterior pruebas reales de tareas o productos externos únicamente cuando el usuario pueda ejecutarlas y documentarlas con evidencia propia.
+- Ningún bloqueo técnico en el código.
+- Observar impresiones, clics y uso real posteriores al 2026-09-21. La indexación ya confirmada de otras URLs no resuelve por sí sola el criterio de AdSense sobre valor único e interés de los usuarios.
+
+Las métricas de audiencia, la ampliación del perfil del autor y las pruebas con productos externos quedan como mejoras futuras opcionales. Solo se incorporarán cuando existan datos o experiencia comprobables; no impiden publicar el trabajo actual.
 
 ## Próximo paso recomendado
 
-Revisar y desplegar las mejoras de evidencia; después solicitar recrawl de las URLs modificadas y observar rendimiento orgánico durante varias semanas. No solicitar otra revisión de AdSense hasta que Google haya procesado los cambios y exista una señal sostenida de uso real.
+Conservar el Excel actual como línea base y compararlo con los 28 días posteriores al despliegue. Este periodo es una recomendación de medición, no un requisito oficial de Google. No pedir otra revisión de AdSense solo por haber completado la indexación: las tres guías ya están rastreadas, pero el rechazo vigente exige valor único e interés real de usuarios.
