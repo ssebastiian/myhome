@@ -1,6 +1,6 @@
 # Contexto del proyecto
 
-Última actualización: 2026-09-21
+Última actualización: 2026-10-01
 
 ## Objetivo actual
 
@@ -8,7 +8,7 @@ Salir del ciclo de rechazos de AdSense por “contenido de poco valor” mediant
 
 ## Estado actual
 
-El código fuente está disponible en este workspace y el remoto es `https://github.com/ssebastiian/myhome.git`. El 2026-09-21 el usuario informó un decimoquinto rechazo con el mismo motivo de AdSense y confirmó que la validación de Search Console ya fue completada. El Excel de Rendimiento para 2026-06-20 a 2026-09-19 muestra 4 clics, 801 impresiones, CTR de 0,5 % y posición media 27; todavía no refleja las mejoras publicadas el 2026-09-21. Las impresiones aumentaron de 168 en los 28 días anteriores a 577 en los últimos 28 días del archivo, mientras la posición ponderada permaneció cerca de 27. La base técnica y editorial contiene seis guías extensas, siete descargas, tres herramientas locales, navegación clara, autor, política editorial, sitemap y páginas legales. Para reforzar evidencia propia se publicaron pruebas reproducibles de la rúbrica, la calculadora de costos y el orientador: 10 comprobaciones automatizadas cubren 15 escenarios y todas pasan. El commit `ce034fb` está en `main` y `origin/main`, y la presencia pública de las tres secciones de pruebas se confirmó el 2026-09-21. Las tres guías actualizadas fueron rastreadas por Google después del despliegue y están indexadas. No existe un bloqueo técnico local. El riesgo restante es convertir la visibilidad creciente en interés sostenido de usuarios y experiencia real con tareas o productos externos, sin inventar casos.
+El código fuente está disponible en este workspace y el remoto es `https://github.com/ssebastiian/myhome.git`. El 2026-09-21 el usuario informó un decimoquinto rechazo con el mismo motivo de AdSense y confirmó que la validación de Search Console ya fue completada. El Excel de Rendimiento para 2026-06-20 a 2026-09-19 muestra 4 clics, 801 impresiones, CTR de 0,5 % y posición media 27; todavía no refleja las mejoras publicadas el 2026-09-21. El nuevo Excel de Cobertura descargado el 2026-10-01 también termina el 2026-09-20, por lo que no permite evaluar la versión mejorada: en esa fecha registra 13 URLs indexadas, 25 sin indexar y cuatro en “Rastreada: actualmente sin indexar”. Las impresiones del gráfico crecieron de 180 en los 28 días anteriores a 605 en los últimos 28 días disponibles, pero siguen siendo datos anteriores al despliegue. La base técnica y editorial contiene seis guías extensas, siete descargas, tres herramientas locales, navegación clara, autor, política editorial, sitemap y páginas legales. Para reforzar evidencia propia se publicaron pruebas reproducibles de la rúbrica, la calculadora de costos y el orientador: 10 comprobaciones automatizadas cubren 15 escenarios y todas pasan. El commit `ce034fb` está en `main` y `origin/main`, y la presencia pública de las tres secciones de pruebas se confirmó el 2026-09-21. Las tres guías actualizadas fueron rastreadas por Google después del despliegue y están indexadas. No existe un bloqueo técnico local. La recomendación vigente es no solicitar todavía otra revisión de AdSense: primero hay que identificar las cuatro URLs rastreadas sin indexar y obtener datos que cubran el periodo posterior al 2026-09-21.
 
 ## Trabajo completado
 
@@ -41,6 +41,8 @@ El código fuente está disponible en este workspace y el remoto es `https://git
 - Se analizó el Excel exportado de Search Console: la guía de verificación concentra 377 impresiones y 3 clics; la portada tiene 65 impresiones y 1 clic; las otras páginas no registran clics en el periodo.
 - Se confirmó que la guía de evaluación fue rastreada el 2026-09-21 a las 16:01:07, después del commit de las mejoras a las 11:24:13, y figura como “La URL está en Google”. No debe solicitarse otra indexación para esa URL.
 - Se confirmó que las guías de costos y datos fueron rastreadas el 2026-09-21 a las 16:03:07, después del despliegue, y figuran como “La URL está en Google”. Ya no debe solicitarse indexación para ninguna de las tres guías.
+- Se analizó `topiapps.com-Coverage-2026-10-01.xlsx`: el informe de Cobertura termina el 2026-09-20 y, por tanto, no mide las mejoras desplegadas el 2026-09-21.
+- Se revisó la captura de AdSense del 2026-10-01: el sitio figura como “Preparando” y el estado de `ads.txt` como “No se encuentra”. La comprobación pública demostró que el archivo está implementado correctamente; el estado de AdSense corresponde a su último rastreo y debe actualizarse sin cambiar el archivo.
 
 ## Decisiones y restricciones
 
@@ -60,6 +62,11 @@ El código fuente está disponible en este workspace y el remoto es `https://git
 - No volver a solicitar revisión por cambios cosméticos, más palabras o nuevas páginas legales. La próxima mejora debe aportar evidencia propia: pruebas ejecutadas, resultados, capturas o datos descargables reproducibles.
 - La declaración de apoyo de IA no es por sí misma la causa del rechazo y debe mantenerse por transparencia; el problema probable es que gran parte del valor actual puede percibirse como síntesis de fuentes y escenarios ficticios, sin suficiente experiencia de primera mano demostrable.
 - No existe un número oficial mínimo de artículos, visitas ni semanas que garantice aprobación. Usar señales operativas internas sin presentarlas como requisitos de Google.
+- Las mejoras publicadas probablemente aumentan la posibilidad de aprobación porque aportan utilidad y evidencia propia, pero no permiten calcular una probabilidad ni garantizan el resultado. La señal pendiente es el interés real posterior al despliegue.
+- Durante la ventana de medición se permite promocionar orgánicamente una guía concreta ante una audiencia realmente interesada. No comprar tráfico, usar intercambios, automatizar visitas, enviar mensajes masivos ni pedir clics en anuncios; esas prácticas pueden producir tráfico no válido o spam.
+- Para promocionar una guía en LinkedIn, usar una publicación breve con contenido útil y enlace a TopiApps, no un artículo casi vacío ni una copia completa de la guía. La versión extensa y principal debe permanecer en el sitio.
+- No reenviar la solicitud de AdSense basándose en el Excel de Cobertura del 2026-10-01. Su fecha de descarga no equivale a actualidad de los datos: la última fecha del gráfico es anterior al despliegue que se pretende evaluar.
+- No borrar, reemplazar ni duplicar `ads.txt` mientras AdSense lo muestra como “No se encuentra”: el archivo público, el identificador y las redirecciones son correctos. Google indica que la actualización puede tardar varios días y hasta un mes en sitios con pocas solicitudes de anuncios.
 
 ## Archivos importantes
 
@@ -78,6 +85,7 @@ El código fuente está disponible en este workspace y el remoto es `https://git
 - `index.html`: conserva la verificación de AdSense, pero ya no carga el script publicitario.
 - `pages/privacy.html`: refleja el alcance real del cargador de AdSense y la fecha de revisión actual.
 - `robots.txt`: permite todo el rastreo y declara el sitemap; no requirió cambios tras el fallo aislado de Search Console.
+- `/Users/sebastian.carrillo/Downloads/topiapps.com-Coverage-2026-10-01.xlsx`: exportación de Cobertura de Search Console con datos hasta el 2026-09-20.
 
 ## Verificaciones
 
@@ -126,14 +134,22 @@ El código fuente está disponible en este workspace y el remoto es `https://git
 - Entre las tres guías mejoradas, la guía de datos registra 50 impresiones y posición media 6,52; costos, 48 y posición 6,15; evaluación, 16 y posición 13,12. Ninguna recibió clics en el periodo anterior a las mejoras.
 - Las URLs antiguas de facturación, resumen de PDF y la variante `-ai-` que aparecen en el histórico responden actualmente `404` y no están en el sitemap. Las variantes `.html` de Contacto y Privacidad redirigen correctamente a sus canónicas.
 - “Página de referencia: No se ha detectado ninguna” en Inspección de URLs no es una métrica de visitas; indica que Google no informa otra página de descubrimiento. Las capturas sí muestran el sitemap y un rastreo correcto.
+- En Cobertura, el 2026-09-20 figuran 13 URLs indexadas y 25 sin indexar. Las causas suman 10 páginas con redirección, 4 rastreadas sin indexar, 7 respuestas 404, 2 errores de redirección y 2 descubiertas sin indexar.
+- El gráfico de Cobertura suma 605 impresiones del 2026-08-24 al 2026-09-20 frente a 180 del 2026-07-27 al 2026-08-23, un aumento aproximado del 236 %. Esta señal es favorable, pero todo el periodo precede a las mejoras del 2026-09-21.
+- El 2026-10-01 `https://topiapps.com/ads.txt` respondió HTTP `200`, `Content-Type: text/plain` y mostró `google.com, pub-9439862036060464, DIRECT, f08c47fec0942fa0`.
+- `http://topiapps.com/ads.txt` y `https://www.topiapps.com/ads.txt` redirigieron con `301` directamente a `https://topiapps.com/ads.txt`.
+- Con el agente `Mediapartners-Google`, tanto `ads.txt` como `robots.txt` respondieron HTTP `200`; `robots.txt` permite `User-agent: *` y no bloquea el rastreo.
 
 ## Pendientes o bloqueos
 
 - Ningún bloqueo técnico en el código.
 - Observar impresiones, clics y uso real posteriores al 2026-09-21. La indexación ya confirmada de otras URLs no resuelve por sí sola el criterio de AdSense sobre valor único e interés de los usuarios.
+- Si se promociona el sitio fuera de Google, definir una analítica compatible con la privacidad para medir esas visitas, porque Search Console solo registra el rendimiento procedente de la Búsqueda de Google.
+- Exportar o copiar la lista de las cuatro URLs de “Rastreada: actualmente sin indexar” para comprobar si son guías o páginas importantes vigentes. El Excel resumido no contiene esas URLs.
+- Obtener una nueva exportación de Rendimiento y Cobertura cuyo intervalo incluya suficientes días posteriores al 2026-09-21; el archivo recibido el 2026-10-01 termina el día anterior al despliegue.
 
 Las métricas de audiencia, la ampliación del perfil del autor y las pruebas con productos externos quedan como mejoras futuras opcionales. Solo se incorporarán cuando existan datos o experiencia comprobables; no impiden publicar el trabajo actual.
 
 ## Próximo paso recomendado
 
-Conservar el Excel actual como línea base y compararlo con los 28 días posteriores al despliegue. Este periodo es una recomendación de medición, no un requisito oficial de Google. No pedir otra revisión de AdSense solo por haber completado la indexación: las tres guías ya están rastreadas, pero el rechazo vigente exige valor único e interés real de usuarios.
+Hasta el 2026-10-19, evitar cambios grandes y compartir de forma orgánica una guía útil cada vez con una audiencia pertinente, registrando fecha y canal, sin comprar ni intercambiar tráfico. Ese día, exportar los últimos 28 días de Search Console y compararlos con el Excel actual. Este periodo es una recomendación de medición, no un requisito oficial de Google. No pedir otra revisión de AdSense antes de evaluar esos datos: las tres guías ya están rastreadas, pero el rechazo vigente exige valor único e interés real de usuarios.
