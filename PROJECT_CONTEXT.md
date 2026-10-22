@@ -1,6 +1,6 @@
 # Contexto del proyecto
 
-Última actualización: 2026-10-01
+Última actualización: 2026-10-22
 
 ## Objetivo actual
 
@@ -8,7 +8,9 @@ Salir del ciclo de rechazos de AdSense por “contenido de poco valor” mediant
 
 ## Estado actual
 
-El código fuente está disponible en este workspace y el remoto es `https://github.com/ssebastiian/myhome.git`. El 2026-09-21 el usuario informó un decimoquinto rechazo con el mismo motivo de AdSense y confirmó que la validación de Search Console ya fue completada. El Excel de Rendimiento para 2026-06-20 a 2026-09-19 muestra 4 clics, 801 impresiones, CTR de 0,5 % y posición media 27; todavía no refleja las mejoras publicadas el 2026-09-21. El nuevo Excel de Cobertura descargado el 2026-10-01 también termina el 2026-09-20, por lo que no permite evaluar la versión mejorada: en esa fecha registra 13 URLs indexadas, 25 sin indexar y cuatro en “Rastreada: actualmente sin indexar”. Las impresiones del gráfico crecieron de 180 en los 28 días anteriores a 605 en los últimos 28 días disponibles, pero siguen siendo datos anteriores al despliegue. La base técnica y editorial contiene seis guías extensas, siete descargas, tres herramientas locales, navegación clara, autor, política editorial, sitemap y páginas legales. Para reforzar evidencia propia se publicaron pruebas reproducibles de la rúbrica, la calculadora de costos y el orientador: 10 comprobaciones automatizadas cubren 15 escenarios y todas pasan. El commit `ce034fb` está en `main` y `origin/main`, y la presencia pública de las tres secciones de pruebas se confirmó el 2026-09-21. Las tres guías actualizadas fueron rastreadas por Google después del despliegue y están indexadas. No existe un bloqueo técnico local. La recomendación vigente es no solicitar todavía otra revisión de AdSense: primero hay que identificar las cuatro URLs rastreadas sin indexar y obtener datos que cubran el periodo posterior al 2026-09-21.
+El código fuente está disponible en este workspace y el remoto es `https://github.com/ssebastiian/myhome.git`. El 2026-10-20 el usuario informó un nuevo rechazo de AdSense con el mismo motivo, “contenido de poco valor”. La exportación de Cobertura descargada ese día contiene datos hasta el 2026-10-11: registra 13 URLs indexadas y 25 sin indexar, pero las capturas detalladas confirman que ninguna de las seis guías activas aparece en las exclusiones relevantes. La exportación general de Rendimiento del 2026-10-20 cubre exactamente los 28 días posteriores al despliegue, del 2026-09-21 al 2026-10-18: 8 clics, 804 impresiones, CTR de 1,0 % y posición media ponderada aproximada de 7,97. Frente a los 28 días anteriores disponibles, con 3 clics, 577 impresiones, CTR de 0,52 % y posición 26,34, mejoraron los clics (+167 %), las impresiones (+39 %) y el CTR (+91 %). La señal sigue siendo pequeña y está concentrada: la guía de verificación aporta 6 clics y 595 impresiones; costos aporta 1 clic y 64 impresiones; la portada, 1 clic y 20 impresiones. La guía de datos tiene 85 impresiones y posición 7,04, pero ningún clic. Las exportaciones con sufijos `(1)` y `(2)` no contienen el detalle de esa guía: ambas se generaron con un filtro de Consulta incorrecto y devuelven ceros. La base técnica y editorial contiene seis guías extensas, ocho descargas, tres herramientas locales, navegación clara, autor, política editorial, sitemap y páginas legales. Para reforzar evidencia propia se publicaron pruebas reproducibles de la rúbrica, la calculadora de costos y el orientador: 10 comprobaciones automatizadas cubren 15 escenarios y todas pasan. El 2026-10-22 también quedó preparada localmente una prueba editorial real de VÉRIFICA con 39 comprobaciones sobre primeras respuestas de Gemini, Claude y ChatGPT. La mejora aún no está desplegada. No existe un bloqueo técnico local confirmado y no debe solicitarse otra revisión de AdSense antes de publicar y medir esta mejora material.
+
+La captura revisada el 2026-10-22 vuelve a mostrar la categoría general “Contenido de poco valor” y no identifica una URL ni una infracción técnica concreta. La auditoría editorial del repositorio confirma que la principal brecha ya no es extensión, navegación o indexación: varias guías explican métodos con ejemplos ficticios y pruebas de la lógica local, pero todavía no demuestran suficiente experiencia de primera mano con salidas reales y resultados observados. La guía VÉRIFICA, que concentra 6 de los 8 clics, es la candidata prioritaria para una prueba real reproducible.
 
 ## Trabajo completado
 
@@ -43,6 +45,24 @@ El código fuente está disponible en este workspace y el remoto es `https://git
 - Se confirmó que las guías de costos y datos fueron rastreadas el 2026-09-21 a las 16:03:07, después del despliegue, y figuran como “La URL está en Google”. Ya no debe solicitarse indexación para ninguna de las tres guías.
 - Se analizó `topiapps.com-Coverage-2026-10-01.xlsx`: el informe de Cobertura termina el 2026-09-20 y, por tanto, no mide las mejoras desplegadas el 2026-09-21.
 - Se revisó la captura de AdSense del 2026-10-01: el sitio figura como “Preparando” y el estado de `ads.txt` como “No se encuentra”. La comprobación pública demostró que el archivo está implementado correctamente; el estado de AdSense corresponde a su último rastreo y debe actualizarse sin cambiar el archivo.
+- Se analizó `topiapps.com-Coverage-2026-10-20.xlsx`: el informe llega hasta el 2026-10-11 y permite comparar 21 días posteriores al despliegue con los 21 anteriores.
+- Se revisó el nuevo rechazo de AdSense informado el 2026-10-20. El mensaje sigue siendo una categoría general y no identifica páginas concretas.
+- Se verificaron de nuevo las políticas oficiales vigentes de AdSense y Google Search: Google exige contenido único y valioso, buena navegación y una experiencia satisfactoria; no publica un mínimo de artículos, palabras, visitas o semanas que garantice aprobación.
+- Se identificaron las 4 URLs en “Rastreada: actualmente sin indexar”: `downloads/laboratorio-formulas-hojas-calculo.csv`, el antiguo artículo de resumen de PDF y dos variantes del antiguo artículo de facturación. No son guías activas que deban recuperarse.
+- Se identificaron las 2 URLs en “Descubierta: actualmente sin indexar”: `pages/editorial-policy` y `pages/terms`. Son páginas auxiliares, accesibles, canónicas, enlazadas internamente y presentes en el sitemap; su indexación no es necesaria para monetizar las guías.
+- Se analizó `topiapps.com-Performance-on-Search-2026-10-20.xlsx` y se comparó con los 28 días finales del informe anterior. El periodo posterior al despliegue registra 8 clics y 804 impresiones frente a 3 clics y 577 impresiones.
+- Se comprobó que los clics reales no aparecen asociados a las consultas visibles del Excel. Search Console omite consultas poco frecuentes por privacidad; los ceros de la pestaña Consultas no contradicen los 8 clics totales.
+- Se analizó `topiapps.com-Performance-on-Search-2026-10-20 (1).xlsx`: se aplicó un filtro de Consulta con el texto de una instrucción, no un filtro de Página por la URL de la guía. El archivo devuelve cero clics e impresiones y deja vacías las pestañas de dimensiones; no sirve para diagnosticar el rechazo de AdSense ni el CTR de la guía.
+- Se analizó `topiapps.com-Performance-on-Search-2026-10-20 (2).xlsx`: sigue usando `Consulta` y el valor `que-datos-puedes-compartir-con-una-ia. Abrir Consultas y exportar los`. También devuelve ceros; todavía no es la exportación solicitada por Página.
+- Se contrastó la captura de “Contenido de poco valor” con las políticas oficiales vigentes el 2026-10-22. Google prohíbe anuncios en pantallas sin contenido del editor o con contenido de poco valor, y recomienda información, investigación o análisis originales, valor adicional frente a otras fuentes y experiencia de primera mano.
+- Se auditó la evidencia visible en las seis guías y se identificó que VÉRIFICA no publicaba una prueba con respuestas reales; esa brecha quedó atendida localmente con el estudio del 2026-10-22.
+- Se definió un protocolo mínimo para la prueba real de VÉRIFICA: ejecutar una misma consulta en tres asistentes, registrar herramienta, plan, modo, fecha y respuesta sin editar; separar cada afirmación comprobable; contrastarla con fuentes primarias; y publicar resultados y límites como estudio de caso, no como clasificación general de productos.
+- El usuario entregó el 2026-10-22 las primeras respuestas de Gemini y Claude; posteriormente entregó la tercera respuesta atribuida a ChatGPT.
+- La ejecución de Gemini quedó identificada a las 12:43 p. m. COT del 2026-10-22. La interfaz solo se identificó como “Gemini, desarrollado por Google”, sin nombre de modelo, y confirmó que la búsqueda web estaba desactivada. El plan sigue sin confirmarse: la respuesta “no aplicable” describe al asistente, no el tipo de cuenta usado.
+- La comprobación preliminar encontró diferencias materiales: Gemini marcó como no confirmados los límites de Gemini y Copilot aunque sus ayudas oficiales publican 100 MB y 10 archivos por solicitud para Gemini, y 50 MB y 20 archivos por conversación para Copilot. Gemini también aplicó a la versión nueva de Copilot una afirmación y un control de entrenamiento que corresponden a documentación anterior. Claude identificó mejor el cambio de versión, pero dejó sin confirmar el uso de conversaciones en la aplicación nueva cuando Microsoft indica que prompts, respuestas y archivos no se usan para entrenar modelos fundacionales.
+- Se recibió la tercera respuesta, atribuida a ChatGPT, y se cerró el conjunto de 39 comprobaciones: 13 criterios equivalentes por asistente. Los resultados locales son Gemini: 5 confirmadas, 7 corregidas y 1 no verificada; Claude: 11 confirmadas y 2 corregidas; ChatGPT: 13 confirmadas. Son resultados de una ejecución, no una clasificación general.
+- Se creó `downloads/resultados-prueba-verifica-asistentes-2026-10-22.csv` y se actualizó la guía VÉRIFICA con protocolo, resultados, hallazgos, limitaciones, fuentes oficiales y enlace a la descarga.
+- Se actualizaron portada, biblioteca, Recursos, perfil editorial y sitemap para reflejar la prueba real y el inventario de ocho descargas.
 
 ## Decisiones y restricciones
 
@@ -67,6 +87,16 @@ El código fuente está disponible en este workspace y el remoto es `https://git
 - Para promocionar una guía en LinkedIn, usar una publicación breve con contenido útil y enlace a TopiApps, no un artículo casi vacío ni una copia completa de la guía. La versión extensa y principal debe permanecer en el sitio.
 - No reenviar la solicitud de AdSense basándose en el Excel de Cobertura del 2026-10-01. Su fecha de descarga no equivale a actualidad de los datos: la última fecha del gráfico es anterior al despliegue que se pretende evaluar.
 - No borrar, reemplazar ni duplicar `ads.txt` mientras AdSense lo muestra como “No se encuentra”: el archivo público, el identificador y las redirecciones son correctos. Google indica que la actualización puede tardar varios días y hasta un mes en sitios con pocas solicitudes de anuncios.
+- El crecimiento de impresiones del informe del 2026-10-20 es una señal favorable, no una prueba de interés suficiente para AdSense: faltan clics, consultas, páginas de entrada y comportamiento posterior al clic.
+- El total agregado de 25 URLs sin indexar no debe interpretarse como 25 páginas activas defectuosas: las URLs detalladas son redirecciones, 404, artículos retirados, una descarga y dos páginas auxiliares. No se detectó una guía activa excluida por calidad.
+- Mantener las tres URLs de artículos retirados fuera del sitemap y como 404 mientras no exista un reemplazo equivalente. No restaurarlas ni redirigirlas a una página genérica solo para limpiar Search Console.
+- No solicitar indexación del CSV: es una descarga de apoyo, no una página de contenido destinada a resultados de búsqueda.
+- No sumar las impresiones de la pestaña Páginas para reconstruir el total: Search Console puede acreditar una misma búsqueda a varias URLs o fragmentos y aplica agregaciones distintas. Usar el total diario de la pestaña Gráfico.
+- No cambiar el título o la intención de la guía de datos sin filtrar primero sus consultas. Sus 85 impresiones y posición 7,04 con CTR cero muestran oportunidad, pero la exportación general no revela qué búsquedas las generaron.
+- No interpretar los ceros de una exportación filtrada sin revisar la pestaña `Filtros`. Para este análisis se necesita `Página: URL exacta`, no introducir la URL ni las instrucciones en un filtro de Consulta.
+- Tratar la falta de evidencia editorial de primera mano como hipótesis principal, no como diagnóstico revelado por Google: el aviso no informa qué URL o señal produjo el rechazo.
+- Fijar el prompt y el método antes de ejecutar la prueba de VÉRIFICA. Usar una sola ejecución por asistente, conservar también los aciertos y declarar que la muestra no permite decidir cuál producto es mejor.
+- No inferir modelos, planes o modos de búsqueda que no quedaron registrados. Publicar esos campos como “no confirmado” y separar esa limitación de la verificación factual.
 
 ## Archivos importantes
 
@@ -78,6 +108,8 @@ El código fuente está disponible en este workspace y el remoto es `https://git
 - `main.js`: incluye la lógica del orientador local de datos.
 - `tests/main.test.js`: pruebas automatizadas de la rúbrica, calculadora de costos y orientador.
 - `downloads/registro-pruebas-herramientas-locales.csv`: evidencia pública de 15 escenarios ejecutados.
+- `downloads/resultados-prueba-verifica-asistentes-2026-10-22.csv`: 39 comprobaciones editoriales de primeras respuestas de Gemini, Claude y ChatGPT.
+- `articles/como-verificar-respuestas-de-ia-metodo-practico.html`: prueba real, resultados, fuentes y límites del estudio VÉRIFICA.
 - `articles/como-evaluar-herramienta-ia-antes-de-pagar.html`: resultados verificables de la rúbrica ponderada.
 - `articles/calcular-costo-real-ia-en-un-equipo.html`: resultados verificables de cálculo y punto de equilibrio.
 - `pages/autor-sebastian-carrillo.html`: alcance y enlaces a pruebas publicadas sin atribuir credenciales no demostradas.
@@ -86,6 +118,11 @@ El código fuente está disponible en este workspace y el remoto es `https://git
 - `pages/privacy.html`: refleja el alcance real del cargador de AdSense y la fecha de revisión actual.
 - `robots.txt`: permite todo el rastreo y declara el sitemap; no requirió cambios tras el fallo aislado de Search Console.
 - `/Users/sebastian.carrillo/Downloads/topiapps.com-Coverage-2026-10-01.xlsx`: exportación de Cobertura de Search Console con datos hasta el 2026-09-20.
+- `/Users/sebastian.carrillo/Downloads/topiapps.com-Coverage-2026-10-20.xlsx`: exportación de Cobertura de Search Console con datos hasta el 2026-10-11; no contiene el detalle de URLs.
+- `/Users/sebastian.carrillo/Downloads/topiapps.com-Performance-on-Search-2026-09-21.xlsx`: línea base de Rendimiento; sus últimos 28 días disponibles cubren del 2026-08-23 al 2026-09-19.
+- `/Users/sebastian.carrillo/Downloads/topiapps.com-Performance-on-Search-2026-10-20.xlsx`: Rendimiento de los 28 días posteriores al despliegue, del 2026-09-21 al 2026-10-18.
+- `/Users/sebastian.carrillo/Downloads/topiapps.com-Performance-on-Search-2026-10-20 (1).xlsx`: exportación filtrada incorrectamente por Consulta; sus ceros no representan el rendimiento de la guía ni del sitio.
+- `/Users/sebastian.carrillo/Downloads/topiapps.com-Performance-on-Search-2026-10-20 (2).xlsx`: segundo intento todavía filtrado por Consulta; no contiene las consultas de la guía.
 
 ## Verificaciones
 
@@ -99,7 +136,7 @@ El código fuente está disponible en este workspace y el remoto es `https://git
 - Search Console confirmó el 2026-08-19 que `https://topiapps.com/` está indexada y se sirve por HTTPS.
 - En la revisión documentada del 2026-08-19, AdSense mostraba dos mensajes activos para reglamentos europeos y uno para normativas estatales de EE. UU.; la CMP no forma parte del código estático del repositorio.
 - PageSpeed Insights no devolvió métricas por agotamiento de la cuota pública de la API.
-- El repositorio contiene ahora 6 artículos, 7 descargas y 6 URLs de artículos en el sitemap.
+- El repositorio contiene ahora 6 artículos, 8 descargas y 6 URLs de artículos en el sitemap.
 - `node --check main.js` terminó correctamente.
 - `xmllint --noout sitemap.xml` terminó correctamente.
 - Los 15 bloques JSON-LD de los archivos HTML se analizaron correctamente.
@@ -122,10 +159,15 @@ El código fuente está disponible en este workspace y el remoto es `https://git
 - Googlebot, Google Inspection Tool y Mediapartners-Google descargaron el sitemap con `200`; cinco descargas consecutivas adicionales también devolvieron `200`.
 - Google Public DNS y Cloudflare DNS resolvieron correctamente los registros A y AAAA de `topiapps.com`; los dos destinos IPv4 sirvieron `sitemap.xml` y `robots.txt` con `200`.
 - El 2026-09-21 la búsqueda pública devolvió resultados individuales para portada, biblioteca, recursos, Nosotros, política editorial y al menos dos de las seis guías; las consultas exactas no devolvieron de forma fiable las otras cuatro guías. Es una señal parcial, no sustituto de Inspección de URLs.
-- El sitemap sigue declarando 15 URLs: 6 guías y 9 páginas estructurales/editoriales. El sitio ofrece además 7 archivos descargables enlazados desde las guías y recursos.
+- El sitemap sigue declarando 15 URLs: 6 guías y 9 páginas estructurales/editoriales. El sitio ofrece además 8 archivos descargables enlazados desde las guías y recursos.
 - No se encontró integración de Google Analytics, Matomo, Plausible, Umami ni Cloudflare Web Analytics en el HTML o JavaScript local; no hay datos de audiencia disponibles en el repositorio.
 - `git status --short` estaba limpio antes de esta actualización de contexto.
 - `node --test tests/main.test.js` completó 13/13 pruebas: 10 funcionales sobre 15 escenarios y 3 estructurales para JSON-LD, enlaces/fragmentos e identificadores únicos.
+- El 2026-10-22, `node --test tests/main.test.js` volvió a completar 13/13 pruebas y `git diff --check` no encontró errores.
+- Tras incorporar la prueba real, `node --test tests/main.test.js` completó 13/13; `node --check main.js`, `xmllint --noout sitemap.xml` y `git diff --check` finalizaron correctamente.
+- El CSV nuevo se analizó con un lector que respeta comillas: contiene 39 filas de datos y 12 columnas uniformes.
+- Tidy no encontró errores en los cinco HTML modificados; solo advirtió sobre elementos vacíos del botón de navegación ya existente.
+- No se pudo hacer la revisión visual en navegador local porque el navegador integrado no estaba disponible y el sandbox impidió abrir el servidor HTTP local; la validación estructural y de enlaces sí terminó correctamente.
 - La comprobación local en navegador confirmó el caso de costo sin ahorro (`−1 min`, punto de equilibrio no alcanzable), el umbral de rúbrica (`80/100`) y la ruta del orientador para secretos (`Detener y escalar`).
 - `main` y `origin/main` apuntan al commit `ce034fb`, que contiene las pruebas y la evidencia nueva.
 - La versión pública de las tres guías contiene las secciones “Pruebas ejecutadas” y el sitemap público declara `lastmod` 2026-09-21.
@@ -139,17 +181,31 @@ El código fuente está disponible en este workspace y el remoto es `https://git
 - El 2026-10-01 `https://topiapps.com/ads.txt` respondió HTTP `200`, `Content-Type: text/plain` y mostró `google.com, pub-9439862036060464, DIRECT, f08c47fec0942fa0`.
 - `http://topiapps.com/ads.txt` y `https://www.topiapps.com/ads.txt` redirigieron con `301` directamente a `https://topiapps.com/ads.txt`.
 - Con el agente `Mediapartners-Google`, tanto `ads.txt` como `robots.txt` respondieron HTTP `200`; `robots.txt` permite `User-agent: *` y no bloquea el rastreo.
+- En la nueva exportación de Cobertura, el periodo 2026-09-21 a 2026-10-11 suma 582 impresiones frente a 515 entre 2026-08-31 y 2026-09-20, un aumento del 13,0 %.
+- Los últimos 28 días disponibles, 2026-09-14 a 2026-10-11, suman 751 impresiones frente a 499 en los 28 días anteriores, un aumento del 50,5 %.
+- El recuento se mantuvo en 13 indexadas y 25 sin indexar todos los días desde el 2026-09-18 hasta el final del informe, 2026-10-11.
+- El código local mantiene el cargador de AdSense solo en las seis guías. Portada y páginas auxiliares no cargan `adsbygoogle`; varias conservan la metaetiqueta oficial de verificación.
+- La captura de detalle del 2026-10-20 muestra como rastreadas sin indexar el CSV del laboratorio (rastreo 2026-08-22), el antiguo artículo de PDF (2026-07-28) y las dos variantes del antiguo artículo de facturación (2026-06-27).
+- La captura de detalle muestra `pages/editorial-policy` y `pages/terms` como descubiertas sin indexar y sin fecha de rastreo. Una búsqueda pública del 2026-10-20 devolvió la política editorial, señal de que el informe de Cobertura puede ir retrasado respecto del índice visible.
+- En Rendimiento, el periodo 2026-09-21 a 2026-10-18 suma 8 clics, 804 impresiones, CTR de 0,995 % y posición media ponderada de 7,97.
+- En los 28 días anteriores disponibles, 2026-08-23 a 2026-09-19, hubo 3 clics, 577 impresiones, CTR de 0,520 % y posición media ponderada de 26,34.
+- La guía de verificación concentra 6 de 8 clics y 595 de 804 impresiones del total del sitio. Costos y portada aportan un clic cada una.
+- La guía de datos registra 85 impresiones, posición 7,04 y cero clics. Evaluación tiene 11 impresiones en posición 6; hojas de cálculo, 6 en posición 7,17; la plantilla de política, 22 en posición 50,95.
+- La primera mitad del nuevo periodo tuvo 3 clics y 460 impresiones; la segunda, 5 clics y 344 impresiones. El CTR mejoró de 0,65 % a 1,45 %, pero la visibilidad diaria todavía no muestra crecimiento sostenido dentro de las cuatro semanas.
+- En la exportación `(1)`, `Filtros!B4` contiene `+que-datos-puedes-compartir-con-una-ia. Abrir Consultas y exportar los`; `Gráfico!B2:C29` está en cero y las pestañas `Consultas`, `Páginas`, `Países` y `Dispositivos` solo contienen sus encabezados.
+- En la exportación `(2)`, `Filtros!A4` vuelve a indicar `Consulta`; `Filtros!B4` contiene `que-datos-puedes-compartir-con-una-ia. Abrir Consultas y exportar los`. `Gráfico!B2:C29` está en cero y las tablas de dimensiones siguen vacías.
 
 ## Pendientes o bloqueos
 
 - Ningún bloqueo técnico en el código.
 - Observar impresiones, clics y uso real posteriores al 2026-09-21. La indexación ya confirmada de otras URLs no resuelve por sí sola el criterio de AdSense sobre valor único e interés de los usuarios.
 - Si se promociona el sitio fuera de Google, definir una analítica compatible con la privacidad para medir esas visitas, porque Search Console solo registra el rendimiento procedente de la Búsqueda de Google.
-- Exportar o copiar la lista de las cuatro URLs de “Rastreada: actualmente sin indexar” para comprobar si son guías o páginas importantes vigentes. El Excel resumido no contiene esas URLs.
-- Obtener una nueva exportación de Rendimiento y Cobertura cuyo intervalo incluya suficientes días posteriores al 2026-09-21; el archivo recibido el 2026-10-01 termina el día anterior al despliegue.
+- En Search Console, quitar el filtro de Consulta equivocado, añadir un filtro de Página por URL exacta para `https://topiapps.com/articles/que-datos-puedes-compartir-con-una-ia`, abrir Consultas y exportar ese detalle antes de modificar el título, descripción o contenido.
+- Revisar visualmente la tabla amplia de resultados en escritorio y móvil antes de desplegar. Los modelos, planes y modos de búsqueda de Claude y ChatGPT siguen sin confirmarse; no bloquean la publicación si se conserva esa limitación visible.
+- Desplegar la mejora local y solicitar indexación de la guía VÉRIFICA solo después de confirmar la versión pública.
 
 Las métricas de audiencia, la ampliación del perfil del autor y las pruebas con productos externos quedan como mejoras futuras opcionales. Solo se incorporarán cuando existan datos o experiencia comprobables; no impiden publicar el trabajo actual.
 
 ## Próximo paso recomendado
 
-Hasta el 2026-10-19, evitar cambios grandes y compartir de forma orgánica una guía útil cada vez con una audiencia pertinente, registrando fecha y canal, sin comprar ni intercambiar tráfico. Ese día, exportar los últimos 28 días de Search Console y compararlos con el Excel actual. Este periodo es una recomendación de medición, no un requisito oficial de Google. No pedir otra revisión de AdSense antes de evaluar esos datos: las tres guías ya están rastreadas, pero el rechazo vigente exige valor único e interés real de usuarios.
+Revisar visualmente la guía y el CSV, desplegar los cambios y confirmar que la sección `#prueba-real` y la descarga responden públicamente. Después solicitar una sola indexación de la guía VÉRIFICA y esperar a que Search Console registre el nuevo rastreo antes de medir su efecto. Mantener pendiente la exportación de consultas de la guía de datos con filtro de Página exacta. No solicitar todavía otra revisión de AdSense.

@@ -26,7 +26,7 @@
         "url": "https://topiapps.com/articles/como-verificar-respuestas-de-ia-metodo-practico",
         "image": "https://topiapps.com/assets/hero-topiapps.png",
         "datePublished": "2026-07-15",
-        "dateModified": "2026-08-12",
+        "dateModified": "2026-10-22",
         "author": {
           "@type": "Person",
           "name": "Sebastián Carrillo",
@@ -48,9 +48,10 @@
           <p class="eyebrow">Alfabetización en IA</p>
           <h1>Cómo verificar una respuesta de IA antes de usarla</h1>
           <p class="page-intro">Una respuesta clara puede ser incorrecta. Este método convierte la revisión en ocho pasos concretos y deja un registro que otra persona puede repetir.</p>
-          <p class="mini-meta"><span>Por <a href="/pages/autor-sebastian-carrillo">Sebastián Carrillo</a></span><span>12 min de lectura</span><span>Publicado: 15 de julio de 2026</span><span>Actualizado: 12 de agosto de 2026</span></p>
+          <p class="mini-meta"><span>Por <a href="/pages/autor-sebastian-carrillo">Sebastián Carrillo</a></span><span>15 min de lectura</span><span>Publicado: 15 de julio de 2026</span><span>Actualizado: 22 de octubre de 2026</span></p>
           <p class="article-disclosure"><strong>Transparencia de producción:</strong> se utilizó IA como apoyo para organizar y revisar el borrador. La selección de fuentes, los límites y la publicación quedan bajo responsabilidad editorial de Sebastián Carrillo.</p>
           <p class="article-disclosure">Guía editorial original. El método VÉRIFICA fue organizado por TopiApps a partir de prácticas de evaluación, trazabilidad y gestión de riesgos; no es una certificación oficial.</p>
+          <p class="article-disclosure"><strong>Prueba real:</strong> el 22 de octubre de 2026 se aplicó el método a primeras respuestas de Gemini, Claude y ChatGPT sobre límites y privacidad de archivos. Se conservan los 39 resultados verificables en un CSV.</p>
         </div>
       </section>
       <section class="section">
@@ -66,6 +67,7 @@
               <ol class="content-index">
                 <li><a href="#antes">Antes de empezar: define el riesgo</a></li>
                 <li><a href="#metodo">Los ocho pasos del método VÉRIFICA</a></li>
+                <li><a href="#prueba-real">Prueba real con tres asistentes</a></li>
                 <li><a href="#ejemplo">Ejemplo completo con una respuesta ficticia</a></li>
                 <li><a href="#rubrica">Rúbrica para aprobar, corregir o descartar</a></li>
                 <li><a href="#plantilla">Plantilla lista para copiar</a></li>
@@ -111,6 +113,31 @@
 
             <h3>A — Aprueba con límites explícitos</h3>
             <p>La aprobación final debe decir para qué se puede usar el resultado. Por ejemplo: “apto como borrador interno; las cifras fueron verificadas el 15 de julio; la conclusión comercial requiere aprobación del responsable”. Una respuesta no pasa de “borrador” a “verdad”; pasa a un uso delimitado con evidencia suficiente.</p>
+
+            <h2 id="prueba-real">Prueba real: verificar una comparación de tres asistentes</h2>
+            <p>El 22 de octubre de 2026 se formuló la misma solicitud a Gemini, Claude y ChatGPT: comparar los planes personales gratuitos de ChatGPT, Gemini y Microsoft Copilot para resumir archivos PDF. El prompt pidió tamaños, cantidades, formatos, uso de archivos para mejorar modelos, controles de privacidad y un enlace oficial para cada dato.</p>
+            <p>Se conservó la primera respuesta de cada asistente, sin pedir correcciones. Después se agruparon 13 criterios equivalentes por respuesta y se contrastaron con las ayudas oficiales de OpenAI, Google y Microsoft. Una afirmación quedó <strong>confirmada</strong> cuando la fuente respaldaba el dato y su alcance; <strong>corregida</strong> cuando faltaba una cifra publicada, se aplicaba una política anterior o la lista era incompleta; y <strong>no verificada</strong> cuando la documentación no permitía sostenerla como estaba escrita.</p>
+
+            <table class="review-table">
+              <thead><tr><th>Primera respuesta</th><th>Confirmadas</th><th>Corregidas</th><th>No verificadas</th><th>Condición registrada</th></tr></thead>
+              <tbody>
+                <tr><th>Gemini</th><td>5 de 13</td><td>7 de 13</td><td>1 de 13</td><td>Búsqueda web desactivada; modelo y plan no confirmados.</td></tr>
+                <tr><th>Claude</th><td>11 de 13</td><td>2 de 13</td><td>0</td><td>Modelo, plan y modo de búsqueda no confirmados.</td></tr>
+                <tr><th>ChatGPT</th><td>13 de 13</td><td>0</td><td>0</td><td>Modelo, plan y modo de búsqueda no confirmados.</td></tr>
+              </tbody>
+            </table>
+
+            <h3>Qué detectó el método</h3>
+            <ul>
+              <li>Gemini declaró “no confirmados” dos límites que la ayuda oficial de Google sí publica: 100 MB por archivo distinto de video y hasta 10 archivos por solicitud.</li>
+              <li>La misma respuesta omitió los límites publicados por Microsoft de 50 MB por archivo y 20 archivos por conversación.</li>
+              <li>Gemini aplicó a Copilot una regla de entrenamiento y un control de privacidad de una versión anterior. Microsoft indica para la aplicación actual que los prompts, respuestas y archivos no se usan para entrenar modelos fundacionales.</li>
+              <li>Claude distinguió la versión anterior de Copilot, pero dejó sin confirmar una protección que la documentación actual sí expresa. También afirmó que OpenAI no enumeraba PDF, aunque la ayuda consultada lo incluye expresamente.</li>
+              <li>La respuesta de ChatGPT separó correctamente límites por archivo, por solicitud, por conversación y por día. También evitó extender la política de archivos de Copilot a otros datos de la conversación.</li>
+            </ul>
+
+            <p>Este resultado no demuestra que un asistente sea siempre más preciso que otro. Es una sola ejecución, los modos disponibles no fueron idénticos y las páginas de ayuda cambian. Su valor está en mostrar que una respuesta convincente puede mezclar aciertos, omisiones y reglas antiguas, y que el estado “no confirmado” también debe comprobarse.</p>
+            <p><a class="button secondary download-link" href="/downloads/resultados-prueba-verifica-asistentes-2026-10-22.csv" download>Descargar los 39 resultados verificados</a></p>
 
             <h2 id="ejemplo">Ejemplo completo: verificar una recomendación de software</h2>
             <p>Imagina que una IA responde: “La herramienta Alfa es la mejor para un equipo de cinco personas porque tiene plan gratuito ilimitado, almacena datos en tu país y exporta reportes contables compatibles con la autoridad fiscal”. La frase parece concreta, pero contiene al menos cuatro afirmaciones:</p>
@@ -164,12 +191,18 @@
             <section class="source-box" aria-labelledby="fuentes-verificacion">
               <h2 id="fuentes-verificacion">Fuentes y marco consultado</h2>
               <ul class="source-list">
+                <li><a href="https://help.openai.com/en/articles/8555545-uploading-files-and-audio-to-chatgpt">OpenAI — carga de archivos y audio</a><small>Límites, formatos, cuotas y disponibilidad por plan usados en la prueba real.</small></li>
+                <li><a href="https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance">OpenAI — uso de datos para mejorar modelos</a><small>Controles para servicios personales y alcance de la exclusión.</small></li>
+                <li><a href="https://support.google.com/gemini/answer/14903178">Google — subir y analizar archivos en Gemini</a><small>Tamaños, cantidad por solicitud y límites acumulativos.</small></li>
+                <li><a href="https://support.google.com/gemini/answer/13594961">Google — centro de privacidad de Gemini</a><small>Conservar actividad, entrenamiento, revisión y retención.</small></li>
+                <li><a href="https://support.microsoft.com/en-us/microsoft-365-copilot/file-upload-in-microsoft-copilot">Microsoft — carga de archivos en Copilot</a><small>Formatos, 50 MB por archivo, 20 archivos por conversación y tratamiento de archivos.</small></li>
+                <li><a href="https://support.microsoft.com/en-us/privacy/microsoft-copilot/activity-history">Microsoft — historial de actividad de Copilot</a><small>Alcance de la aplicación personal actual y uso para entrenamiento de modelos fundacionales.</small></li>
                 <li><a href="https://www.nist.gov/itl/ai-risk-management-framework">NIST — AI Risk Management Framework</a><small>Marco voluntario para incorporar confiabilidad y gestión de riesgos durante el ciclo de vida de sistemas de IA.</small></li>
                 <li><a href="https://airc.nist.gov/">NIST AI Resource Center</a><small>Recursos sobre pruebas, evaluación, verificación y validación de IA.</small></li>
                 <li><a href="https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf">NIST AI 600-1 — perfil para IA generativa</a><small>Documento técnico sobre riesgos específicos o amplificados por IA generativa.</small></li>
                 <li><a href="https://owasp.org/www-project-top-10-for-large-language-model-applications/">OWASP — Top 10 para aplicaciones con modelos de lenguaje</a><small>Referencia de seguridad para riesgos en aplicaciones basadas en modelos de lenguaje.</small></li>
               </ul>
-              <p><small>Consultadas el 15 de julio de 2026. Los enlaces se incluyen para que el lector pueda revisar el marco original; TopiApps no pertenece a estas organizaciones.</small></p>
+              <p><small>Las fuentes de producto se comprobaron el 22 de octubre de 2026; el marco de NIST y OWASP se consultó inicialmente el 15 de julio de 2026. Los enlaces permiten revisar el alcance original; TopiApps no pertenece a estas organizaciones.</small></p>
             </section>
 
             <section class="author-box" aria-labelledby="sobre-autor"><div class="author-monogram" aria-hidden="true">SC</div><div><h2 id="sobre-autor">Sobre el autor</h2><p><a href="/pages/autor-sebastian-carrillo">Sebastián Carrillo</a> es el editor responsable de TopiApps. Revisa fuentes, estructura ejemplos y mantiene el canal de correcciones del sitio.</p></div></section>
